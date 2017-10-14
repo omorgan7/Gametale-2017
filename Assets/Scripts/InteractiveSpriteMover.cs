@@ -29,6 +29,21 @@ public class InteractiveSpriteMover : MonoBehaviour {
 		}
 	}
 	void OnTriggerStay2D(Collider2D other){
+		if(other.gameObject.tag != "npc"){
+			return;
+		}
+
+		// have an if for if you press the spacebar.
+		if(Input.GetButtonUp("Submit")){
+			other.gameObject.GetComponent<NPCSpriteMover>().stopMoving();
+			//do some other stuff
+		}
 		print(other.gameObject.name);
+	}
+	void OnTriggerExit2D(Collider2D other){
+		if(other.gameObject.tag != "npc"){
+			return;
+		}
+		other.gameObject.GetComponent<NPCSpriteMover>().startMoving();
 	}
 }
