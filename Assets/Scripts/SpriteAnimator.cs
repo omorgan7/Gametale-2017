@@ -14,7 +14,7 @@ public class SpriteAnimator : MonoBehaviour {
 	bool isPlaying = false;
 	public bool isLooping = true;
 
-	int idleIndex;
+	public int idleIndex;
 
 	public float frameTime = 0.1f;
 

@@ -3,7 +3,7 @@
 public class NPCSpriteMover : MonoBehaviour {
 
 	// Use this for initialization
-	SpriteMover spriteMover;
+	public SpriteMover spriteMover;
 	float right, forward;
 
 	public float randomThreshold = 0.1f;
@@ -18,10 +18,6 @@ public class NPCSpriteMover : MonoBehaviour {
 	}
 
 	void Update(){
-		if(!isMoving){
-			pauseMoving();
-			return;
-		}
 		elapsedTime += Time.deltaTime;
 		if(elapsedTime >= moveDuration){
 			float randomNumber = Random.value;
@@ -42,11 +38,10 @@ public class NPCSpriteMover : MonoBehaviour {
 			}
 		}
 	}
-
-	void pauseMoving(){
+	public void pauseMoving(){
 		right = 0f;
 		forward = 0f;
-		spriteMover.stopMoving();
+		spriteMover.pauseMoving();
 	}
 
 	public void startMoving(){
@@ -55,9 +50,15 @@ public class NPCSpriteMover : MonoBehaviour {
 
 	public void stopMoving(){
 		isMoving = false;
+		right = 0f;
+		forward = 0f;
 	}
 
 	void FixedUpdate(){
+		if(!isMoving){
+			pauseMoving();
+			return;
+		}
 		if(forward < 0f){
 			spriteMover.moveForward(forward);
 		}
