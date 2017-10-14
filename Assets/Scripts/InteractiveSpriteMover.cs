@@ -5,6 +5,7 @@ public class InteractiveSpriteMover : MonoBehaviour {
 	// Use this for initialization
 	
 	public SpriteAnimationController spriteAnimationController;
+	SpriteMover spriteMover;
 	public float speed = 1f;
 
 	float right, forward;
@@ -32,5 +33,8 @@ public class InteractiveSpriteMover : MonoBehaviour {
 	void FixedUpdate(){
 		right = Input.GetAxisRaw("Horizontal");
 		forward = Input.GetAxisRaw("Vertical");
+	}
+	void OnTriggerStay2D(Collider2D other){
+		print(other.gameObject.name);
 	}
 }
