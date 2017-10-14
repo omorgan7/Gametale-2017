@@ -30,4 +30,8 @@ public class SpriteMover : MonoBehaviour {
 	public void stopMoving(){
 		spriteAnimationController.nextAnimation = AnimationStates.States.Idle;
 	}
+
+	public void pauseMoving(){
+		spriteAnimationController.sendToIdle();
+	}
 }

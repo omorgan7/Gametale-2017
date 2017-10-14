@@ -26,6 +26,9 @@ public class SpriteAnimationController : MonoBehaviour {
 		}
 	}
 
+	public void sendToIdle(){
+		animationCurrentlyPlaying.goIdle();
+	}
 	SpriteAnimator findAnimation(AnimationStates.States state){
 		foreach(var animation in animations){
 			if(animation.state == nextAnimation){
