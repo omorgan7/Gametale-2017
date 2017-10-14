@@ -37,7 +37,7 @@ public class SpriteAnimationController : MonoBehaviour {
 	public void sendToIdle(){
 		animationCurrentlyPlaying.goIdle();
 	}
-	SpriteAnimator findAnimation(Enums.States state){
+	SpriteAnimator findAnimation(Enums.AnimStates state){
 		foreach(var animation in animations){
 			if(animation.state == nextAnimation){
 				return animation ;
