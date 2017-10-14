@@ -685,7 +685,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.2505219, y: 0.480167}
+  m_Size: {x: 0.64, y: 0.64}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -714,12 +714,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprites:
-  - {fileID: 21300000, guid: 8080741afe82f440a938dd73729eb34e, type: 3}
-  - {fileID: 21300000, guid: 871db2cc442754c44941a485e4e20dbc, type: 3}
-  - {fileID: 21300000, guid: 46b8ba32b4e964997ab47995137d8001, type: 3}
+  - {fileID: 21300000, guid: e6520f93060974bc893394c14398b164, type: 3}
+  - {fileID: 21300000, guid: a4c41208ff7fe40c38ae72329b51e69e, type: 3}
+  - {fileID: 21300000, guid: 1c80a2fb9ceb042488ec46cb38c75f3f, type: 3}
   isLooping: 1
   frameTime: 0.2
-  state: 4
+  state: 2
 --- !u!114 &1990260507
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -766,9 +766,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprites:
-  - {fileID: 21300000, guid: e6520f93060974bc893394c14398b164, type: 3}
-  - {fileID: 21300000, guid: a4c41208ff7fe40c38ae72329b51e69e, type: 3}
-  - {fileID: 21300000, guid: 1c80a2fb9ceb042488ec46cb38c75f3f, type: 3}
+  - {fileID: 21300000, guid: 8080741afe82f440a938dd73729eb34e, type: 3}
+  - {fileID: 21300000, guid: 871db2cc442754c44941a485e4e20dbc, type: 3}
+  - {fileID: 21300000, guid: 46b8ba32b4e964997ab47995137d8001, type: 3}
   isLooping: 1
   frameTime: 0.2
-  state: 2
+  state: 4
