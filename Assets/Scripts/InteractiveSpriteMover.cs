@@ -2,7 +2,6 @@
 using UnityEngine.UI;
 
 public class InteractiveSpriteMover : MonoBehaviour {
-	public GameObject speechBubble;
 	// Use this for initialization
 	SpriteMover spriteMover;
 	private GameObject box;
