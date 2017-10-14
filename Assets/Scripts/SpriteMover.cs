@@ -4,23 +4,30 @@ public class SpriteMover : MonoBehaviour {
 
 	// Use this for initialization
 	
-	public SpriteAnimationController spriteAnimationController;
-	public float speed = 1f;
+	SpriteAnimationController spriteAnimationController;
+	public float speed = 0.1f;
+	bool isMoving;
+	void Start(){
+		spriteAnimationController = gameObject.GetComponentInChildren<SpriteAnimationController>();
+	}
 	// Update is called once per frame
-	public void MoveLeft(float amount){
+	public void moveLeft(float amount){
 		transform.position = transform.position + new Vector3(amount * speed, 0, 0);
-		spriteAnimationController.animationToPlay = (int) AnimationStates.States.MoveLeft;
+		spriteAnimationController.nextAnimation = AnimationStates.States.MoveLeft;
 	}
-	public void MoveRight(float amount){
+	public void moveRight(float amount){
 		transform.position = transform.position + new Vector3(amount * speed, 0, 0);
-		spriteAnimationController.animationToPlay = (int) AnimationStates.States.MoveRight;
+		spriteAnimationController.nextAnimation = AnimationStates.States.MoveRight;
 	}
-	public void MoveForward(float amount){
+	public void moveForward(float amount){
 		transform.position = transform.position + new Vector3(0, amount * speed, 0);
-		spriteAnimationController.animationToPlay = (int) AnimationStates.States.MoveForward;
+		spriteAnimationController.nextAnimation = AnimationStates.States.MoveForward;
 	}
-	public void MoveBackward(float amount){
+	public void moveBackward(float amount){
 		transform.position = transform.position + new Vector3(0, amount * speed, 0);
-		spriteAnimationController.animationToPlay = (int) AnimationStates.States.MoveBack;
+		spriteAnimationController.nextAnimation = AnimationStates.States.MoveBack;
+	}
+	public void stopMoving(){
+		spriteAnimationController.nextAnimation = AnimationStates.States.Idle;
 	}
 }

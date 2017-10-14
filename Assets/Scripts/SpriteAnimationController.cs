@@ -4,28 +4,34 @@ using UnityEngine;
 
 public class SpriteAnimationController : MonoBehaviour {
 
-	public SpriteAnimator[] animations;
+	SpriteAnimator[] animations;
 
-	public int animationToPlay;
-	int animationCurrentlyPlaying;
+	public AnimationStates.States nextAnimation = AnimationStates.States.Idle;
+	//SpriteAnimator animationToPlay;
+	SpriteAnimator animationCurrentlyPlaying;
 	int numAnimations;
 	// Use this for initialization
 	void Start () {
-		numAnimations = animations.Length;
-		animationCurrentlyPlaying = animationToPlay;
-		animations[animationToPlay].startAnimation();
+		animations = gameObject.GetComponents<SpriteAnimator>();
+		animationCurrentlyPlaying = findAnimation(nextAnimation);
+		animationCurrentlyPlaying.startAnimation();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if(animationToPlay < 0 || animationToPlay >= numAnimations){
-			animationToPlay = animationCurrentlyPlaying;
-			return;
+		if(nextAnimation != animationCurrentlyPlaying.state){
+			animationCurrentlyPlaying.stopAnimation();
+			animationCurrentlyPlaying = findAnimation(nextAnimation);
+			animationCurrentlyPlaying.startAnimation();
 		}
-		if(animationToPlay != animationCurrentlyPlaying){
-			animations[animationCurrentlyPlaying].stopAnimation();
-			animations[animationToPlay].startAnimation();
-			animationCurrentlyPlaying = animationToPlay;
+	}
+
+	SpriteAnimator findAnimation(AnimationStates.States state){
+		foreach(var animation in animations){
+			if(animation.state == nextAnimation){
+				return animation ;
+			}
 		}
+		return null;
 	}
 }

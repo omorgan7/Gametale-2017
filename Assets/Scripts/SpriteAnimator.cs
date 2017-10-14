@@ -4,7 +4,6 @@ using System.Collections;
 public class SpriteAnimator : MonoBehaviour {
 
 	// Use this for initialization
-	public string name;
 	SpriteRenderer spriteRenderer;
 	int spriteIndex = 0;
 	int numSprites;
@@ -16,6 +15,8 @@ public class SpriteAnimator : MonoBehaviour {
 	public bool isLooping = true;
 
 	public float frameTime = 0.1f;
+
+	public AnimationStates.States state = AnimationStates.States.Idle;
 
 	void Awake () {
 		spriteRenderer = gameObject.GetComponent<SpriteRenderer>();

@@ -187,8 +187,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08521797d6c3c4615a0c1a85ffae114c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteAnimationController: {fileID: 749295018}
-  speed: 0.05
 --- !u!4 &623884363
 Transform:
   m_ObjectHideFlags: 0
@@ -260,12 +258,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52598c8df3c8d4ef2b6447a57d3bf45e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animations:
-  - {fileID: 749295022}
-  - {fileID: 749295021}
-  - {fileID: 749295020}
-  - {fileID: 749295019}
-  animationToPlay: 0
+  nextAnimation: 0
 --- !u!114 &749295019
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -277,13 +270,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aabd57daabaa8498b9856e88964065e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: WalkingBack
   sprites:
   - {fileID: 21300006, guid: 11ab9f0045e204c93995dd01de0213d3, type: 3}
   - {fileID: 21300008, guid: 11ab9f0045e204c93995dd01de0213d3, type: 3}
   - {fileID: 21300010, guid: 11ab9f0045e204c93995dd01de0213d3, type: 3}
   isLooping: 1
   frameTime: 0.2
+  state: 1
 --- !u!114 &749295020
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -295,13 +288,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aabd57daabaa8498b9856e88964065e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: WalkingForward
   sprites:
   - {fileID: 21300000, guid: 11ab9f0045e204c93995dd01de0213d3, type: 3}
   - {fileID: 21300002, guid: 11ab9f0045e204c93995dd01de0213d3, type: 3}
   - {fileID: 21300004, guid: 11ab9f0045e204c93995dd01de0213d3, type: 3}
   isLooping: 1
   frameTime: 0.2
+  state: 3
 --- !u!114 &749295021
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -313,13 +306,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aabd57daabaa8498b9856e88964065e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: WalkingLeft
   sprites:
   - {fileID: 21300012, guid: 11ab9f0045e204c93995dd01de0213d3, type: 3}
   - {fileID: 21300014, guid: 11ab9f0045e204c93995dd01de0213d3, type: 3}
   - {fileID: 21300016, guid: 11ab9f0045e204c93995dd01de0213d3, type: 3}
   isLooping: 1
   frameTime: 0.2
+  state: 4
 --- !u!114 &749295022
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -331,11 +324,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aabd57daabaa8498b9856e88964065e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Idle
   sprites:
   - {fileID: 21300002, guid: 11ab9f0045e204c93995dd01de0213d3, type: 3}
-  isLooping: 1
+  isLooping: 0
   frameTime: 0.2
+  state: 0
 --- !u!212 &749295023
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -481,10 +474,11 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1751353966}
-  - component: {fileID: 1751353967}
   - component: {fileID: 1751353968}
   - component: {fileID: 1751353969}
   - component: {fileID: 1751353970}
+  - component: {fileID: 1751353967}
+  - component: {fileID: 1751353971}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -517,8 +511,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08521797d6c3c4615a0c1a85ffae114c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteAnimationController: {fileID: 1990260505}
-  speed: 0.05
 --- !u!61 &1751353968
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -589,6 +581,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2, y: 2}
   m_EdgeRadius: 0
+--- !u!114 &1751353971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1751353965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22742b4c69f1348229cb6fa9c7c54f95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0.1
 --- !u!1 &1990260501
 GameObject:
   m_ObjectHideFlags: 0
@@ -601,6 +605,7 @@ GameObject:
   - component: {fileID: 1990260503}
   - component: {fileID: 1990260507}
   - component: {fileID: 1990260506}
+  - component: {fileID: 1990260509}
   - component: {fileID: 1990260508}
   - component: {fileID: 1990260505}
   m_Layer: 0
@@ -618,7 +623,7 @@ Transform:
   m_GameObject: {fileID: 1990260501}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 10}
+  m_LocalScale: {x: 4.0000005, y: 4, z: 10}
   m_Children: []
   m_Father: {fileID: 1751353966}
   m_RootOrder: 0
@@ -634,13 +639,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aabd57daabaa8498b9856e88964065e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: WalkingForward
   sprites:
-  - {fileID: 21300000, guid: 11ab9f0045e204c93995dd01de0213d3, type: 3}
-  - {fileID: 21300002, guid: 11ab9f0045e204c93995dd01de0213d3, type: 3}
-  - {fileID: 21300004, guid: 11ab9f0045e204c93995dd01de0213d3, type: 3}
+  - {fileID: 21300000, guid: fda1fda81d1804ad9aa81634ed4df5ff, type: 3}
+  - {fileID: 21300000, guid: efcd09f6c710b44f6a067ba7d4315cf6, type: 3}
+  - {fileID: 21300000, guid: 6b1f308f145a641e98a929b8f673482e, type: 3}
   isLooping: 1
   frameTime: 0.2
+  state: 3
 --- !u!212 &1990260504
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -675,7 +680,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300002, guid: 11ab9f0045e204c93995dd01de0213d3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: efcd09f6c710b44f6a067ba7d4315cf6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -684,7 +689,7 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
+  m_MaskInteraction: 2
 --- !u!114 &1990260505
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -696,12 +701,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52598c8df3c8d4ef2b6447a57d3bf45e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animations:
-  - {fileID: 1990260508}
-  - {fileID: 1990260507}
-  - {fileID: 1990260503}
-  - {fileID: 1990260506}
-  animationToPlay: 0
+  nextAnimation: 0
 --- !u!114 &1990260506
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -713,13 +713,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aabd57daabaa8498b9856e88964065e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: WalkingBack
   sprites:
-  - {fileID: 21300006, guid: 11ab9f0045e204c93995dd01de0213d3, type: 3}
-  - {fileID: 21300008, guid: 11ab9f0045e204c93995dd01de0213d3, type: 3}
-  - {fileID: 21300010, guid: 11ab9f0045e204c93995dd01de0213d3, type: 3}
+  - {fileID: 21300000, guid: 8080741afe82f440a938dd73729eb34e, type: 3}
+  - {fileID: 21300000, guid: 871db2cc442754c44941a485e4e20dbc, type: 3}
+  - {fileID: 21300000, guid: 46b8ba32b4e964997ab47995137d8001, type: 3}
   isLooping: 1
   frameTime: 0.2
+  state: 4
 --- !u!114 &1990260507
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -731,13 +731,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aabd57daabaa8498b9856e88964065e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: WalkingLeft
   sprites:
-  - {fileID: 21300012, guid: 11ab9f0045e204c93995dd01de0213d3, type: 3}
-  - {fileID: 21300014, guid: 11ab9f0045e204c93995dd01de0213d3, type: 3}
-  - {fileID: 21300016, guid: 11ab9f0045e204c93995dd01de0213d3, type: 3}
+  - {fileID: 21300000, guid: 92547bbfeb7b3417287e28010190ff00, type: 3}
+  - {fileID: 21300000, guid: d0b26a4155cff46d3ba280947f714014, type: 3}
+  - {fileID: 21300000, guid: c89609f3b3b6642bc96a5baf5d0c491b, type: 3}
   isLooping: 1
   frameTime: 0.2
+  state: 1
 --- !u!114 &1990260508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -749,8 +749,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aabd57daabaa8498b9856e88964065e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Idle
   sprites:
-  - {fileID: 21300002, guid: 11ab9f0045e204c93995dd01de0213d3, type: 3}
+  - {fileID: 21300000, guid: efcd09f6c710b44f6a067ba7d4315cf6, type: 3}
+  isLooping: 0
+  frameTime: 0.2
+  state: 0
+--- !u!114 &1990260509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1990260501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aabd57daabaa8498b9856e88964065e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 21300000, guid: e6520f93060974bc893394c14398b164, type: 3}
+  - {fileID: 21300000, guid: a4c41208ff7fe40c38ae72329b51e69e, type: 3}
+  - {fileID: 21300000, guid: 1c80a2fb9ceb042488ec46cb38c75f3f, type: 3}
   isLooping: 1
   frameTime: 0.2
+  state: 2
