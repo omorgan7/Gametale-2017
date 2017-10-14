@@ -9,6 +9,8 @@ public class NPCSpriteMover : MonoBehaviour {
 	public float randomThreshold = 0.1f;
 	public float moveDuration = 1f;
 
+	bool isMoving = true;
+
 	float elapsedTime = 0f;
 	// Update is called once per frame
 	void Start(){
@@ -16,6 +18,10 @@ public class NPCSpriteMover : MonoBehaviour {
 	}
 
 	void Update(){
+		if(!isMoving){
+			pauseMoving();
+			return;
+		}
 		elapsedTime += Time.deltaTime;
 		if(elapsedTime >= moveDuration){
 			float randomNumber = Random.value;
@@ -32,11 +38,23 @@ public class NPCSpriteMover : MonoBehaviour {
 				}
 			}
 			else{
-				right = 0f;
-				forward = 0f;
-				spriteMover.stopMoving();
+				pauseMoving();
 			}
 		}
+	}
+
+	void pauseMoving(){
+		right = 0f;
+		forward = 0f;
+		spriteMover.stopMoving();
+	}
+
+	public void startMoving(){
+		isMoving = true;
+	}
+
+	public void stopMoving(){
+		isMoving = false;
 	}
 
 	void FixedUpdate(){
