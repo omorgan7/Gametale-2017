@@ -58,7 +58,6 @@ public class InteractiveSpriteMover : MonoBehaviour {
 			other.gameObject.GetComponent<NPCSpriteMover>().stopMoving();
 			//do some other stuff
 		}
-		print(other.gameObject.name);
 	}
 	void OnTriggerExit2D(Collider2D other){
 		if(other.gameObject.tag != "npc"){
