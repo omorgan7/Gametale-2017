@@ -12,17 +12,23 @@ public class SpriteAnimator : MonoBehaviour {
 	int indexDirection = 1;
 
 	public Sprite[] sprites;
-	bool isPlaying;
+	bool isPlaying = false;
+	public bool isLooping = true;
 
 	public float frameTime = 0.1f;
 
-	void Start () {
+	void Awake () {
 		spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
 		numSprites = sprites.Length;
+		if(numSprites == 1){
+			isLooping = false;
+		}
 	}
 	public void startAnimation(){
-		isPlaying = true;
-		StartCoroutine(animation());
+		if(!isPlaying){
+			isPlaying = true;
+			StartCoroutine(animation());
+		}
 	}
 	public void stopAnimation(){
 		isPlaying = false;
@@ -31,12 +37,15 @@ public class SpriteAnimator : MonoBehaviour {
 	}
 	IEnumerator animation(){
 		while(isPlaying){
-			yield return new WaitForSecondsRealtime(frameTime);
 			spriteRenderer.sprite = sprites[spriteIndex];
 			if(spriteIndex == numSprites - 1 || (spriteIndex == 0 && indexDirection == -1)){
+				if(!isLooping){
+					break;
+				}
 				indexDirection *= -1;
 			}
 			spriteIndex += indexDirection;
+			yield return new WaitForSecondsRealtime(frameTime);
 		}
 	}
 }
