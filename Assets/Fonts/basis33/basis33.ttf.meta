@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 38b029b3c74f43c4a9d270a4e934209c
+timeCreated: 1507992837
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: basis33
+  fontNames:
+  - basis33
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
