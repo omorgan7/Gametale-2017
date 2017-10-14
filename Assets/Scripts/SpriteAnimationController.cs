@@ -6,7 +6,7 @@ public class SpriteAnimationController : MonoBehaviour {
 
 	SpriteAnimator[] animations;
 
-	public AnimationStates.States nextAnimation = AnimationStates.States.Idle;
+	public Enums.States nextAnimation = Enums.States.Idle;
 	//SpriteAnimator animationToPlay;
 	SpriteAnimator animationCurrentlyPlaying;
 	int numAnimations;
@@ -37,7 +37,7 @@ public class SpriteAnimationController : MonoBehaviour {
 	public void sendToIdle(){
 		animationCurrentlyPlaying.goIdle();
 	}
-	SpriteAnimator findAnimation(AnimationStates.States state){
+	SpriteAnimator findAnimation(Enums.States state){
 		foreach(var animation in animations){
 			if(animation.state == nextAnimation){
 				return animation ;
