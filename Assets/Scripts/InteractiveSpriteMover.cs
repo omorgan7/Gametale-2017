@@ -20,23 +20,29 @@ public class InteractiveSpriteMover : MonoBehaviour {
 			spriteMover.pauseMoving();
 			return;
 		}
+
 		right = Input.GetAxisRaw("Horizontal");
 		forward = Input.GetAxisRaw("Vertical");
-		if(forward < 0f){
-			spriteMover.moveForward(forward);
-		}
-		else if(forward > 0f){
-			spriteMover.moveBackward(forward);
+		//print(new Vector2(right, forward));
+		if(forward == 0 && right == 0){
+			spriteMover.pauseMoving();
+			return;
 		}
 		if(right > 0f){
 			spriteMover.moveRight(right);
 		}
 		else if(right < 0f){
 			spriteMover.moveLeft(right);
+			return;
 		}
-		if(forward == 0 && right == 0){
-			spriteMover.stopMoving();
+		if(forward < 0f){
+			spriteMover.moveForward(forward);
 		}
+		else if(forward > 0f){
+			spriteMover.moveBackward(forward);
+		}
+
+
 	}
 	void OnTriggerStay2D(Collider2D other){
 		if(other.gameObject.tag != "npc"){

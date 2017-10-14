@@ -14,14 +14,22 @@ public class SpriteAnimationController : MonoBehaviour {
 	void Start () {
 		animations = gameObject.GetComponents<SpriteAnimator>();
 		animationCurrentlyPlaying = findAnimation(nextAnimation);
+		if(!animationCurrentlyPlaying){
+			return;
+		}
 		animationCurrentlyPlaying.startAnimation();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if(nextAnimation != animationCurrentlyPlaying.state){
+			print("hello");
+			var animation = findAnimation(nextAnimation);
+			if(!animation){
+				return;
+			} 
 			animationCurrentlyPlaying.stopAnimation();
-			animationCurrentlyPlaying = findAnimation(nextAnimation);
+			animationCurrentlyPlaying = animation;
 			animationCurrentlyPlaying.startAnimation();
 		}
 	}

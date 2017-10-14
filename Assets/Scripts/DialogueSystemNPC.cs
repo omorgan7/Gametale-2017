@@ -15,8 +15,6 @@ public class DialogueSystemNPC : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		LoadInDialogue(SceneManager.GetActiveScene ().name);
-		print(loadText.npcDialogue.Count);
-		print(loadText.npcDialogue[0]);
 		NPCword = loadText.npcDialogue;
 		print(NPCword.Count);
 	}
