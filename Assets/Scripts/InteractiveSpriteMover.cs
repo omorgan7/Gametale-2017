@@ -10,7 +10,6 @@ public class InteractiveSpriteMover : MonoBehaviour {
 	private bool isTalking = false;
 	//LoadText loadText = new LoadText();
 
-	DialogueSystemNPC DSnpc = new DialogueSystemNPC();
 	// Update is called once per frame
 	void Start(){
 		spriteMover = gameObject.GetComponent<SpriteMover>();

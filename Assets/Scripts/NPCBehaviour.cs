@@ -7,10 +7,11 @@ using UnityEngine.UI;
 public class NPCBehaviour : MonoBehaviour {
 
 	public int catchphrase;
+	public string nameOfNPC;
 	public GameObject speechBubble;
-	public GameObject CharName;
 	private GameObject box;
-	public string NPCname;
+	
+	
 	public int getCatchphrase(){
 		return catchphrase;
 	}
@@ -19,7 +20,7 @@ public class NPCBehaviour : MonoBehaviour {
 	}
 	
 	void FixedUpdate(){
-		if(Input.GetButtonUp("Submit")){
+		if((Input.GetButtonUp("Submit"))&&(DialogueSystemNPC.isDone)){
 			turnOffBox();
 			var gameobjects = GameObject.FindGameObjectsWithTag("Player");
 			gameobjects[0].GetComponent<InteractiveSpriteMover>().moveAgain();
@@ -32,9 +33,9 @@ public class NPCBehaviour : MonoBehaviour {
 		}
 		box = Instantiate(speechBubble, Vector3.zero, Quaternion.identity);
 		Text txt = box.transform.GetChild(0).GetChild(0).GetComponent<Text>();
-		txt.text = (DialogueSystemNPC.NPCword[0]);
-		CharName.transform.GetChild(0).GetComponent<Text>().text = name;
-		CharName.SetActive(false);
+		txt.text = (DialogueSystemNPC.NPCword[catchphrase]);
+		Text txtName = box.transform.GetChild(1).GetChild(0).GetComponent<Text>();
+		txtName.text = nameOfNPC;
 		box.SetActive(false);
 	}
 	public void turnOnBox(){
