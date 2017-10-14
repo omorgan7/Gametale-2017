@@ -34,6 +34,7 @@ public class NPCBehaviour : MonoBehaviour {
 		Text txt = box.transform.GetChild(0).GetChild(0).GetComponent<Text>();
 		txt.text = (DialogueSystemNPC.NPCword[0]);
 		CharName.transform.GetChild(0).GetComponent<Text>().text = name;
+		CharName.SetActive(false);
 		box.SetActive(false);
 	}
 	public void turnOnBox(){
