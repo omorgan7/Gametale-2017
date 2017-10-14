@@ -10,6 +10,7 @@ public class DialogueSystemNPC : MonoBehaviour {
 	private GameObject box;
 	LoadText loadText = new LoadText();
 	static public List <string> NPCword;
+	static public bool isDone = false;
 
 	// Use this for initialization
 	void Start () {
@@ -21,6 +22,7 @@ public class DialogueSystemNPC : MonoBehaviour {
 	}
 	void LoadInDialogue(string level){
 		loadText.Load("Assets/Character Dialogue/npc/"+ level + ".txt", LoadText.characters.npc);
+		isDone = true;
 	}
 	
 	// Update is called once per frame

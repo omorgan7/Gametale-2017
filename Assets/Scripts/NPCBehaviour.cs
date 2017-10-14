@@ -27,7 +27,9 @@ public class NPCBehaviour : MonoBehaviour {
 	}
 
 	IEnumerator start(){
-		yield return new WaitForSeconds(2f);
+		while(!DialogueSystemNPC.isDone){
+			yield return null;
+		}
 		box = Instantiate(speechBubble, Vector3.zero, Quaternion.identity);
 		Text txt = box.transform.GetChild(0).GetChild(0).GetComponent<Text>();
 		txt.text = (DialogueSystemNPC.NPCword[0]);
