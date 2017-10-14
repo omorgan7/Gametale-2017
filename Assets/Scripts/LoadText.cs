@@ -10,6 +10,8 @@ public class LoadText : MonoBehaviour {
 	public List<string> badgerDialogue = new List<string>();
 	public enum characters {tinker, monk, badger};
 	public enum scene {a,b};
+	public float letterPause = 0.15f;
+	public float sentencePause = 1.0f;
 	public void Load(string fileName, characters _char){
 		StreamReader theReader = new StreamReader(fileName, Encoding.Default);
 		string line;		
@@ -30,5 +32,5 @@ public class LoadText : MonoBehaviour {
                  }
 			
 			}while (line != null);
-	}
+	}	
 }

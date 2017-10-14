@@ -9,9 +9,10 @@ public class DialogueSystemTinker : MonoBehaviour {
 	private float pauseTime = 0.1f; //maybe use deltaTime
 	private GameObject box;
 
+
 	LoadText loadText  = new LoadText();
 	void Start () {
-		LoadInDialogue(LoadText.scene.b);
+		LoadInDialogue(LoadText.scene.a);
 		StartCoroutine( speak(0,4));
 	}
 	
@@ -39,10 +40,16 @@ public class DialogueSystemTinker : MonoBehaviour {
 		box = Instantiate(speechBubble, Vector3.zero, Quaternion.identity); 
 		Text txt = box.transform.GetChild(0).GetChild(0).GetComponent<Text>();
 		for(int i = startIndex; i< EndIndex + 1; ++i){
-			txt.text =loadText.tinkerDialogue[i];
-			yield return new WaitForSeconds(2f);
+			string _string = loadText.tinkerDialogue[i];
+			txt.text = " ";
+			foreach(char s in _string){
+				txt.text += s;
+				yield return new WaitForSeconds (loadText.letterPause);
+			}
+			yield return new WaitForSeconds(loadText.sentencePause);
 			
 		}	
 		Destroy(box);	
 	}
+	
 }
