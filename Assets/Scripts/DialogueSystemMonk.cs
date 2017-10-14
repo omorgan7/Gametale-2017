@@ -9,7 +9,6 @@ public class DialogueSystemMonk : MonoBehaviour {
 	private bool isTalking = false; 
 	private float pauseTime = 0.1f; //maybe use deltaTime
 	private GameObject box;
-
 	LoadText loadText  = new LoadText();
 	void Start () {
 		LoadInDialogue(LoadText.scene.b);

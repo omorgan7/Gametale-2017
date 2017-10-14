@@ -2,30 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class DialogueSystemTinker : MonoBehaviour {
 	public GameObject speechBubble;
 	private bool isTalking = false; 
 	private float pauseTime = 0.1f; //maybe use deltaTime
 	private GameObject box;
-
-
 	LoadText loadText  = new LoadText();
 	void Start () {
-		LoadInDialogue(LoadText.scene.a);
+		LoadInDialogue(SceneManager.GetActiveScene ().name);
 		StartCoroutine( speak(0,4));
 	}
 	
-	void LoadInDialogue(LoadText.scene _scene){
-		switch (_scene){
-			case LoadText.scene.a:
-				loadText.Load("Assets/Character Dialogue/tinker/level1.txt", LoadText.characters.tinker);
-				break;
-			case LoadText.scene.b:
-				loadText.Load("Assets/Character Dialogue/tinker/level2.txt", LoadText.characters.tinker);
-				break;
-		}
-
+	void LoadInDialogue(string level){
+		loadText.Load("Assets/Character Dialogue/tinker/"+level + ".txt", LoadText.characters.tinker);
 	}
 	// Update is called once per frame
 	void Update () {
