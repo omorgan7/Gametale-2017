@@ -1,5 +1,6 @@
-hello this is a test
-does typing
-look 
-ok ?
-good bye !
+Hello!
+I am the tinker
+Have you seen a kettle?
+"..."
+"..."
+bye

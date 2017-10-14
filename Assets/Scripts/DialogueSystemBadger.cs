@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class DialogueSystemBadger : MonoBehaviour {
 	public GameObject speechBubble;
+	public GameObject CharName;
 	private bool isTalking = false; 
 	private float pauseTime = 0.1f; //maybe use deltaTime
 	private GameObject box;
@@ -30,6 +31,7 @@ public class DialogueSystemBadger : MonoBehaviour {
 	IEnumerator speak(int startIndex, int EndIndex){
 		box = Instantiate(speechBubble, Vector3.zero, Quaternion.identity); 
 		Text txt = box.transform.GetChild(0).GetChild(0).GetComponent<Text>();
+		CharName.transform.GetChild(0).GetComponent<Text>().text = "Badger";
 		for(int i = startIndex; i< EndIndex + 1; ++i){
 			string _string = loadText.badgerDialogue[i];
 			txt.text = " ";

@@ -11,8 +11,8 @@ public class LoadText : MonoBehaviour {
 	public List<string> npcDialogue = new List<string>();
 	public enum characters {tinker, monk, badger, npc};
 	public enum scene {a,b};
-	public float letterPause = 0.15f;
-	public float sentencePause = 1.0f;
+	public float letterPause = 0.1f;
+	public float sentencePause = 0.75f;
 	public void Load(string fileName, characters _char){
 		StreamReader theReader = new StreamReader(fileName, Encoding.Default);
 		string line;		
