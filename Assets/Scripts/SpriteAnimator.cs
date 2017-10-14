@@ -18,7 +18,7 @@ public class SpriteAnimator : MonoBehaviour {
 
 	public float frameTime = 0.1f;
 
-	public Enums.States state = Enums.AnimStates.Idle;
+	public Enums.AnimStates state = Enums.AnimStates.Idle;
 
 	void Awake () {
 		spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
