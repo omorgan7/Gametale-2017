@@ -6,7 +6,7 @@ public class SpriteAnimationController : MonoBehaviour {
 
 	SpriteAnimator[] animations;
 
-	public Enums.States nextAnimation = Enums.States.Idle;
+	public Enums.States nextAnimation = Enums.AnimStates.Idle;
 	//SpriteAnimator animationToPlay;
 	SpriteAnimator animationCurrentlyPlaying;
 	int numAnimations;
