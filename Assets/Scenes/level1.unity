@@ -269,6 +269,7 @@ MonoBehaviour:
   tinkerDialogue: []
   monkDialogue: []
   badgerDialogue: []
+  npcDialogue: []
   letterPause: 0.15
   sentencePause: 1
 --- !u!1 &1156907260
@@ -283,7 +284,7 @@ GameObject:
   - component: {fileID: 1156907261}
   - component: {fileID: 1156907264}
   m_Layer: 0
-  m_Name: testCharacter
+  m_Name: testTinker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -360,7 +361,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d085f6f3ad683fb4d97f36cfa18ad2e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speechBubble: {fileID: 1697122695345866, guid: d3e1654edb721a6409cd39fc10f200f8,
+  speechBubble: {fileID: 1542382921259858, guid: d3e1654edb721a6409cd39fc10f200f8,
     type: 2}
 --- !u!1001 &1675974524
 Prefab:
@@ -405,8 +406,12 @@ Prefab:
         type: 2}
       propertyPath: speechBubble
       value: 
-      objectReference: {fileID: 1697122695345866, guid: d3e1654edb721a6409cd39fc10f200f8,
+      objectReference: {fileID: 1542382921259858, guid: d3e1654edb721a6409cd39fc10f200f8,
         type: 2}
+    - target: {fileID: 1308269786137438, guid: e1335889cb993f64f91cc3580324395c, type: 2}
+      propertyPath: m_Name
+      value: testTinker
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e1335889cb993f64f91cc3580324395c, type: 2}
   m_IsPrefabParent: 0
