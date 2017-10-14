@@ -1,12 +1,15 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class InteractiveSpriteMover : MonoBehaviour {
 	public GameObject speechBubble;
 	// Use this for initialization
 	SpriteMover spriteMover;
 	private GameObject box;
-	private NPC _npc;
+	private NPCBehaviour _npc;
 	float right, forward;
+	private bool isTalking = false;
+	//LoadText loadText = new LoadText();
 
 	DialogueSystemNPC DSnpc = new DialogueSystemNPC();
 	// Update is called once per frame
@@ -14,6 +17,10 @@ public class InteractiveSpriteMover : MonoBehaviour {
 		spriteMover = gameObject.GetComponent<SpriteMover>();
 	}
 	void FixedUpdate(){
+		if(isTalking){
+			spriteMover.pauseMoving();
+			return;
+		}
 		right = Input.GetAxisRaw("Horizontal");
 		forward = Input.GetAxisRaw("Vertical");
 		if(forward < 0f){
@@ -36,21 +43,41 @@ public class InteractiveSpriteMover : MonoBehaviour {
 		if(other.gameObject.tag != "npc"){
 			return;
 		}
-
 		// have an if for if you press the spacebar.
 		if(Input.GetButtonUp("Submit")){
+			//face the player:
+			isTalking = true;
+			Vector3 positionDifference = transform.position - other.transform.position;
+			if(Mathf.Abs(positionDifference.x) > Mathf.Abs(positionDifference.y)){
+				if(positionDifference.x <= 0f){
+					other.gameObject.GetComponent<NPCSpriteMover>().spriteMover.moveLeft(1f);
+				}
+				else{
+					other.gameObject.GetComponent<NPCSpriteMover>().spriteMover.moveRight(1f);
+				}
+			}
+			else{
+				if(positionDifference.y <= 0f){
+					other.gameObject.GetComponent<NPCSpriteMover>().spriteMover.moveForward(1f);
+				}
+				else{
+					other.gameObject.GetComponent<NPCSpriteMover>().spriteMover.moveBackward(1f);
+				}
+			}
 			other.gameObject.GetComponent<NPCSpriteMover>().stopMoving();
-			_npc = other.GetComponent<NPC>();
-			print(_npc.getCatchphrase());
-			StartCoroutine(DSnpc.speak(_npc.getCatchphrase(), box, speechBubble));
-			//do some other stuff
+			_npc = other.gameObject.GetComponent<NPCBehaviour>();
+			_npc.turnOnBox();
 		}
-	//	print(other.gameObject.name);
+		
 	}
 	void OnTriggerExit2D(Collider2D other){
 		if(other.gameObject.tag != "npc"){
 			return;
 		}
 		other.gameObject.GetComponent<NPCSpriteMover>().startMoving();
+	}
+
+	public void moveAgain(){
+		isTalking = false;
 	}
 }

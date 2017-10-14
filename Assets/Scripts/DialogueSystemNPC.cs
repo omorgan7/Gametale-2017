@@ -9,11 +9,15 @@ public class DialogueSystemNPC : MonoBehaviour {
 	public GameObject speechBubble;
 	private GameObject box;
 	LoadText loadText = new LoadText();
+	static public List <string> NPCword;
 
 	// Use this for initialization
 	void Start () {
 		LoadInDialogue(SceneManager.GetActiveScene ().name);
-		print(SceneManager.GetActiveScene ().name);
+		print(loadText.npcDialogue.Count);
+		print(loadText.npcDialogue[0]);
+		NPCword = loadText.npcDialogue;
+		print(NPCword.Count);
 	}
 	void LoadInDialogue(string level){
 		loadText.Load("Assets/Character Dialogue/npc/"+ level + ".txt", LoadText.characters.npc);

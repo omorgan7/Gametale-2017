@@ -14,6 +14,8 @@ public class SpriteAnimator : MonoBehaviour {
 	bool isPlaying = false;
 	public bool isLooping = true;
 
+	public int idleIndex;
+
 	public float frameTime = 0.1f;
 
 	public AnimationStates.States state = AnimationStates.States.Idle;
@@ -35,6 +37,14 @@ public class SpriteAnimator : MonoBehaviour {
 		isPlaying = false;
 		indexDirection = 1;
 		spriteIndex = 0;
+	}
+
+	public void goIdle(){
+		stopAnimation();
+		if(idleIndex < 0 || idleIndex > numSprites){
+			return;
+		}
+		spriteRenderer.sprite = sprites[idleIndex];
 	}
 	IEnumerator animation(){
 		while(isPlaying){

@@ -239,62 +239,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43d3e30ea9e07432c8d8653f6eba0bde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteMover: {fileID: 0}
   randomThreshold: 0.1
   moveDuration: 1
---- !u!1 &1064570110
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1064570112}
-  - component: {fileID: 1064570111}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!61 &1064570111
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1064570110}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -3.42, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 5, y: 10.17}
-  m_EdgeRadius: 0
---- !u!4 &1064570112
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1064570110}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1120481850
 GameObject:
   m_ObjectHideFlags: 0
@@ -564,6 +511,7 @@ MonoBehaviour:
   sprites:
   - {fileID: 21300000, guid: efcd09f6c710b44f6a067ba7d4315cf6, type: 3}
   isLooping: 0
+  idleIndex: 0
   frameTime: 0.2
   state: 0
 --- !u!114 &1907302985
@@ -582,6 +530,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 871db2cc442754c44941a485e4e20dbc, type: 3}
   - {fileID: 21300000, guid: 46b8ba32b4e964997ab47995137d8001, type: 3}
   isLooping: 1
+  idleIndex: 1
   frameTime: 0.2
   state: 4
 --- !u!114 &1907302986
@@ -600,6 +549,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: a4c41208ff7fe40c38ae72329b51e69e, type: 3}
   - {fileID: 21300000, guid: 1c80a2fb9ceb042488ec46cb38c75f3f, type: 3}
   isLooping: 1
+  idleIndex: 1
   frameTime: 0.2
   state: 2
 --- !u!114 &1907302987
@@ -618,6 +568,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: d0b26a4155cff46d3ba280947f714014, type: 3}
   - {fileID: 21300000, guid: c89609f3b3b6642bc96a5baf5d0c491b, type: 3}
   isLooping: 1
+  idleIndex: 1
   frameTime: 0.2
   state: 1
 --- !u!114 &1907302988
@@ -636,6 +587,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: efcd09f6c710b44f6a067ba7d4315cf6, type: 3}
   - {fileID: 21300000, guid: 6b1f308f145a641e98a929b8f673482e, type: 3}
   isLooping: 1
+  idleIndex: 1
   frameTime: 0.2
   state: 3
 --- !u!212 &1907302989
@@ -733,6 +685,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: efcd09f6c710b44f6a067ba7d4315cf6, type: 3}
   - {fileID: 21300000, guid: 6b1f308f145a641e98a929b8f673482e, type: 3}
   isLooping: 1
+  idleIndex: 0
   frameTime: 0.2
   state: 3
 --- !u!212 &1990260504
@@ -807,6 +760,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: a4c41208ff7fe40c38ae72329b51e69e, type: 3}
   - {fileID: 21300000, guid: 1c80a2fb9ceb042488ec46cb38c75f3f, type: 3}
   isLooping: 1
+  idleIndex: 0
   frameTime: 0.2
   state: 2
 --- !u!114 &1990260507
@@ -825,6 +779,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: d0b26a4155cff46d3ba280947f714014, type: 3}
   - {fileID: 21300000, guid: c89609f3b3b6642bc96a5baf5d0c491b, type: 3}
   isLooping: 1
+  idleIndex: 0
   frameTime: 0.2
   state: 1
 --- !u!114 &1990260508
@@ -841,6 +796,7 @@ MonoBehaviour:
   sprites:
   - {fileID: 21300000, guid: efcd09f6c710b44f6a067ba7d4315cf6, type: 3}
   isLooping: 0
+  idleIndex: 0
   frameTime: 0.2
   state: 0
 --- !u!114 &1990260509
@@ -859,5 +815,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 871db2cc442754c44941a485e4e20dbc, type: 3}
   - {fileID: 21300000, guid: 46b8ba32b4e964997ab47995137d8001, type: 3}
   isLooping: 1
+  idleIndex: 0
   frameTime: 0.2
   state: 4
