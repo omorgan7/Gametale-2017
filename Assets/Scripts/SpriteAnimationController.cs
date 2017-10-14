@@ -25,7 +25,6 @@ public class SpriteAnimationController : MonoBehaviour {
 			animationCurrentlyPlaying.startAnimation();
 		}
 	}
-
 	SpriteAnimator findAnimation(AnimationStates.States state){
 		foreach(var animation in animations){
 			if(animation.state == nextAnimation){
