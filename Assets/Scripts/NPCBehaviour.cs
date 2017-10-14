@@ -34,8 +34,13 @@ public class NPCBehaviour : MonoBehaviour {
 		box = Instantiate(speechBubble, Vector3.zero, Quaternion.identity);
 		Text txt = box.transform.GetChild(0).GetChild(0).GetComponent<Text>();
 		txt.text = (DialogueSystemNPC.NPCword[catchphrase]);
-		Text txtName = box.transform.GetChild(1).GetChild(0).GetComponent<Text>();
-		txtName.text = nameOfNPC;
+		if(nameOfNPC == "Head Monk"){
+			Text txtName = box.transform.GetChild(1).GetChild(0).GetComponent<Text>();
+			txtName.text = nameOfNPC;
+		}
+		else{
+			box.transform.GetChild(1).gameObject.SetActive(false);
+		}
 		box.SetActive(false);
 	}
 	public void turnOnBox(){
