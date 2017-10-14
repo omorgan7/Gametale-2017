@@ -38,9 +38,15 @@ public class NPCBehaviour : MonoBehaviour {
 		box.SetActive(false);
 	}
 	public void turnOnBox(){
+		if(!box){
+			return;
+		}
 		box.SetActive(true);
 	}
 	public void turnOffBox(){
+		if(!box){
+			return;
+		}
 		box.SetActive(false);
 	}
 	

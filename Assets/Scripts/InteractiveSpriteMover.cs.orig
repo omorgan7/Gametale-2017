@@ -1,7 +1,8 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class InteractiveSpriteMover : MonoBehaviour {
+	public GameObject speechBubble;
 	// Use this for initialization
 	SpriteMover spriteMover;
 	private GameObject box;
@@ -67,7 +68,10 @@ public class InteractiveSpriteMover : MonoBehaviour {
 			_npc = other.gameObject.GetComponent<NPCBehaviour>();
 			_npc.turnOnBox();
 		}
+<<<<<<< HEAD
+=======
 		
+>>>>>>> 4af21b6acfa0f50912ed92afe3eb6a07b93856b1
 	}
 	void OnTriggerExit2D(Collider2D other){
 		if(other.gameObject.tag != "npc"){
