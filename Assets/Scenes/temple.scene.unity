@@ -6901,7 +6901,9 @@ Prefab:
       propertyPath: idleIndex
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114062736087209348, guid: 5fedeea37ecc64b3484473f667451f05, type: 2}
+    - {fileID: 114933494976572594, guid: 5fedeea37ecc64b3484473f667451f05, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 5fedeea37ecc64b3484473f667451f05, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &681832495
