@@ -14,7 +14,7 @@ public class DialogueSystemNPC : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		loadText = GameObject.Find("ScriptingSystem").GetComponent<LoadText>();
+		loadText = GameObject.Find("EventSystem").GetComponent<LoadText>();
 		LoadInDialogue(SceneManager.GetActiveScene ().name, loadText);
 		NPCword = loadText.npcDialogue;
 	}
