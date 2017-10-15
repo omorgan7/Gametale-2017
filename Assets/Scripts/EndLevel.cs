@@ -18,13 +18,15 @@ public class EndLevel : MonoBehaviour {
 	void LoadInDialogue(string level){
 		loadText.Load("Assets/Character Dialogue/sceneDescription/" +level + ".txt", LoadText.characters.narrator);
 	}
-	void Update () {
+	void FixedUpdate(){
 		if(sceneFinished){
-			//display ending text
-			
-
+			if(Input.GetButtonUp("Submit")){
+				print("done");
+				SceneManager.LoadScene("temple.scene");
+			}
 		}
 	}
+
 	public void endLevelText(GameObject textPanel){
 		box = Instantiate(textPanel, Vector3.zero, Quaternion.identity); 
 		Text txt = box.transform.GetChild(0).GetChild(0).GetComponent<Text>();
