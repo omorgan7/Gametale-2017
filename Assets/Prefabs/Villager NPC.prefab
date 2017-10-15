@@ -47,6 +47,7 @@ GameObject:
   - component: {fileID: 114035980662687946}
   - component: {fileID: 114187187672199842}
   - component: {fileID: 114716848082862664}
+  - component: {fileID: 114942334113101948}
   m_Layer: 0
   m_Name: Villager NPC
   m_TagString: npc
@@ -74,7 +75,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1173208303634028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.39, y: 2.98, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4247775583028010}
@@ -297,6 +298,21 @@ MonoBehaviour:
   idleIndex: 0
   frameTime: 0.2
   state: 0
+--- !u!114 &114942334113101948
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1173208303634028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8def2c303e208d840947f0367e0cf1ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  catchphrase: 0
+  nameOfNPC: 
+  speechBubble: {fileID: 1542382921259858, guid: d3e1654edb721a6409cd39fc10f200f8,
+    type: 2}
 --- !u!212 &212196965661711144
 SpriteRenderer:
   m_ObjectHideFlags: 1

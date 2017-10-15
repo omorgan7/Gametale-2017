@@ -5,15 +5,23 @@ using System.Collections;
 public class InteractiveSpriteMover : MonoBehaviour {
 	// Use this for initialization
 	SpriteMover spriteMover;
-	private GameObject box;
+	private GameObject bunbukuBox;
+	private GameObject monkBox;
 	private NPCBehaviour _npc;
 	float right, forward;
 	private bool isTalking = false;
 	private bool hasKettle = false;
+	public GameObject speechBubble;
+	public GameObject kettle;
+	public GameObject textPanel;
+
+	EndLevel endLevel;
+	
 	//LoadText loadText = new LoadText();
 
 	// Update is called once per frame
 	void Start(){
+		endLevel = gameObject.AddComponent<EndLevel>() as EndLevel;
 		spriteMover = gameObject.GetComponent<SpriteMover>();
 	}
 	void LateUpdate(){
@@ -75,37 +83,47 @@ public class InteractiveSpriteMover : MonoBehaviour {
 		}
 		other.gameObject.GetComponent<NPCSpriteMover>().stopMoving();
 		_npc = other.gameObject.GetComponent<NPCBehaviour>();
-		//if(!hasKettle){
+		if((!hasKettle)|(_npc.getName()!="Head Monk")){
 			_npc.turnOnBox();
-		// }
-		// else{
-		// 	if(_npc.getName()=="Head Monk"){
-		// 		StartCoroutine(other.gameObject.GetComponent<DialogueSystemMonk>().speak(0,2));
-		// 	}
-		// }	
+		}
+		else{
+			if(_npc.getName()=="Head Monk"){
+				StartCoroutine(other.gameObject.GetComponent<DialogueSystemMonk>().speak(0,2, speechBubble, monkBox));
+				StartCoroutine(waitMonk());
+			}
+		}	
 	}
+	IEnumerator waitMonk(){
+		while(DialogueSystemMonk.isTalking){
+			yield return null;
+		}
+		endLevel.endLevelText(textPanel);
+	}
+	
 	void OnTriggerStay2D(Collider2D other){
+		if(other.gameObject.tag == "bunbuku"){
+			if(Input.GetButtonUp("Submit")){
+				StartCoroutine(other.gameObject.GetComponent<DialogueSystemBadger>().speak(0,0, speechBubble,bunbukuBox));
+				StartCoroutine(other.gameObject.GetComponent<DialogueSystemBadger>().disappear());
+				kettle.SetActive(true);
+			}
+			return;
+		}
+		if(other.gameObject.tag == "kettle"){ //collect kettle
+			if(Input.GetButtonUp("Submit")){
+				other.gameObject.SetActive(false);
+				hasKettle = true;
+			}
+			return;
+		}
+
 		if(other.gameObject.tag != "npc"){
 			return;
 		}
 		if(Input.GetButtonUp("Submit")){
 			submitInteraction(other);
 		}
-		//if(other.gameObject.tag == "bunbuku"){
-		//	GameObject kettle = GameObject.FindGameObjectWithTag("kettle");
-
-			//free bunbuku
-			//kettle appears
-		//}
-		// if(other.gameObject.tag == "kettle"){ //collect kettle
-		// 	if(Input.GetButtonUp("Submit")){
-		// 		print("got kettle");
-		// 		other.gameObject.SetActive(false);
-		// 		hasKettle = true;
-		// 	}
-		// 	return;
-		// }
-		// have an if for if you press the spacebar
+		
 		
 	}
 	void OnTriggerExit2D(Collider2D other){
