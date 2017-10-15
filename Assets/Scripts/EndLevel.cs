@@ -30,6 +30,7 @@ public class EndLevel : MonoBehaviour {
 				StartCoroutine(loadLevel());
 				SceneManager.LoadScene("temple.scene");
 				sceneFinished = false;
+				DialogueSystemNPC.isDone = false;
 			}
 		}
 	}

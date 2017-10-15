@@ -22,7 +22,7 @@ public class InteractiveSpriteMover : MonoBehaviour {
 
 	// Update is called once per frame
 	void Start(){
-		endLevel = GameObject.Find("EventSystem").GetComponent<EndLevel>();
+		endLevel = GameObject.Find("ScriptingSystem").GetComponent<EndLevel>();
 		spriteMover = gameObject.GetComponent<SpriteMover>();
 	}
 	void LateUpdate(){
