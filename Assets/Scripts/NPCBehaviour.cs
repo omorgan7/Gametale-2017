@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-
 public class NPCBehaviour : MonoBehaviour {
 
 	public int catchphrase;
@@ -11,7 +10,9 @@ public class NPCBehaviour : MonoBehaviour {
 	public GameObject speechBubble;
 	private GameObject box;
 	
-	
+	public string getName(){
+		return nameOfNPC;
+	}
 	public int getCatchphrase(){
 		return catchphrase;
 	}

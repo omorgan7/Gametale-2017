@@ -8,6 +8,7 @@ public class InteractiveSpriteMover : MonoBehaviour {
 	private NPCBehaviour _npc;
 	float right, forward;
 	private bool isTalking = false;
+	private bool hasKettle = false;
 	//LoadText loadText = new LoadText();
 
 	// Update is called once per frame
@@ -38,6 +39,14 @@ public class InteractiveSpriteMover : MonoBehaviour {
 		}
 	}
 	void OnTriggerStay2D(Collider2D other){
+		// if(other.gameObject.tag == "kettle"){ //collect kettle
+		// 	if(Input.GetButtonUp("Submit")){
+		// 		print("got kettle");
+		// 		other.gameObject.SetActive(false);
+		// 		hasKettle = true;
+		// 	}
+		// 	return;
+		// }
 		if(other.gameObject.tag != "npc"){
 			return;
 		}
@@ -64,7 +73,15 @@ public class InteractiveSpriteMover : MonoBehaviour {
 			}
 			other.gameObject.GetComponent<NPCSpriteMover>().stopMoving();
 			_npc = other.gameObject.GetComponent<NPCBehaviour>();
-			_npc.turnOnBox();
+			//if(!hasKettle){
+				_npc.turnOnBox();
+			// }
+			// else{
+			// 	if(_npc.getName()=="Head Monk"){
+			// 		StartCoroutine(other.gameObject.GetComponent<DialogueSystemMonk>().speak(0,2));
+			// 	}
+			// }
+			
 		}
 		
 	}
