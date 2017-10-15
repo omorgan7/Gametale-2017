@@ -59,10 +59,6 @@ public class InteractiveSpriteMover : MonoBehaviour {
 		}
 	}
 	void OnTriggerEnter2D(Collider2D other){
-		if(other.gameObject.tag == "fire"){
-			kettle.SetActive(true);	
-			return;	
-		}
 		if(other.gameObject.tag != "npc"){
 			return;
 		}

@@ -8,7 +8,7 @@ public class DialogueSystemBadger : MonoBehaviour {
 	LoadText loadText;
 	private bool isTalking = false;
 	void Start () {
-		loadText = GameObject.Find("EventSystem").GetComponent<LoadText>();;
+		loadText = gameObject.AddComponent<LoadText>() as LoadText;
 		LoadInDialogue(SceneManager.GetActiveScene ().name);
 	}
 	
@@ -20,7 +20,7 @@ public class DialogueSystemBadger : MonoBehaviour {
 		isTalking = true;
 		box = Instantiate(speechBubble, Vector3.zero, Quaternion.identity); 
 		Text txt = box.transform.GetChild(0).GetChild(0).GetComponent<Text>();
-		box.transform.GetChild(1).GetChild(0).GetComponent<Text>().text = "Tanuki";
+		box.transform.GetChild(1).GetChild(0).GetComponent<Text>().text = "Bunbuku";
 		for(int i = startIndex; i< EndIndex + 1; ++i){
 			string _string = loadText.badgerDialogue[i];
 			txt.text = " ";
