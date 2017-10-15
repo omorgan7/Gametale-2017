@@ -16,7 +16,7 @@ public class NPCBehaviour : MonoBehaviour {
 	public int getCatchphrase(){
 		return catchphrase;
 	}
-	void Start(){
+	void Awake(){
 		StartCoroutine(start());		
 	}
 	
@@ -45,6 +45,7 @@ public class NPCBehaviour : MonoBehaviour {
 		box.SetActive(false);
 	}
 	public void turnOnBox(){
+		print("turned on box");
 		if(!box){
 			return;
 		}
