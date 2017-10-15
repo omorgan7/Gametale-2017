@@ -6,6 +6,7 @@ public class PerformanceActions : MonoBehaviour {
 
 	// Use this for initialization
 	MenuInput menuInput;
+	PerformanceResults performanceResults;
 	public GameObject bunbuku;
 	bool isPerforming = false;
 	bool canPerformAgain = true;
@@ -13,6 +14,7 @@ public class PerformanceActions : MonoBehaviour {
 	float height = 2f;
 	void Start () {
 		menuInput = gameObject.GetComponent<MenuInput>();
+		performanceResults = gameObject.GetComponent<PerformanceResults>();
 	}
 	
 	// Update is called once per frame
@@ -31,7 +33,7 @@ public class PerformanceActions : MonoBehaviour {
 				StartCoroutine(jump());
 				break;
 			}
-			
+
 		}
 	}
 	void FixedUpdate(){
@@ -43,6 +45,7 @@ public class PerformanceActions : MonoBehaviour {
 	}
 
 	IEnumerator flip(){
+		yield return new WaitForSecondsRealtime(0.5f);
 		Vector3 initialPosition = bunbuku.transform.position;
 		elapsedTime = 0f;
 		do{
@@ -54,9 +57,18 @@ public class PerformanceActions : MonoBehaviour {
 		bunbuku.transform.Rotate(new Vector3(0f,0f, -7.2f));
 		bunbuku.transform.position = initialPosition;
 		canPerformAgain = true;
+		float result = Random.value;
+		if(result < 0.3){
+			performanceResults.amazed();
+		}
+		else{
+			performanceResults.disappointed();
+		}
+		
 	}
 
 	IEnumerator jump(){
+		yield return new WaitForSecondsRealtime(0.5f);
 		elapsedTime = 0f;
 		Vector3 initialPosition = bunbuku.transform.position;
 		while(elapsedTime <= 0.5f){
@@ -70,9 +82,21 @@ public class PerformanceActions : MonoBehaviour {
 			yield return new WaitForEndOfFrame();
 		}
 		canPerformAgain = true;
+		float result = Random.value;
+		if(result < 0.1){
+			performanceResults.amazed();
+		}
+		else if(result < 0.6){
+			performanceResults.mild();
+		}
+		else{
+			performanceResults.disappointed();
+		}
+		
 	}
 
 	IEnumerator twirl(){
+		yield return new WaitForSecondsRealtime(0.5f);
 		Vector3 initialPosition = bunbuku.transform.position;
 		var spriteController = bunbuku.transform.GetChild(0).GetComponent<SpriteAnimationController>();
 		spriteController.nextAnimation = Enums.AnimStates.Idle;
@@ -84,5 +108,15 @@ public class PerformanceActions : MonoBehaviour {
 		spriteController.nextAnimation = Enums.AnimStates.MoveLeft;
 		yield return new WaitForSecondsRealtime(0.25f);
 		canPerformAgain = true;
+		float result = Random.value;
+		if(result < 0.1){
+			performanceResults.amazed();
+		}
+		else if(result < 0.8){
+			performanceResults.mild();
+		}
+		else{
+			performanceResults.disappointed();
+		}
 	}
 }
