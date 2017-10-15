@@ -615,9 +615,10 @@ GameObject:
   m_Component:
   - component: {fileID: 63491172}
   - component: {fileID: 63491171}
+  - component: {fileID: 63491173}
   m_Layer: 0
   m_Name: Kettle
-  m_TagString: Untagged
+  m_TagString: kettle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -679,6 +680,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &63491173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 63491170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c508db751b9257748b5a5db366f8a0f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &63846985
 GameObject:
   m_ObjectHideFlags: 0
@@ -6960,6 +6972,11 @@ Prefab:
       propertyPath: kettle
       value: 
       objectReference: {fileID: 63491170}
+    - target: {fileID: 61601648452614878, guid: 5fedeea37ecc64b3484473f667451f05,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5fedeea37ecc64b3484473f667451f05, type: 2}
   m_IsPrefabParent: 0
