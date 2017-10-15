@@ -12,7 +12,7 @@ public class EndLevel : MonoBehaviour {
 	FadeController fadeController;
 	// Use this for initialization
 	void Start () {
-		loadText = gameObject.AddComponent<LoadText>() as LoadText;
+		loadText = GameObject.Find("EventSystem").GetComponent<LoadText>();
 		LoadInDialogue(SceneManager.GetActiveScene ().name);
 		fadeController = gameObject.GetComponent<FadeController>();
 	}

@@ -2936,7 +2936,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adc4196e6e855364cb5671fd54baefcd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speechBubble: {fileID: 0}
+  speechBubble: {fileID: 1542382921259858, guid: d3e1654edb721a6409cd39fc10f200f8,
+    type: 2}
 --- !u!114 &268101272
 MonoBehaviour:
   m_ObjectHideFlags: 0
