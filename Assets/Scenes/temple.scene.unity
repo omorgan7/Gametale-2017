@@ -681,7 +681,7 @@ Transform:
   m_LocalScale: {x: 4, y: 4, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &63491174
 MonoBehaviour:
@@ -2977,6 +2977,8 @@ GameObject:
   - component: {fileID: 268101271}
   - component: {fileID: 268101274}
   - component: {fileID: 268101275}
+  - component: {fileID: 268101276}
+  - component: {fileID: 268101277}
   m_Layer: 0
   m_Name: ScriptingSystem
   m_TagString: Untagged
@@ -3026,7 +3028,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &268101274
 MonoBehaviour:
@@ -3040,11 +3042,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textPanel: {fileID: 1506839909541514, guid: f5fff3a4797244a3c99b8773e2503888, type: 2}
-  m_Script: {fileID: 11500000, guid: c508db751b9257748b5a5db366f8a0f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  kettle: {fileID: 63491170}
-  bunbuku: {fileID: 1551576911}
 --- !u!114 &268101275
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3059,6 +3056,33 @@ MonoBehaviour:
   monkContainer: {fileID: 1348429546}
   bunbuku: {fileID: 1551576911}
   hasBeenCaught: 0
+--- !u!114 &268101276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 268101270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c508db751b9257748b5a5db366f8a0f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kettle: {fileID: 63491170}
+  bunbuku: {fileID: 1551576911}
+--- !u!114 &268101277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 268101270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ed578111e2a54136ad0da6b59e1a974, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeObject: {fileID: 0}
+  duration: 1
+  isDone: 0
 --- !u!1 &299711792
 GameObject:
   m_ObjectHideFlags: 0
@@ -5406,6 +5430,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 020c291a32bb3044384156b5586dcf92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bunbuku: {fileID: 1551576911}
+  textPanel: {fileID: 1506839909541514, guid: f5fff3a4797244a3c99b8773e2503888, type: 2}
 --- !u!1 &522870574
 GameObject:
   m_ObjectHideFlags: 0
@@ -13764,7 +13790,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4125138618311184, guid: 9bce754a6465649e3bab3c23cfd4cb40, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 114049757820806254, guid: 9bce754a6465649e3bab3c23cfd4cb40,
         type: 2}
@@ -15381,6 +15407,15 @@ Prefab:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1357052099867536, guid: 244ba7097fc3a45fd929be8baedfc8bc, type: 2}
+      propertyPath: m_TagString
+      value: bunbuku
+      objectReference: {fileID: 0}
+    - target: {fileID: 114953251791301904, guid: 244ba7097fc3a45fd929be8baedfc8bc,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114271821919083870, guid: 244ba7097fc3a45fd929be8baedfc8bc, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 244ba7097fc3a45fd929be8baedfc8bc, type: 2}
@@ -15461,7 +15496,7 @@ Transform:
   - {fileID: 1733279642}
   - {fileID: 332632740}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1581670395
 BoxCollider2D:

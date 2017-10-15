@@ -25,6 +25,9 @@ public class WildBehaviour : MonoBehaviour {
 	}
 	// Update is called once per frame
 	void Update () {
+		if(hasBeenCaught){
+			return;
+		}
 		if(bunbuku.activeSelf){
 			if(!hasBegun){
 				hasBegun = true;
