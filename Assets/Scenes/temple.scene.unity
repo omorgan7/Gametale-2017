@@ -616,6 +616,10 @@ GameObject:
   - component: {fileID: 63491172}
   - component: {fileID: 63491171}
   - component: {fileID: 63491173}
+  - component: {fileID: 63491177}
+  - component: {fileID: 63491176}
+  - component: {fileID: 63491175}
+  - component: {fileID: 63491174}
   m_Layer: 0
   m_Name: Kettle
   m_TagString: kettle
@@ -691,6 +695,71 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c508db751b9257748b5a5db366f8a0f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &63491174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 63491170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52598c8df3c8d4ef2b6447a57d3bf45e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextAnimation: 0
+--- !u!114 &63491175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 63491170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aabd57daabaa8498b9856e88964065e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 21300000, guid: 2450a158e7c48443abc100df498e67ae, type: 3}
+  isLooping: 0
+  idleIndex: 0
+  frameTime: 0.1
+  state: 0
+--- !u!114 &63491176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 63491170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aabd57daabaa8498b9856e88964065e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 21300000, guid: 2450a158e7c48443abc100df498e67ae, type: 3}
+  - {fileID: 21300000, guid: d0b6c0c83707744cc9dd1390e22272f4, type: 3}
+  isLooping: 1
+  idleIndex: 0
+  frameTime: 0.1
+  state: 2
+--- !u!114 &63491177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 63491170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aabd57daabaa8498b9856e88964065e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 21300000, guid: 63e8dd6edd97b4f7f93dcd83ae5ad03d, type: 3}
+  - {fileID: 21300000, guid: 6408aeaf78a8742b9a6d0ed2e009fb96, type: 3}
+  isLooping: 1
+  idleIndex: 0
+  frameTime: 0.1
+  state: 1
 --- !u!1 &63846985
 GameObject:
   m_ObjectHideFlags: 0
@@ -15421,6 +15490,17 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4886437140043832, guid: a28a850afc96a4801b0fef6f5ebb29f0, type: 2}
       propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212823390078927490, guid: a28a850afc96a4801b0fef6f5ebb29f0,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f558666d80cc39f4f9fff29d09375e86,
+        type: 3}
+    - target: {fileID: 212823390078927490, guid: a28a850afc96a4801b0fef6f5ebb29f0,
+        type: 2}
+      propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
