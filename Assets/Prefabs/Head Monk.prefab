@@ -175,10 +175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aabd57daabaa8498b9856e88964065e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprites:
-  - {fileID: 21300000, guid: 834ba918ed0044b559c4f3b7c397115a, type: 3}
-  - {fileID: 21300000, guid: 4fae86b40add94f37b5cd138ca54fa9f, type: 3}
-  - {fileID: 21300000, guid: be05b71cfb721461b85cca35955c96ba, type: 3}
+  sprites: []
   isLooping: 1
   idleIndex: 1
   frameTime: 0.2
@@ -219,7 +216,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprites:
-  - {fileID: 21300000, guid: 4fae86b40add94f37b5cd138ca54fa9f, type: 3}
+  - {fileID: 0}
   isLooping: 1
   idleIndex: 0
   frameTime: 0.2
@@ -235,10 +232,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aabd57daabaa8498b9856e88964065e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprites:
-  - {fileID: 21300000, guid: d5469900a7c474803a6e058cfe37d4c0, type: 3}
-  - {fileID: 21300000, guid: f8728c95c654d4d4c836a7dcb8a4e4fa, type: 3}
-  - {fileID: 21300000, guid: 5a43a45ab3da04ece96917bde5bb40f2, type: 3}
+  sprites: []
   isLooping: 1
   idleIndex: 0
   frameTime: 0.2
@@ -254,10 +248,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aabd57daabaa8498b9856e88964065e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprites:
-  - {fileID: 21300000, guid: 27ec192af8ea448f9ab661cfceab2935, type: 3}
-  - {fileID: 21300000, guid: cc29230c791414c3cb7e39ae14eb6dcd, type: 3}
-  - {fileID: 21300000, guid: ce4442e215c40425a9138cd111f23ee1, type: 3}
+  sprites: []
   isLooping: 1
   idleIndex: 0
   frameTime: 0.2
@@ -273,10 +264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aabd57daabaa8498b9856e88964065e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprites:
-  - {fileID: 21300000, guid: e00a87da480774bc58fd9c16f7b6a1d4, type: 3}
-  - {fileID: 21300000, guid: 7b8bdda68328743b790985d90eb59178, type: 3}
-  - {fileID: 21300000, guid: e1b4074441c1044e19bf68da6bbb7138, type: 3}
+  sprites: []
   isLooping: 1
   idleIndex: 0
   frameTime: 0.2
@@ -320,7 +308,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.64, y: 0.64}
+  m_Size: {x: 0.64, y: 0.74}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
