@@ -45,6 +45,12 @@ public class InteractiveSpriteMover : MonoBehaviour {
 
 	}
 	void OnTriggerStay2D(Collider2D other){
+		if(other.gameObject.tag == "bunbuku"){
+		//	GameObject kettle = GameObject.FindGameObjectWithTag("kettle");
+
+			//free bunbuku
+			//kettle appears
+		}
 		// if(other.gameObject.tag == "kettle"){ //collect kettle
 		// 	if(Input.GetButtonUp("Submit")){
 		// 		print("got kettle");
