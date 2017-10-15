@@ -11,3 +11,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/town.scene.unity
     guid: 44e54a5a516b84a409f68b9d47752315
+  - enabled: 1
+    path: Assets/Scenes/temple.scene.unity
+    guid: 4f44721129ee9461097788e31023d4e0
