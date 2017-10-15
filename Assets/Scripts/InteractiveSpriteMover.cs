@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
 public class InteractiveSpriteMover : MonoBehaviour {
 	// Use this for initialization
@@ -14,8 +15,9 @@ public class InteractiveSpriteMover : MonoBehaviour {
 	// Update is called once per frame
 	void Start(){
 		spriteMover = gameObject.GetComponent<SpriteMover>();
+		Time.fixedDeltaTime = 0.25f;
 	}
-	void FixedUpdate(){
+	void LateUpdate(){
 		if(isTalking){
 			spriteMover.pauseMoving();
 			return;

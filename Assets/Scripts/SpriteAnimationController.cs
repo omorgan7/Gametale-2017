@@ -21,16 +21,16 @@ public class SpriteAnimationController : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 		if(nextAnimation != animationCurrentlyPlaying.state){
-			print("hello");
 			var animation = findAnimation(nextAnimation);
 			if(!animation){
 				return;
-			} 
+			}
+			animation.startAnimation(); 
 			animationCurrentlyPlaying.stopAnimation();
 			animationCurrentlyPlaying = animation;
-			animationCurrentlyPlaying.startAnimation();
+			// animationCurrentlyPlaying.startAnimation();
 		}
 	}
 
