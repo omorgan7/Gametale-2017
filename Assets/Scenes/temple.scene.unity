@@ -2908,6 +2908,66 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!1 &268101270
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 268101273}
+  - component: {fileID: 268101272}
+  - component: {fileID: 268101271}
+  m_Layer: 0
+  m_Name: EventSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &268101271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 268101270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adc4196e6e855364cb5671fd54baefcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speechBubble: {fileID: 0}
+--- !u!114 &268101272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 268101270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3304cd397fc2fea4aa4e8c093d8755ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tinkerDialogue: []
+  monkDialogue: []
+  badgerDialogue: []
+  npcDialogue: []
+  narration: []
+  letterPause: 0.1
+  sentencePause: 0.75
+--- !u!4 &268101273
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 268101270}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 12.629316, y: 13.930972, z: -0.20312664}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &299711792
 GameObject:
   m_ObjectHideFlags: 0
@@ -5280,7 +5340,8 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: 468561d7bcff147d1b5e8be6cafad2aa,
         type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114127387051953674, guid: 5fedeea37ecc64b3484473f667451f05, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 5fedeea37ecc64b3484473f667451f05, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &493675775 stripped
@@ -5334,7 +5395,6 @@ GameObject:
   - component: {fileID: 496170219}
   - component: {fileID: 496170218}
   - component: {fileID: 496170217}
-  - component: {fileID: 496170216}
   - component: {fileID: 496170215}
   - component: {fileID: 496170213}
   - component: {fileID: 496170214}
@@ -5387,21 +5447,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.1
---- !u!114 &496170216
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114127387051953674, guid: 5fedeea37ecc64b3484473f667451f05,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 496170212}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08521797d6c3c4615a0c1a85ffae114c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speechBubble: {fileID: 0}
-  kettle: {fileID: 0}
-  textPanel: {fileID: 0}
 --- !u!61 &496170217
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15348,7 +15393,8 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: 468561d7bcff147d1b5e8be6cafad2aa,
         type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114127387051953674, guid: 5fedeea37ecc64b3484473f667451f05, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 5fedeea37ecc64b3484473f667451f05, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1566525407 stripped
@@ -15399,8 +15445,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1581670394}
   - component: {fileID: 1581670395}
-  - component: {fileID: 1581670397}
-  - component: {fileID: 1581670396}
   - component: {fileID: 1581670403}
   - component: {fileID: 1581670402}
   - component: {fileID: 1581670401}
@@ -15474,37 +15518,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 11.548349, y: 0.9999962}
   m_EdgeRadius: 0
---- !u!114 &1581670396
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1581670393}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: adc4196e6e855364cb5671fd54baefcd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speechBubble: {fileID: 1542382921259858, guid: d3e1654edb721a6409cd39fc10f200f8,
-    type: 2}
---- !u!114 &1581670397
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1581670393}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3304cd397fc2fea4aa4e8c093d8755ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tinkerDialogue: []
-  monkDialogue: []
-  badgerDialogue: []
-  npcDialogue: []
-  narration: []
-  letterPause: 0.1
-  sentencePause: 0.75
 --- !u!61 &1581670398
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16013,7 +16026,8 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: 468561d7bcff147d1b5e8be6cafad2aa,
         type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114127387051953674, guid: 5fedeea37ecc64b3484473f667451f05, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 5fedeea37ecc64b3484473f667451f05, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1617049128 stripped
@@ -19117,7 +19131,8 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: 468561d7bcff147d1b5e8be6cafad2aa,
         type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114127387051953674, guid: 5fedeea37ecc64b3484473f667451f05, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 5fedeea37ecc64b3484473f667451f05, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1932854995 stripped
@@ -19763,7 +19778,8 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: 468561d7bcff147d1b5e8be6cafad2aa,
         type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114127387051953674, guid: 5fedeea37ecc64b3484473f667451f05, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 5fedeea37ecc64b3484473f667451f05, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1985680370 stripped

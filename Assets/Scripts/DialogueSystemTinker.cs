@@ -8,11 +8,10 @@ public class DialogueSystemTinker : MonoBehaviour {
 	public GameObject speechBubble;
 	public GameObject CharName;
 	private bool isTalking = false; 
-	private float pauseTime = 0.1f; //maybe use deltaTime
 	private GameObject box;
 	LoadText loadText;
 	void Start () {
-		loadText = gameObject.AddComponent<LoadText>() as LoadText;
+		loadText = GameObject.Find("EventSystem").GetComponent<LoadText>();
 		LoadInDialogue(SceneManager.GetActiveScene ().name);
 		StartCoroutine( speak(0,4));
 	}

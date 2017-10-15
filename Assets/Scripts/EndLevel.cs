@@ -23,6 +23,7 @@ public class EndLevel : MonoBehaviour {
 			if(Input.GetButtonUp("Submit")){
 				print("done");
 				SceneManager.LoadScene("temple.scene");
+				sceneFinished = false;
 			}
 		}
 	}
