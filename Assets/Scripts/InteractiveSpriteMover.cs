@@ -102,6 +102,7 @@ public class InteractiveSpriteMover : MonoBehaviour {
 		while(DialogueSystemMonk.isTalking){
 			yield return null;
 		}
+		EndLevel.sceneFinished = true;
 		endLevel.endLevelText(textPanel);
 	}
 	
