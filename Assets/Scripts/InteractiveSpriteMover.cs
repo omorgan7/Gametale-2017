@@ -125,7 +125,6 @@ public class InteractiveSpriteMover : MonoBehaviour {
 				isTalking =  true;
 				DialogueSystemBadger.isTalking = true;
 				StartCoroutine(waitBunbuku());
-				print("here");
 				StartCoroutine(other.gameObject.GetComponent<DialogueSystemBadger>().speak(0,0, speechBubble,bunbukuBox));
 				StartCoroutine(other.gameObject.GetComponent<DialogueSystemBadger>().disappear());
 				kettle.SetActive(true);

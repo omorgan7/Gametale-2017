@@ -46,6 +46,11 @@ public class EndLevel : MonoBehaviour {
 		while(!fadeController.isDone){
 			yield return null;
 		}
-		SceneManager.LoadScene("temple.scene");
+		if(SceneManager.GetActiveScene().name=="town.scene"){
+			SceneManager.LoadScene("temple.scene");
+		}
+		else if (SceneManager.GetActiveScene().name == "temple.scene"){
+			//load next
+		}
 	}
 }
