@@ -5,34 +5,22 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class DialogueSystemBadger : MonoBehaviour {
-	public GameObject speechBubble;
-	public GameObject CharName;
-	private bool isTalking = false; 
-	private float pauseTime = 0.1f; //maybe use deltaTime
-	private GameObject box;
 	LoadText loadText;
+	private bool isTalking = false;
 	void Start () {
 		loadText = gameObject.AddComponent<LoadText>() as LoadText;
 		LoadInDialogue(SceneManager.GetActiveScene ().name);
-		StartCoroutine( speak(0,4));
 	}
 	
 	void LoadInDialogue(string level){
 		loadText.Load("Assets/Character Dialogue/badger/" +level + ".txt", LoadText.characters.badger);
 	}
 	// Update is called once per frame
-	void Update () {
-
-		if (isTalking == true){
-		//speak
-			isTalking = false;
-		}
-		
-	}
-	IEnumerator speak(int startIndex, int EndIndex){
+	public IEnumerator speak(int startIndex, int EndIndex, GameObject speechBubble, GameObject box){
+		isTalking = true;
 		box = Instantiate(speechBubble, Vector3.zero, Quaternion.identity); 
 		Text txt = box.transform.GetChild(0).GetChild(0).GetComponent<Text>();
-		CharName.transform.GetChild(0).GetComponent<Text>().text = "Badger";
+		box.transform.GetChild(1).GetChild(0).GetComponent<Text>().text = "Badger";
 		for(int i = startIndex; i< EndIndex + 1; ++i){
 			string _string = loadText.badgerDialogue[i];
 			txt.text = " ";
@@ -43,6 +31,13 @@ public class DialogueSystemBadger : MonoBehaviour {
 			yield return new WaitForSeconds(loadText.sentencePause);
 			
 		}	
-		Destroy(box);	
+		Destroy(box);
+		isTalking =  false;	
+	}
+	public IEnumerator disappear(){
+		while(isTalking){
+			yield return null;
+		}
+		gameObject.SetActive(false);
 	}
 }

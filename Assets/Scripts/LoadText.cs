@@ -9,7 +9,8 @@ public class LoadText : MonoBehaviour {
 	public List<string> monkDialogue = new List<string>();
 	public List<string> badgerDialogue = new List<string>();
 	public List<string> npcDialogue = new List<string>();
-	public enum characters {tinker, monk, badger, npc};
+	public List<string> narration = new List<string>();
+	public enum characters {tinker, monk, badger, npc, narrator};
 	public enum scene {a,b};
 	public float letterPause = 0.1f;
 	public float sentencePause = 0.75f;
@@ -31,6 +32,9 @@ public class LoadText : MonoBehaviour {
 							break;
 						case characters.npc:
 							npcDialogue.Add(line);
+							break;
+						case characters.narrator:
+							narration.Add(line);
 							break;
 					 }
                  }

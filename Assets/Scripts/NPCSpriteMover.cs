@@ -22,7 +22,7 @@ public class NPCSpriteMover : MonoBehaviour {
 		if(elapsedTime >= moveDuration){
 			float randomNumber = Random.value;
 			elapsedTime = 0;
-			if(randomNumber > 0.1f){
+			if(randomNumber > randomThreshold){
 				Vector2 direction = Random.insideUnitCircle;
 				if(Mathf.Abs(direction.x) > Mathf.Abs(direction.y)){
 					right = direction.x;
