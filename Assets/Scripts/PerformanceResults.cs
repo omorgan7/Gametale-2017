@@ -7,12 +7,18 @@ public class PerformanceResults : MonoBehaviour {
 
 	// Use this for initialization
 	public GameObject[] topPanels = new GameObject[3];
+	public AudioClip[] clips = new AudioClip[3];
+	public AudioClip ambient;
 	public RectTransform progressBar;
+	AudioSource audioSource;
 	public float progress;
 	float newProgress;
 	void Start(){
 		progress = progressBar.anchorMax.x;
 		newProgress = progress;
+		audioSource = gameObject.GetComponent<AudioSource>();
+		audioSource.clip = ambient;
+		audioSource.Play();
 	}
 
 	void LateUpdate(){
@@ -34,24 +40,40 @@ public class PerformanceResults : MonoBehaviour {
 
 	}
 	public void disappointed(){
+		audioSource.Stop();
+		audioSource.clip = clips[0];
+		audioSource.volume = 1f;
+		audioSource.Play();
 		StartCoroutine(switchPanel(0));
 		newProgress -= 0.05f;
 	}
 
 	public void mild(){
+		audioSource.Stop();
+		audioSource.clip = clips[1];
+		audioSource.volume = 1f;
+		audioSource.Play();
 		StartCoroutine(switchPanel(1));
 		newProgress += 0.1f;
 	}
 
 	public void amazed(){
+		audioSource.Stop();
+		audioSource.clip = clips[2];
+		audioSource.volume = 1f;
+		audioSource.Play();
 		StartCoroutine(switchPanel(2));
 		newProgress += 0.5f;
 	}
 
 	IEnumerator switchPanel(int index){
 		topPanels[index].SetActive(true);
-		yield return new WaitForSecondsRealtime(3f);
+		yield return new WaitForSecondsRealtime(5f);
 		topPanels[index].SetActive(false);
+		audioSource.Stop();
+		audioSource.clip = ambient;
+		audioSource.volume = 0.5f;
+		audioSource.Play();
 	}
 }
 

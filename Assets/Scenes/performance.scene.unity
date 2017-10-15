@@ -690,6 +690,7 @@ GameObject:
   - component: {fileID: 637392988}
   - component: {fileID: 637392989}
   - component: {fileID: 637392990}
+  - component: {fileID: 637392991}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -793,8 +794,93 @@ MonoBehaviour:
   - {fileID: 1100234241}
   - {fileID: 2122994624}
   - {fileID: 1708638832}
+  clips:
+  - {fileID: 8300000, guid: 40124427565bf4db7a7fcd52c8883e25, type: 3}
+  - {fileID: 8300000, guid: 5675cfbd0b1aa4e4c9902d1e93a33f03, type: 3}
+  - {fileID: 8300000, guid: 6a8ac812c7a68487ba25a4408687f657, type: 3}
+  ambient: {fileID: 8300000, guid: f1d078dc96d8641dd8e5951eee57f46a, type: 3}
   progressBar: {fileID: 1112240985}
   progress: 0
+--- !u!82 &637392991
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 637392983}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 0.5
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!1 &795155043 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1357052099867536, guid: 244ba7097fc3a45fd929be8baedfc8bc,

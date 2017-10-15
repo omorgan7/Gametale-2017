@@ -62,7 +62,7 @@ public class PerformanceActions : MonoBehaviour {
 			performanceResults.amazed();
 		}
 		else{
-			performanceResults.disappointed();
+			performanceResults.mild();
 		}
 		
 	}
