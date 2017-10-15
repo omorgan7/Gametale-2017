@@ -4469,7 +4469,8 @@ Prefab:
       propertyPath: m_Name
       value: NPC Novice Monk (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_ParentPrefab: {fileID: 100100000, guid: cea355df6f86648a69790892882da3a8, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &418938173 stripped
@@ -5781,7 +5782,8 @@ Prefab:
       propertyPath: m_Name
       value: NPC Novice Monk
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_ParentPrefab: {fileID: 100100000, guid: cea355df6f86648a69790892882da3a8, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &540296698 stripped
@@ -5983,7 +5985,8 @@ Prefab:
       propertyPath: m_Name
       value: NPC Novice Monk (3)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_ParentPrefab: {fileID: 100100000, guid: cea355df6f86648a69790892882da3a8, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &555377927 stripped
@@ -6953,7 +6956,7 @@ Prefab:
     - target: {fileID: 61601648452614878, guid: 5fedeea37ecc64b3484473f667451f05,
         type: 2}
       propertyPath: m_IsTrigger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114596199655939266, guid: 5fedeea37ecc64b3484473f667451f05,
         type: 2}
@@ -6969,6 +6972,11 @@ Prefab:
         type: 2}
       propertyPath: idleIndex
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 50181794272328722, guid: 5fedeea37ecc64b3484473f667451f05,
+        type: 2}
+      propertyPath: m_BodyType
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114062736087209348, guid: 5fedeea37ecc64b3484473f667451f05, type: 2}
@@ -19486,7 +19494,8 @@ Prefab:
       propertyPath: m_Name
       value: NPC Novice Monk (2)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_ParentPrefab: {fileID: 100100000, guid: cea355df6f86648a69790892882da3a8, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &2020310524 stripped
@@ -19542,7 +19551,8 @@ Prefab:
       propertyPath: m_Name
       value: NPC Novice Monk (4)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_ParentPrefab: {fileID: 100100000, guid: cea355df6f86648a69790892882da3a8, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &2026471313 stripped
@@ -19890,7 +19900,8 @@ Prefab:
       propertyPath: m_Name
       value: NPC Novice Monk (5)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_ParentPrefab: {fileID: 100100000, guid: cea355df6f86648a69790892882da3a8, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &2060510974 stripped
