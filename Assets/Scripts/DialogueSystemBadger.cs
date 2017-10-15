@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class DialogueSystemBadger : MonoBehaviour {
 	LoadText loadText;
-	private bool isTalking = false;
+	static public bool isTalking = false;
 	void Start () {
 		loadText = GameObject.Find("ScriptingSystem").GetComponent<LoadText>();
 		LoadInDialogue(SceneManager.GetActiveScene ().name);
@@ -15,7 +15,7 @@ public class DialogueSystemBadger : MonoBehaviour {
 	void LoadInDialogue(string level){
 		loadText.Load("Assets/Character Dialogue/badger/" +level + ".txt", LoadText.characters.badger);
 	}
-	// Update is called once per frame
+
 	public IEnumerator speak(int startIndex, int EndIndex, GameObject speechBubble, GameObject box){
 		isTalking = true;
 		box = Instantiate(speechBubble, Vector3.zero, Quaternion.identity); 

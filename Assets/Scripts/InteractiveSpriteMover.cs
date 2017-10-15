@@ -18,11 +18,12 @@ public class InteractiveSpriteMover : MonoBehaviour {
 	float currentSpeed = 1f;
 	EndLevel endLevel;
 	
+	
 	//LoadText loadText = new LoadText();
 
 	// Update is called once per frame
 	void Start(){
-		endLevel = GameObject.Find("EventSystem").GetComponent<EndLevel>();
+		endLevel = GameObject.Find("ScriptingSystem").GetComponent<EndLevel>();
 		spriteMover = gameObject.GetComponent<SpriteMover>();
 	}
 	void LateUpdate(){
@@ -109,10 +110,22 @@ public class InteractiveSpriteMover : MonoBehaviour {
 		EndLevel.sceneFinished = true;
 		endLevel.endLevelText(textPanel);
 	}
-	
+	IEnumerator waitBunbuku(){
+		while (DialogueSystemBadger.isTalking){
+			yield return null;
+		}
+		isTalking = false;
+	}
 	void OnTriggerStay2D(Collider2D other){
 		if(other.gameObject.tag == "bunbuku"){
-			if(Input.GetButtonUp("Submit")){
+			if(isTalking){
+				return;
+			}
+			if((Input.GetButtonUp("Submit"))&&(!isTalking)){
+				isTalking =  true;
+				DialogueSystemBadger.isTalking = true;
+				StartCoroutine(waitBunbuku());
+				print("here");
 				StartCoroutine(other.gameObject.GetComponent<DialogueSystemBadger>().speak(0,0, speechBubble,bunbukuBox));
 				StartCoroutine(other.gameObject.GetComponent<DialogueSystemBadger>().disappear());
 				kettle.SetActive(true);

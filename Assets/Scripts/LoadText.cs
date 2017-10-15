@@ -14,13 +14,6 @@ public class LoadText : MonoBehaviour {
 	public float letterPause = 0.1f;
 	public float sentencePause = 0.75f;
 
-	void Start (){
-		// tinkerDialogue.Clear();
-		// monkDialogue.Clear();
-		// badgerDialogue.Clear();
-		// npcDialogue.Clear();
-		// narration.Clear();
-	}
 	public void Load(string fileName, characters _char){
 		StreamReader theReader = new StreamReader(fileName, Encoding.Default);
 		string line;		
