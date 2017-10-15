@@ -14,11 +14,11 @@ public class DialogueSystemNPC : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		loadText = gameObject.AddComponent<LoadText>() as LoadText;
-		LoadInDialogue(SceneManager.GetActiveScene ().name);
+		loadText = GameObject.Find("EventSystem").GetComponent<LoadText>();
+		LoadInDialogue(SceneManager.GetActiveScene ().name, loadText);
 		NPCword = loadText.npcDialogue;
 	}
-	void LoadInDialogue(string level){
+	void LoadInDialogue(string level, LoadText loadText){
 		loadText.Load("Assets/Character Dialogue/npc/"+ level + ".txt", LoadText.characters.npc);
 		isDone = true;
 	}

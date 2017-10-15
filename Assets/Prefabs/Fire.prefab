@@ -156,16 +156,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprites:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: bb3a086bdf9804f09bac7229226c6ffd, type: 3}
+  - {fileID: 21300000, guid: 1f07971a0b5da4555ade3614450ba68e, type: 3}
+  - {fileID: 21300000, guid: 000ce14c6ae724a0d959d22c177d6f42, type: 3}
+  - {fileID: 21300000, guid: a67ca76775c5a4f4db64c3a751fa62d7, type: 3}
+  - {fileID: 21300000, guid: 7c630a71ee0fe4edbafd5b1787111326, type: 3}
+  - {fileID: 21300000, guid: a8e3ca3891e164392acf80bb7e6eb840, type: 3}
+  - {fileID: 21300000, guid: 4143c40bd17a946818de537a745eb4ab, type: 3}
+  - {fileID: 21300000, guid: b40d050472fb44f7b80ee70e9d957399, type: 3}
+  - {fileID: 21300000, guid: e28d197124ed44228a98d694bf3918fe, type: 3}
+  - {fileID: 21300000, guid: 08f332bc1eae448f0968be8fa3b83ec8, type: 3}
   isLooping: 1
   idleIndex: 9
   frameTime: 0.1
