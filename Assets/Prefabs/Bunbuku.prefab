@@ -162,7 +162,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprites:
-  - {fileID: 0}
+  - {fileID: 21300000, guid: b2e107b2c54552543a3def4bebde232a, type: 3}
   isLooping: 0
   idleIndex: 0
   frameTime: 0.05
@@ -190,9 +190,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprites:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: c88ceaac8de4a4e45be1b8d051817be3, type: 3}
+  - {fileID: 21300000, guid: 7072aa7c6861e8a4e924789f96ef3449, type: 3}
+  - {fileID: 21300000, guid: e2de8fba68499cd4891db38108d47fbc, type: 3}
   isLooping: 1
   idleIndex: 1
   frameTime: 0.05
@@ -209,9 +209,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprites:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: 32c5fde4bd0adf44fbe05803178bb0f9, type: 3}
+  - {fileID: 21300000, guid: dad96e4ac353e114683bcf75d64470e3, type: 3}
+  - {fileID: 21300000, guid: 29212e4dc92526a418e3c22c0743be0b, type: 3}
   isLooping: 1
   idleIndex: 1
   frameTime: 0.1
@@ -240,9 +240,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprites:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: 0721bc60a0e2b4543b3ed889f3aba6db, type: 3}
+  - {fileID: 21300000, guid: dd9d27f919238b2479015694f4c9385b, type: 3}
+  - {fileID: 21300000, guid: b7d444358babd9d40b89082b415c7a7c, type: 3}
   isLooping: 1
   idleIndex: 1
   frameTime: 0.05
@@ -259,9 +259,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprites:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: 2f115658d8f055f49aedcba51f1877fd, type: 3}
+  - {fileID: 21300000, guid: b2e107b2c54552543a3def4bebde232a, type: 3}
+  - {fileID: 21300000, guid: 624f5b3a5ba6da5458db1587dcc8465c, type: 3}
   isLooping: 1
   idleIndex: 1
   frameTime: 0.05

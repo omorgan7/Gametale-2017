@@ -5,11 +5,8 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class DialogueSystemMonk : MonoBehaviour {
-
-	public GameObject speechBubble;
-	//private bool isTalking = false; 
-	private GameObject box;
 	LoadText loadText ;
+	static public bool isTalking = false;
 	void Start () {
 		loadText = gameObject.AddComponent<LoadText>() as LoadText;
 		LoadInDialogue(SceneManager.GetActiveScene ().name);
@@ -19,7 +16,8 @@ public class DialogueSystemMonk : MonoBehaviour {
 		loadText.Load("Assets/Character Dialogue/monk/" +level + ".txt", LoadText.characters.monk);
 	}
 	
-	public IEnumerator speak(int startIndex, int EndIndex){
+	public IEnumerator speak(int startIndex, int EndIndex, GameObject speechBubble, GameObject box){
+		isTalking = true;
 		box = Instantiate(speechBubble, Vector3.zero, Quaternion.identity); 
 		Text txt = box.transform.GetChild(0).GetChild(0).GetComponent<Text>();
 		box.transform.GetChild(1).GetChild(0).GetComponent<Text>().text = "Head Monk";
@@ -34,5 +32,7 @@ public class DialogueSystemMonk : MonoBehaviour {
 			
 		}	
 		Destroy(box);	
+		isTalking = false;
 	}
+	
 }
