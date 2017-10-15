@@ -13,16 +13,7 @@ public class LoadText : MonoBehaviour {
 	public enum characters {tinker, monk, badger, npc, narrator};
 	public float letterPause = 0.1f;
 	public float sentencePause = 0.75f;
-	//public float isClear = false;
 
-	void Start (){
-		// tinkerDialogue.Clear();
-		// monkDialogue.Clear();
-		// badgerDialogue.Clear();
-		// npcDialogue.Clear();
-		// narration.Clear();
-		// isClear = true;
-	}
 	public void Load(string fileName, characters _char){
 		StreamReader theReader = new StreamReader(fileName, Encoding.Default);
 		string line;		

@@ -22,8 +22,8 @@ public class EndLevel : MonoBehaviour {
 		loadText.Load("Assets/Character Dialogue/sceneDescription/" +level + ".txt", LoadText.characters.narrator);
 	}
 	void FixedUpdate(){
-		print(fadeController == null);
-		print(gameObject.name);
+//		print(fadeController == null);
+		//print(gameObject.name);
 		if(sceneFinished){
 			if(Input.GetButtonUp("Submit")){
 				fadeController.FadeOut();
