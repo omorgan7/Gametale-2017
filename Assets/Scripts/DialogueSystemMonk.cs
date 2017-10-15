@@ -7,32 +7,22 @@ using UnityEngine.SceneManagement;
 public class DialogueSystemMonk : MonoBehaviour {
 
 	public GameObject speechBubble;
-	public GameObject CharName;
-	private bool isTalking = false; 
-	private float pauseTime = 0.1f; //maybe use deltaTime
+	//private bool isTalking = false; 
 	private GameObject box;
-	LoadText loadText  = new LoadText();
+	LoadText loadText ;
 	void Start () {
+		loadText = gameObject.AddComponent<LoadText>() as LoadText;
 		LoadInDialogue(SceneManager.GetActiveScene ().name);
-		StartCoroutine( speak(0,4));
 	}
 	
 	void LoadInDialogue(string level){
 		loadText.Load("Assets/Character Dialogue/monk/" +level + ".txt", LoadText.characters.monk);
 	}
-	// Update is called once per frame
-	void Update () {
-
-		if (isTalking == true){
-		//speak
-			isTalking = false;
-		}
-		
-	}
-	IEnumerator speak(int startIndex, int EndIndex){
+	
+	public IEnumerator speak(int startIndex, int EndIndex){
 		box = Instantiate(speechBubble, Vector3.zero, Quaternion.identity); 
 		Text txt = box.transform.GetChild(0).GetChild(0).GetComponent<Text>();
-		CharName.transform.GetChild(0).GetComponent<Text>().text = "Monk";
+		box.transform.GetChild(1).GetChild(0).GetComponent<Text>().text = "Head Monk";
 		for(int i = startIndex; i< EndIndex + 1; ++i){
 			string _string = loadText.monkDialogue[i];
 			txt.text = " ";

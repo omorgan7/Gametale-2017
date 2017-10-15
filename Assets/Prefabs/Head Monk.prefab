@@ -46,9 +46,12 @@ GameObject:
   - component: {fileID: 61601648452614878}
   - component: {fileID: 114127387051953674}
   - component: {fileID: 114299626950451010}
+  - component: {fileID: 114912289165842856}
+  - component: {fileID: 114592362314857616}
+  - component: {fileID: 114530976668885958}
   m_Layer: 0
   m_Name: Head Monk
-  m_TagString: Untagged
+  m_TagString: npc
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -60,7 +63,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1695522433209202}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 4.04, y: 2.39, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4977474122435100}
@@ -112,7 +115,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.018620014, y: 0.00000059604645}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -123,7 +126,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.5, y: 3.5}
+  m_Size: {x: 1.9414015, y: 2.978639}
   m_EdgeRadius: 0
 --- !u!61 &61998924323320930
 BoxCollider2D:
@@ -217,10 +220,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprites:
   - {fileID: 21300000, guid: e724355741f7c4f9f9b370450623690b, type: 3}
-  isLooping: 0
-  idleIndex: 1
+  isLooping: 1
+  idleIndex: 0
   frameTime: 0.2
   state: 0
+--- !u!114 &114530976668885958
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1695522433209202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e4fb47cde335584d9371e79e599b72f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speechBubble: {fileID: 1542382921259858, guid: d3e1654edb721a6409cd39fc10f200f8,
+    type: 2}
+--- !u!114 &114592362314857616
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1695522433209202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43d3e30ea9e07432c8d8653f6eba0bde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteMover: {fileID: 0}
+  randomThreshold: 0.1
+  moveDuration: 1
 --- !u!114 &114596199655939266
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -237,7 +267,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 8692b1b113a364cccb145807b374d1bc, type: 3}
   - {fileID: 21300000, guid: e82daf6d81ad440aba67784220d74d5d, type: 3}
   isLooping: 1
-  idleIndex: 1
+  idleIndex: 0
   frameTime: 0.2
   state: 4
 --- !u!114 &114645734672317550
@@ -275,9 +305,24 @@ MonoBehaviour:
   - {fileID: 21300000, guid: cfc02d67360d74dd5b6da37e5e044c2b, type: 3}
   - {fileID: 21300000, guid: b7a22f42b18244fd29d0b8b69dcf076c, type: 3}
   isLooping: 1
-  idleIndex: 1
+  idleIndex: 0
   frameTime: 0.2
   state: 2
+--- !u!114 &114912289165842856
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1695522433209202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8def2c303e208d840947f0367e0cf1ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  catchphrase: 6
+  nameOfNPC: Head Monk
+  speechBubble: {fileID: 1542382921259858, guid: d3e1654edb721a6409cd39fc10f200f8,
+    type: 2}
 --- !u!212 &212279100202187128
 SpriteRenderer:
   m_ObjectHideFlags: 1

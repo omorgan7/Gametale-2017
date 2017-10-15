@@ -8,15 +8,15 @@ using UnityEngine.SceneManagement;
 public class DialogueSystemNPC : MonoBehaviour {
 	public GameObject speechBubble;
 	private GameObject box;
-	LoadText loadText = new LoadText();
+	LoadText loadText;
 	static public List <string> NPCword;
 	static public bool isDone = false;
 
 	// Use this for initialization
 	void Start () {
+		loadText = gameObject.AddComponent<LoadText>() as LoadText;
 		LoadInDialogue(SceneManager.GetActiveScene ().name);
 		NPCword = loadText.npcDialogue;
-		print(NPCword.Count);
 	}
 	void LoadInDialogue(string level){
 		loadText.Load("Assets/Character Dialogue/npc/"+ level + ".txt", LoadText.characters.npc);
