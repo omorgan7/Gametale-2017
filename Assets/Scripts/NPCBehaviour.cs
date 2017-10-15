@@ -21,7 +21,7 @@ public class NPCBehaviour : MonoBehaviour {
 	}
 	
 	void FixedUpdate(){
-		if((Input.GetButtonUp("Submit"))&&(DialogueSystemNPC.isDone)){
+		if((Input.GetButtonUp("Submit"))){
 			turnOffBox();
 			var gameobjects = GameObject.FindGameObjectsWithTag("Player");
 			gameobjects[0].GetComponent<InteractiveSpriteMover>().moveAgain();

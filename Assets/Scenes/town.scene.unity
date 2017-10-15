@@ -626,6 +626,8 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114666190420675236, guid: 6b062b795a71be340815c5463f125a5c, type: 2}
+    - {fileID: 114249367101733428, guid: 6b062b795a71be340815c5463f125a5c, type: 2}
+    - {fileID: 114174193750250000, guid: 6b062b795a71be340815c5463f125a5c, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 6b062b795a71be340815c5463f125a5c, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &1151207613
@@ -752,35 +754,6 @@ GameObject:
   m_PrefabParentObject: {fileID: 1695522433209202, guid: 243272c242efb4546b7be0502fad2a6f,
     type: 2}
   m_PrefabInternal: {fileID: 1824380727}
---- !u!114 &1347415498
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1347415497}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8def2c303e208d840947f0367e0cf1ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  catchphrase: 6
-  nameOfNPC: Head Monk
-  speechBubble: {fileID: 1542382921259858, guid: d3e1654edb721a6409cd39fc10f200f8,
-    type: 2}
---- !u!114 &1347415505
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1347415497}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43d3e30ea9e07432c8d8653f6eba0bde, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spriteMover: {fileID: 0}
-  randomThreshold: 0.1
-  moveDuration: 1
 --- !u!114 &1347415506
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -846,8 +819,68 @@ Prefab:
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114174193750250000, guid: 6b062b795a71be340815c5463f125a5c, type: 2}
+    - {fileID: 114249367101733428, guid: 6b062b795a71be340815c5463f125a5c, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 6b062b795a71be340815c5463f125a5c, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1 &1376269020 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1326490953508228, guid: 6b062b795a71be340815c5463f125a5c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1376269019}
+--- !u!114 &1376269021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1376269020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08521797d6c3c4615a0c1a85ffae114c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1001 &1447275025
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4185734888126120, guid: 914936ddacf42ec46bfe90916747bf08, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -4.31
+      objectReference: {fileID: 0}
+    - target: {fileID: 4185734888126120, guid: 914936ddacf42ec46bfe90916747bf08, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.56
+      objectReference: {fileID: 0}
+    - target: {fileID: 4185734888126120, guid: 914936ddacf42ec46bfe90916747bf08, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4185734888126120, guid: 914936ddacf42ec46bfe90916747bf08, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4185734888126120, guid: 914936ddacf42ec46bfe90916747bf08, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4185734888126120, guid: 914936ddacf42ec46bfe90916747bf08, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4185734888126120, guid: 914936ddacf42ec46bfe90916747bf08, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4185734888126120, guid: 914936ddacf42ec46bfe90916747bf08, type: 2}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 914936ddacf42ec46bfe90916747bf08, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1626453238
 GameObject:
@@ -985,7 +1018,8 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114249367101733428, guid: 6b062b795a71be340815c5463f125a5c, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 6b062b795a71be340815c5463f125a5c, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1694668364
@@ -1147,37 +1181,3 @@ MonoBehaviour:
   spriteMover: {fileID: 0}
   randomThreshold: 0.1
   moveDuration: 1
---- !u!1 &1873229666 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1326490953508228, guid: 6b062b795a71be340815c5463f125a5c,
-    type: 2}
-  m_PrefabInternal: {fileID: 897632944}
---- !u!114 &1873229667
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1873229666}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43d3e30ea9e07432c8d8653f6eba0bde, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spriteMover: {fileID: 0}
-  randomThreshold: 0.1
-  moveDuration: 1
---- !u!114 &1873229668
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1873229666}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8def2c303e208d840947f0367e0cf1ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  catchphrase: 3
-  nameOfNPC: Villager
-  speechBubble: {fileID: 1542382921259858, guid: d3e1654edb721a6409cd39fc10f200f8,
-    type: 2}

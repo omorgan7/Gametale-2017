@@ -36,7 +36,7 @@ public class SpriteAnimator : MonoBehaviour {
 	}
 	public void startAnimation(){
 		needsStarting = isPlaying || (isPlaying == false) ;
-		print("startAnimation");
+		//print("startAnimation");
 		isPlaying = isPlaying || (isPlaying == false) ;
 		//needsStarting = isPlaying 
 		// if(!isPlaying){
@@ -46,7 +46,7 @@ public class SpriteAnimator : MonoBehaviour {
 	}
 	public void stopAnimation(){
 		StopCoroutine(animation());
-		print("stop");
+//		print("stop");
 		isPlaying = false;
 		indexDirection = 1;
 		spriteIndex = 0;

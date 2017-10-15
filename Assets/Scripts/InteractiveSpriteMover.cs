@@ -45,12 +45,13 @@ public class InteractiveSpriteMover : MonoBehaviour {
 
 	}
 	void OnTriggerStay2D(Collider2D other){
-		if(other.gameObject.tag == "bunbuku"){
-		//	GameObject kettle = GameObject.FindGameObjectWithTag("kettle");
+		// if(other.gameObject.tag == "bunbuku"){
+		// 	GameObject kettle = GameObject.FindGameObjectWithTag("kettle");
+		// 	kettle.SetActive(true);
 
-			//free bunbuku
-			//kettle appears
-		}
+		// 	//free bunbuku
+		// 	//kettle appears
+		// }
 		// if(other.gameObject.tag == "kettle"){ //collect kettle
 		// 	if(Input.GetButtonUp("Submit")){
 		// 		print("got kettle");
@@ -86,7 +87,7 @@ public class InteractiveSpriteMover : MonoBehaviour {
 			other.gameObject.GetComponent<NPCSpriteMover>().stopMoving();
 			_npc = other.gameObject.GetComponent<NPCBehaviour>();
 			//if(!hasKettle){
-				_npc.turnOnBox();
+			_npc.turnOnBox();
 			// }
 			// else{
 			// 	if(_npc.getName()=="Head Monk"){

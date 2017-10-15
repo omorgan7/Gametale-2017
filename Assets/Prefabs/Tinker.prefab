@@ -45,11 +45,10 @@ GameObject:
   - component: {fileID: 50803610296700618}
   - component: {fileID: 61167791726460506}
   - component: {fileID: 114026990023328666}
-  - component: {fileID: 114174193750250000}
-  - component: {fileID: 114249367101733428}
+  - component: {fileID: 114215023402261366}
   m_Layer: 0
   m_Name: Tinker
-  m_TagString: npc
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -163,35 +162,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.1
---- !u!114 &114174193750250000
+--- !u!114 &114215023402261366
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1326490953508228}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43d3e30ea9e07432c8d8653f6eba0bde, type: 3}
+  m_Script: {fileID: 11500000, guid: 08521797d6c3c4615a0c1a85ffae114c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteMover: {fileID: 0}
-  randomThreshold: 0.1
-  moveDuration: 1
---- !u!114 &114249367101733428
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1326490953508228}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8def2c303e208d840947f0367e0cf1ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  catchphrase: 3
-  nameOfNPC: Villager
-  speechBubble: {fileID: 1542382921259858, guid: d3e1654edb721a6409cd39fc10f200f8,
-    type: 2}
 --- !u!114 &114289588614115190
 MonoBehaviour:
   m_ObjectHideFlags: 1
