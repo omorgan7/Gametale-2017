@@ -57,12 +57,13 @@ public class NPCSpriteMover : MonoBehaviour {
 	}
 
 	void FixedUpdate(){
-		// if(!isMoving){
-		// 	pauseMoving();
-		// 	return;
-		// }
+		if(!isMoving){
+			pauseMoving();
+			return;
+		}
 		if(forward == 0 && right == 0){
 			spriteMover.pauseMoving();
+			return;
 		}
 		if(forward < 0f){
 			spriteMover.moveForward(forward);
