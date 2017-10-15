@@ -46,7 +46,6 @@ public class InteractiveSpriteMover : MonoBehaviour {
 
 	}
 	void OnTriggerEnter2D(Collider2D other){
-		print("in range");
 		if(other.gameObject.tag != "npc"){
 			return;
 		}
@@ -86,7 +85,6 @@ public class InteractiveSpriteMover : MonoBehaviour {
 		// }	
 	}
 	void OnTriggerStay2D(Collider2D other){
-		print("in range");
 		if(other.gameObject.tag != "npc"){
 			return;
 		}

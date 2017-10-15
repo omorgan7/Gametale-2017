@@ -45,7 +45,6 @@ public class NPCBehaviour : MonoBehaviour {
 		box.SetActive(false);
 	}
 	public void turnOnBox(){
-		print("turned on box");
 		if(!box){
 			return;
 		}
