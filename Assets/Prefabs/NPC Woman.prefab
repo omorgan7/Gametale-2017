@@ -75,7 +75,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1414373049849192}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -7.6, y: 2.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4379139465045294}
@@ -193,7 +193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2b406bb4074e42d08f8d83b36b05de7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  catchphrase: 0
+  catchphrase: 2
   nameOfNPC: 
   speechBubble: {fileID: 1542382921259858, guid: d3e1654edb721a6409cd39fc10f200f8,
     type: 2}
@@ -249,7 +249,7 @@ MonoBehaviour:
   sprites:
   - {fileID: 21300000, guid: 3fc91d1a4d1f4491a9ac6dc3ae3da461, type: 3}
   - {fileID: 21300000, guid: a2903d9cb35a743bd90ad758e7369c1d, type: 3}
-  - {fileID: 21300000, guid: bdc13481bd42642ec9cd4c8e090f2194, type: 3}
+  - {fileID: 21300000, guid: 88fc439ccf12b7c4c9fd436f3449aa94, type: 3}
   isLooping: 1
   idleIndex: 1
   frameTime: 0.2
@@ -266,9 +266,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprites:
-  - {fileID: 21300000, guid: 646eaff9831614eb185be5629638b4d7, type: 3}
+  - {fileID: 21300000, guid: ad0ad2e90fe5a784ea7a5eb4c2043b93, type: 3}
   - {fileID: 21300000, guid: e9070036852d94d2599ffce855122c7f, type: 3}
-  - {fileID: 21300000, guid: 91cb2f0937a9243518ddf77b15d2e71d, type: 3}
+  - {fileID: 21300000, guid: d8f499d51a74b0b4cb84e63caaef6a4f, type: 3}
   isLooping: 1
   idleIndex: 1
   frameTime: 0.2
@@ -285,9 +285,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprites:
-  - {fileID: 21300000, guid: ee1190cc8ff7244a5b37f0de4fecd9a0, type: 3}
+  - {fileID: 21300000, guid: 2cdf81f0c97914b4a87ebeddf507876b, type: 3}
   - {fileID: 21300000, guid: b02dcdf4735124ca5a70d924207c651c, type: 3}
-  - {fileID: 21300000, guid: c9a592e1b14674e648ff5c6de6b91619, type: 3}
+  - {fileID: 21300000, guid: b02dcdf4735124ca5a70d924207c651c, type: 3}
   isLooping: 1
   idleIndex: 1
   frameTime: 0.2
@@ -304,9 +304,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprites:
-  - {fileID: 21300000, guid: 0d367c0ca903e4916aeeaedd9de2412e, type: 3}
+  - {fileID: 21300000, guid: e5313a0551c84744ca55d105b768064e, type: 3}
   - {fileID: 21300000, guid: 6a5736e779c6843099f54adbf4555e25, type: 3}
-  - {fileID: 21300000, guid: c4a9e68e37f614a24844aae4d269f469, type: 3}
+  - {fileID: 21300000, guid: 327933592098ceb488f398dc72eace10, type: 3}
   isLooping: 1
   idleIndex: 1
   frameTime: 0.2
