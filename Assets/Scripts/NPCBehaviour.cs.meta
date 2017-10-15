@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: d2b406bb4074e42d08f8d83b36b05de7
+timeCreated: 1508005254
+licenseType: Free
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - speechBubble: {fileID: 1542382921259858, guid: d3e1654edb721a6409cd39fc10f200f8,
+      type: 2}
+  - CharName: {fileID: 1280201658361036, guid: d3e1654edb721a6409cd39fc10f200f8, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
