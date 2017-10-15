@@ -34,7 +34,9 @@ public class NPCSpriteMover : MonoBehaviour {
 				}
 			}
 			else{
-				pauseMoving();
+				right = 0;
+				forward = 0;
+				//pauseMoving();
 			}
 		}
 	}
@@ -55,9 +57,12 @@ public class NPCSpriteMover : MonoBehaviour {
 	}
 
 	void FixedUpdate(){
-		if(!isMoving){
-			pauseMoving();
-			return;
+		// if(!isMoving){
+		// 	pauseMoving();
+		// 	return;
+		// }
+		if(forward == 0 && right == 0){
+			spriteMover.pauseMoving();
 		}
 		if(forward < 0f){
 			spriteMover.moveForward(forward);
@@ -70,9 +75,6 @@ public class NPCSpriteMover : MonoBehaviour {
 		}
 		else if(right < 0f){
 			spriteMover.moveLeft(right);
-		}
-		if(forward == 0 && right == 0){
-			spriteMover.stopMoving();
 		}
 	}
 }
