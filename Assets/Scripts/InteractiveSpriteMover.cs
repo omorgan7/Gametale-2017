@@ -14,7 +14,8 @@ public class InteractiveSpriteMover : MonoBehaviour {
 	public GameObject speechBubble;
 	public GameObject kettle;
 	public GameObject textPanel;
-
+	float speedMultiplier = 3f;
+	float currentSpeed = 1f;
 	EndLevel endLevel;
 	
 	//LoadText loadText = new LoadText();
@@ -32,26 +33,30 @@ public class InteractiveSpriteMover : MonoBehaviour {
 
 		right = Input.GetAxisRaw("Horizontal");
 		forward = Input.GetAxisRaw("Vertical");
+		if(Input.GetKey(KeyCode.LeftShift)){
+			currentSpeed = speedMultiplier;
+		}
+		else{
+			currentSpeed = 1f;
+		}
 		//print(new Vector2(right, forward));
 		if(forward == 0 && right == 0){
 			spriteMover.pauseMoving();
 			return;
 		}
 		if(right > 0f){
-			spriteMover.moveRight(right);
+			spriteMover.moveRight(right*currentSpeed);
 		}
 		else if(right < 0f){
-			spriteMover.moveLeft(right);
+			spriteMover.moveLeft(right*currentSpeed);
 			return;
 		}
 		if(forward < 0f){
-			spriteMover.moveForward(forward);
+			spriteMover.moveForward(forward*currentSpeed);
 		}
 		else if(forward > 0f){
-			spriteMover.moveBackward(forward);
+			spriteMover.moveBackward(forward*currentSpeed);
 		}
-
-
 	}
 	void OnTriggerEnter2D(Collider2D other){
 		if(other.gameObject.tag != "npc"){
