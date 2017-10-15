@@ -9,6 +9,7 @@ TagManager:
   - kettle
   - bunbuku
   - door
+  - fire
   layers:
   - Default
   - TransparentFX
