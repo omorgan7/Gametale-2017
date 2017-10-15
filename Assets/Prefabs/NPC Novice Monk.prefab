@@ -44,7 +44,6 @@ GameObject:
   - component: {fileID: 61478906695259826}
   - component: {fileID: 50686917035467680}
   - component: {fileID: 61925697139523760}
-  - component: {fileID: 114819490036011894}
   - component: {fileID: 114133648067566756}
   - component: {fileID: 114725258766914366}
   - component: {fileID: 114888176933667428}
@@ -265,20 +264,6 @@ MonoBehaviour:
   nameOfNPC: 
   speechBubble: {fileID: 1542382921259858, guid: d3e1654edb721a6409cd39fc10f200f8,
     type: 2}
---- !u!114 &114819490036011894
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1567675817320126}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08521797d6c3c4615a0c1a85ffae114c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speechBubble: {fileID: 0}
-  kettle: {fileID: 0}
-  textPanel: {fileID: 0}
 --- !u!114 &114841762130648342
 MonoBehaviour:
   m_ObjectHideFlags: 1
