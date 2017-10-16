@@ -9,8 +9,14 @@ public class KettleTransformation : MonoBehaviour {
 	public GameObject kettle;
 	public GameObject bunbuku;
 	bool transformationBegun = false;
+	DialogueSystemBadger dialogueSystemBadger;
+	private GameObject box;
+	public GameObject speechBubble;
 	
 	// Update is called once per frame
+	void Start(){
+		dialogueSystemBadger = GameObject.Find("ScriptingSystem").GetComponent<DialogueSystemBadger>();
+	} 
 	void Update () {
 		if(kettle.activeSelf & !bunbuku.activeSelf){
 			if(!transformationBegun){
@@ -31,5 +37,6 @@ public class KettleTransformation : MonoBehaviour {
 		yield return new WaitForSecondsRealtime(1f);
 		kettle.SetActive(false);
 		bunbuku.SetActive(true);
+		StartCoroutine(dialogueSystemBadger.speak(0,0, speechBubble, box));
 	}
 }

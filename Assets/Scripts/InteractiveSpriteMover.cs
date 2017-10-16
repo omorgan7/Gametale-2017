@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class InteractiveSpriteMover : MonoBehaviour {
 	// Use this for initialization
@@ -117,7 +118,7 @@ public class InteractiveSpriteMover : MonoBehaviour {
 		isTalking = false;
 	}
 	void OnTriggerStay2D(Collider2D other){
-		if(other.gameObject.tag == "bunbuku"){
+		if((other.gameObject.tag == "bunbuku")&&(SceneManager.GetActiveScene().name == "town.scene")){
 			if(isTalking){
 				return;
 			}
@@ -125,7 +126,6 @@ public class InteractiveSpriteMover : MonoBehaviour {
 				isTalking =  true;
 				DialogueSystemBadger.isTalking = true;
 				StartCoroutine(waitBunbuku());
-				print("here");
 				StartCoroutine(other.gameObject.GetComponent<DialogueSystemBadger>().speak(0,0, speechBubble,bunbukuBox));
 				StartCoroutine(other.gameObject.GetComponent<DialogueSystemBadger>().disappear());
 				kettle.SetActive(true);
