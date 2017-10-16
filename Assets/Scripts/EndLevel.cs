@@ -29,6 +29,7 @@ public class EndLevel : MonoBehaviour {
 		if((sceneFinished)&&(SceneManager.GetActiveScene().name == "temple2.scene")){
 			StartCoroutine(finalFade());
 			fadeController.FadeOut();
+			sceneFinished = false;
 		}
 		if((sceneFinished)&&(SceneManager.GetActiveScene().name == "town3.scene")){
 			fadeController.FadeOut();
