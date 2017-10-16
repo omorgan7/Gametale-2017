@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class EndLevel : MonoBehaviour {
 	static public bool sceneFinished = false;
 	public GameObject textPanel;
+	public AudioSource audioSource;
+	bool isQuitting = false;
 	private GameObject box;
 	LoadText loadText;
 
@@ -31,7 +33,7 @@ public class EndLevel : MonoBehaviour {
 			fadeController.FadeOut();
 			sceneFinished = false;
 		}
-		if((sceneFinished)&&(SceneManager.GetActiveScene().name == "town3.scene")){
+		else if((sceneFinished)&&(SceneManager.GetActiveScene().name == "town3.scene")){
 			fadeController.FadeOut();
 				StartCoroutine(loadLevel());
 				//SceneManager.LoadScene("temple.scene");
@@ -48,7 +50,11 @@ public class EndLevel : MonoBehaviour {
 			}
 		}
 	}
-
+	void Update(){
+		if(isQuitting){
+			audioSource.volume -= 0.04f*Time.deltaTime;
+		}
+	}
 	public void endLevelText(GameObject textPanel){
 		box = Instantiate(textPanel, Vector3.zero, Quaternion.identity); 
 		Text txt = box.transform.GetChild(0).GetChild(0).GetComponent<Text>();
@@ -78,7 +84,9 @@ public class EndLevel : MonoBehaviour {
 	}
 
 	IEnumerator finalFade(){
+		isQuitting = true;
 		yield return new WaitForSecondsRealtime(5f);
+		Application.Quit();
 	}
 
 }

@@ -5155,7 +5155,7 @@ Prefab:
     - target: {fileID: 114929645771466316, guid: 716d3e38923cc4a378e427b2a9a9349f,
         type: 2}
       propertyPath: nextAnimation
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 716d3e38923cc4a378e427b2a9a9349f, type: 2}
@@ -14637,6 +14637,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textPanel: {fileID: 1506839909541514, guid: f5fff3a4797244a3c99b8773e2503888, type: 2}
+  audioSource: {fileID: 39150616}
 --- !u!114 &1475217118
 MonoBehaviour:
   m_ObjectHideFlags: 0
