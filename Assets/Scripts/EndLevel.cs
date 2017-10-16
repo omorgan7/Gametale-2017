@@ -26,7 +26,14 @@ public class EndLevel : MonoBehaviour {
 	void FixedUpdate(){
 //		print(fadeController == null);
 		//print(gameObject.name);
-		if(sceneFinished){
+		if((sceneFinished)&&(SceneManager.GetActiveScene().name == "town3.scene")){
+			fadeController.FadeOut();
+				StartCoroutine(loadLevel());
+				//SceneManager.LoadScene("temple.scene");
+				sceneFinished = false;
+				DialogueSystemNPC.isDone = false;
+		}
+		else if(sceneFinished){
 			if(Input.GetButtonUp("Submit")){
 				fadeController.FadeOut();
 				StartCoroutine(loadLevel());
