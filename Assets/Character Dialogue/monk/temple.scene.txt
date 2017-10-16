@@ -1,6 +1,6 @@
 "Hello master!"
 "Greetings master!"
-"Supberb new Kettle, I bet you can't wait to try it out"
-"Good evening master"
-"I lit the kettle fire in anticipation of your return"
+“What a beautiful kettle, I bet you can't wait to try it out.”
+"Good evening master.”
+"I lit the kettle fire in anticipation of your return.”
 "All this enlightenment has tired me out, I think I may rest soon!"
