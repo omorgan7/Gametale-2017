@@ -1,0 +1,17 @@
+//conversation is outside a bit south of the temple.
+tinker: Oh man we've made a small fortune!
+tinker: How can I ever repay you?
+badger: It was I who owed this debt...
+badger: But it is paid now!
+tinker: What do you mean?
+badger: ...
+badger: I think I must go now.
+tinker: So soon? Why?
+badger: I think it is time I settled down.
+badger: Perhaps for a nice cup of tea with those monks.
+tinker: But...
+badger: I insist.
+tinker: ...
+badger: Thank you.
+//badger transforms into kettle: tinker picks up kettle, moves to the temple and drops kettle.
+//screen slowly fades to black
