@@ -8,7 +8,7 @@ public class DialogueSystemBadger : MonoBehaviour {
 	LoadText loadText;
 	static public bool isTalking = false;
 	void Start () {
-		loadText = GameObject.Find("ScriptingSystem").GetComponent<LoadText>();
+		loadText = GameObject.Find("EventSystem").GetComponent<LoadText>();
 		LoadInDialogue(SceneManager.GetActiveScene ().name);
 	}
 	
