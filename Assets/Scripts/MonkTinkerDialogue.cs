@@ -15,6 +15,7 @@ public class MonkTinkerDialogue : MonoBehaviour {
 	private bool isTalking = false;
 	SpriteAnimationController MonkSAC;
 	SpriteAnimationController TinkerSAC;
+	private bool animating = false;
 
 
 	// Use this for initialization
@@ -56,7 +57,7 @@ public class MonkTinkerDialogue : MonoBehaviour {
 		}
 	}
 	IEnumerator speak(int i){
-		while((DialogueSystemMonk.isTalking)||(DialogueSystemBadger.isTalking)||(DialogueSystemTinker.isTalking)){
+		while((DialogueSystemMonk.isTalking)||(DialogueSystemBadger.isTalking)||(DialogueSystemTinker.isTalking)||(animating)){
 			yield return null;
 		}
 		if((Input.GetButtonUp("Submit"))){
@@ -66,6 +67,7 @@ public class MonkTinkerDialogue : MonoBehaviour {
 	}
 
 	IEnumerator Animation1(){ 
+		animating = true;
 		TinkerSAC.nextAnimation = Enums.AnimStates.MoveForward;
 		yield return new WaitForSecondsRealtime(1f);
 		MonkSAC.nextAnimation = Enums.AnimStates.MoveForward;
@@ -74,6 +76,7 @@ public class MonkTinkerDialogue : MonoBehaviour {
 		yield return (0.2f);
 		kettle.SetActive(true);
 		yield return (0.5f);
+		animating = false;
 	
 	}
 }
