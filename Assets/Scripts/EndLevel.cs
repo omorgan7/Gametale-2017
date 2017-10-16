@@ -55,10 +55,7 @@ public class EndLevel : MonoBehaviour {
 			SceneManager.LoadScene("house_monk-tinker-chat");
 		}
 		else if (SceneManager.GetActiveScene().name == "house_monk-tinker-chat"){
-			SceneManager.LoadScene("town2.scene");
-		}
-		else if (SceneManager.GetActiveScene().name == "town3.scene"){
-			SceneManager.LoadScene("temple2.scene");
+			//SceneManager.LoadScene("town2");
 		}
 	}
 
