@@ -17,14 +17,7 @@ public class DialogueSystemTinker : MonoBehaviour {
 		loadText.Load("Assets/Character Dialogue/tinker/"+level + ".txt", LoadText.characters.tinker);
 	}
 	// Update is called once per frame
-	void Update () {
-
-		if (isTalking == true){
-		//speak
-			isTalking = false;
-		}
-		
-	}
+	
 
 	public IEnumerator speak(int startIndex, int EndIndex, GameObject speechBubble, GameObject box){
 		isTalking = true;
