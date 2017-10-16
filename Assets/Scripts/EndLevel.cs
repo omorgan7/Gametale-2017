@@ -28,7 +28,7 @@ public class EndLevel : MonoBehaviour {
 			if(Input.GetButtonUp("Submit")){
 				fadeController.FadeOut();
 				StartCoroutine(loadLevel());
-				SceneManager.LoadScene("temple.scene");
+				//SceneManager.LoadScene("temple.scene");
 				sceneFinished = false;
 				DialogueSystemNPC.isDone = false;
 			}
@@ -50,7 +50,7 @@ public class EndLevel : MonoBehaviour {
 			SceneManager.LoadScene("temple.scene");
 		}
 		else if (SceneManager.GetActiveScene().name == "temple.scene"){
-			//load next
+			SceneManager.LoadScene("house.scene");
 		}
 	}
 }
