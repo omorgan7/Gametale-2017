@@ -2965,138 +2965,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
---- !u!1 &268101270
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 268101273}
-  - component: {fileID: 268101272}
-  - component: {fileID: 268101271}
-  - component: {fileID: 268101274}
-  - component: {fileID: 268101275}
-  - component: {fileID: 268101276}
-  - component: {fileID: 268101277}
-  - component: {fileID: 268101278}
-  m_Layer: 0
-  m_Name: ScriptingSystem
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &268101271
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 268101270}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: adc4196e6e855364cb5671fd54baefcd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speechBubble: {fileID: 1542382921259858, guid: d3e1654edb721a6409cd39fc10f200f8,
-    type: 2}
---- !u!114 &268101272
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 268101270}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3304cd397fc2fea4aa4e8c093d8755ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tinkerDialogue: []
-  monkDialogue: []
-  badgerDialogue: []
-  npcDialogue: []
-  narration: []
-  letterPause: 0.15
-  sentencePause: 1
---- !u!4 &268101273
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 268101270}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.629316, y: 13.930972, z: -0.20312664}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &268101274
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 268101270}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bee39feebcc9e4e438ab4b1c8c418d78, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textPanel: {fileID: 1506839909541514, guid: f5fff3a4797244a3c99b8773e2503888, type: 2}
---- !u!114 &268101275
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 268101270}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdc110826f1c14f6d96772062e95d2c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  monkContainer: {fileID: 1348429546}
-  bunbuku: {fileID: 1551576911}
-  hasBeenCaught: 0
---- !u!114 &268101276
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 268101270}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c508db751b9257748b5a5db366f8a0f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  kettle: {fileID: 63491170}
-  bunbuku: {fileID: 1551576911}
-  speechBubble: {fileID: 1542382921259858, guid: d3e1654edb721a6409cd39fc10f200f8,
-    type: 2}
---- !u!114 &268101277
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 268101270}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ed578111e2a54136ad0da6b59e1a974, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fadeObject: {fileID: 437858571}
-  duration: 1
-  isDone: 0
---- !u!114 &268101278
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 268101270}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f0d4ff234446eb44daf0d00d7d161c9f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &299711792
 GameObject:
   m_ObjectHideFlags: 0
@@ -14695,6 +14563,13 @@ GameObject:
   - component: {fileID: 1475217112}
   - component: {fileID: 1475217111}
   - component: {fileID: 1475217110}
+  - component: {fileID: 1475217119}
+  - component: {fileID: 1475217118}
+  - component: {fileID: 1475217117}
+  - component: {fileID: 1475217116}
+  - component: {fileID: 1475217115}
+  - component: {fileID: 1475217114}
+  - component: {fileID: 1475217113}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -14747,6 +14622,103 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1475217113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1475217109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0d4ff234446eb44daf0d00d7d161c9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1475217114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1475217109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ed578111e2a54136ad0da6b59e1a974, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeObject: {fileID: 437858571}
+  duration: 1
+  isDone: 0
+--- !u!114 &1475217115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1475217109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c508db751b9257748b5a5db366f8a0f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kettle: {fileID: 63491170}
+  bunbuku: {fileID: 1551576911}
+  speechBubble: {fileID: 1542382921259858, guid: d3e1654edb721a6409cd39fc10f200f8,
+    type: 2}
+--- !u!114 &1475217116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1475217109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdc110826f1c14f6d96772062e95d2c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  monkContainer: {fileID: 1348429546}
+  bunbuku: {fileID: 1551576911}
+  hasBeenCaught: 0
+--- !u!114 &1475217117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1475217109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bee39feebcc9e4e438ab4b1c8c418d78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textPanel: {fileID: 1506839909541514, guid: f5fff3a4797244a3c99b8773e2503888, type: 2}
+--- !u!114 &1475217118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1475217109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3304cd397fc2fea4aa4e8c093d8755ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tinkerDialogue: []
+  monkDialogue: []
+  badgerDialogue: []
+  npcDialogue: []
+  narration: []
+  letterPause: 0.15
+  sentencePause: 1
+--- !u!114 &1475217119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1475217109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adc4196e6e855364cb5671fd54baefcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speechBubble: {fileID: 1542382921259858, guid: d3e1654edb721a6409cd39fc10f200f8,
+    type: 2}
 --- !u!1 &1483774211
 GameObject:
   m_ObjectHideFlags: 0
