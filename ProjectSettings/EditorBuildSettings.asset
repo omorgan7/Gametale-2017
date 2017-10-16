@@ -21,6 +21,9 @@ EditorBuildSettings:
     path: Assets/Scenes/town2.scene.unity
     guid: 7be5cd00870cd41a3877857f4d9a62e9
   - enabled: 1
+    path: Assets/Scenes/performance.scene.unity
+    guid: 22be0d97e34534ffcb2ad82f5d8e5bdd
+  - enabled: 1
     path: Assets/Scenes/town3.scene.unity
     guid: 8d5b87c9d5b83024b8350a32576966c2
   - enabled: 1
