@@ -9,10 +9,13 @@ public class DialogueSystemMonk : MonoBehaviour {
 	static public bool isTalking = false;
 	void Start () {
 		loadText = GameObject.Find("EventSystem").GetComponent<LoadText>();
-		LoadInDialogue(SceneManager.GetActiveScene ().name);
+		StartCoroutine(LoadInDialogue(SceneManager.GetActiveScene ().name));
 	}
 	
-	void LoadInDialogue(string level){
+	IEnumerator LoadInDialogue(string level){
+		while(!loadText.isDone){
+			yield return null;
+		}
 		loadText.Load("Assets/Character Dialogue/monk/" +level + ".txt", LoadText.characters.monk);
 	}
 	

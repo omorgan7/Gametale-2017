@@ -1,9 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BunbukuTinkerDialogue : MonoBehaviour {
 	private int step = 0;
+	public GameObject tinker;
+	public GameObject bunbuku;
+	public GameObject kettle;
+	
+	SpriteAnimationController TinkerSAC;
 
 	private DialogueSystemBadger dialogueSystemBadger;
 	private DialogueSystemTinker dialogueSystemTinker;
@@ -16,6 +22,7 @@ public class BunbukuTinkerDialogue : MonoBehaviour {
 	void Start () {
 		dialogueSystemBadger = GameObject.Find("EventSystem").GetComponent<DialogueSystemBadger>();
 		dialogueSystemTinker = GameObject.Find("EventSystem").GetComponent<DialogueSystemTinker>();
+		TinkerSAC = tinker.transform.GetChild(0).GetComponent<SpriteAnimationController>();
 	}
 	
 	// Update is called once per frame
@@ -54,8 +61,7 @@ public class BunbukuTinkerDialogue : MonoBehaviour {
 			StartCoroutine(dialogueSystemBadger.speak(7,7, speechBubble, badgerBox));
 		}
 		if(i == 10){
-			EndLevel.sceneFinished = true;
-			//animation!
+			StartCoroutine(animation());
 		}
 	}
 	IEnumerator speak(int i){
@@ -66,5 +72,35 @@ public class BunbukuTinkerDialogue : MonoBehaviour {
 			conversation(i);
 			++step;
 		}
+	}
+
+	IEnumerator animation(){
+		var bunbukuController =  bunbuku.transform.GetChild(0).GetComponent<SpriteAnimationController>();
+		yield return new WaitForSecondsRealtime(0.5f);
+		float _elapsedTime = 0f;
+		float _yPos = bunbuku.transform.position.y;
+		int x = -1;
+		while(_elapsedTime <= 2.35f){
+		x *= -1;
+		bunbuku.transform.position = new Vector3(bunbuku.transform.position.x + 0.1f*x, _yPos ,0);
+		_elapsedTime += Time.deltaTime;
+		yield return new WaitForEndOfFrame();
+		}
+		kettle.SetActive(true);
+		bunbuku.SetActive(false);
+		yield return new WaitForSecondsRealtime(1.0f);
+		TinkerSAC.nextAnimation = Enums.AnimStates.MoveLeft;
+		yield return new WaitForSecondsRealtime(1.0f);
+		kettle.SetActive(false);
+		yield return (1f);
+		TinkerSAC.nextAnimation = Enums.AnimStates.MoveBack;
+		float elapsedTime = 0f;
+		float yPos = tinker.transform.position.y;
+		while(elapsedTime <= 2.35f){
+		tinker.transform.position = new Vector3(tinker.transform.position.x, yPos + Mathf.SmoothStep(0f,5,0.25f*elapsedTime),0);
+		elapsedTime += Time.deltaTime;
+		yield return new WaitForEndOfFrame();
+		}
+		EndLevel.sceneFinished=true;
 	}
 }

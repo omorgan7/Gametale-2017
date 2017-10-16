@@ -26,7 +26,14 @@ public class EndLevel : MonoBehaviour {
 	void FixedUpdate(){
 //		print(fadeController == null);
 		//print(gameObject.name);
-		if(sceneFinished){
+		if((sceneFinished)&&(SceneManager.GetActiveScene().name == "town3.scene")){
+			fadeController.FadeOut();
+				StartCoroutine(loadLevel());
+				//SceneManager.LoadScene("temple.scene");
+				sceneFinished = false;
+				DialogueSystemNPC.isDone = false;
+		}
+		else if(sceneFinished){
 			if(Input.GetButtonUp("Submit")){
 				fadeController.FadeOut();
 				StartCoroutine(loadLevel());
@@ -56,6 +63,9 @@ public class EndLevel : MonoBehaviour {
 		}
 		else if (SceneManager.GetActiveScene().name == "house_monk-tinker-chat"){
 			SceneManager.LoadScene("town2.scene");
+		}
+		else if (SceneManager.GetActiveScene().name == "town2.scene"){
+			SceneManager.LoadScene("performance.scene");
 		}
 		else if (SceneManager.GetActiveScene().name == "town3.scene"){
 			SceneManager.LoadScene("temple2.scene");
