@@ -19,7 +19,9 @@ public class EndLevel : MonoBehaviour {
 	
 	// Update is called once per frame
 	void LoadInDialogue(string level){
-		loadText.Load("Assets/Character Dialogue/sceneDescription/" +level + ".txt", LoadText.characters.narrator);
+		if(loadText){
+			loadText.Load("Assets/Character Dialogue/sceneDescription/" +level + ".txt", LoadText.characters.narrator);
+		}
 	}
 	void FixedUpdate(){
 //		print(fadeController == null);
