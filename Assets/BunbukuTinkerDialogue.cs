@@ -53,6 +53,10 @@ public class BunbukuTinkerDialogue : MonoBehaviour {
 		if(i==9){
 			StartCoroutine(dialogueSystemBadger.speak(7,7, speechBubble, badgerBox));
 		}
+		if(i == 10){
+			EndLevel.sceneFinished = true;
+			//animation!
+		}
 	}
 	IEnumerator speak(int i){
 		while((DialogueSystemBadger.isTalking)||(DialogueSystemTinker.isTalking)){
