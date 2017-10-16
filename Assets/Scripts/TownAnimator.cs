@@ -5,6 +5,7 @@ using UnityEngine;
 public class TownAnimator : MonoBehaviour {
 
 	// Use this for initialization
+	private bool canLeave = false;
 	public GameObject npcContainer;
 	public Transform bunbuku;
 	Transform[] npcs;
@@ -17,8 +18,16 @@ public class TownAnimator : MonoBehaviour {
 		}
 		StartCoroutine(npcJumpingRoutine());
 		StartCoroutine(bunbukuJumpingRoutine());
+		StartCoroutine(setCanLeave());
 	}
 
+	void FixedUpdate(){
+		if(canLeave){
+			if((Input.GetButtonUp("Submit"))){
+				EndLevel.sceneFinished = true;
+			}
+		}
+	}
 	IEnumerator npcJumpingRoutine(){
 		yield return new WaitForSecondsRealtime(10f);
 		float elapsedTime = 0f;
@@ -74,5 +83,8 @@ public class TownAnimator : MonoBehaviour {
 			yield return new WaitForSecondsRealtime(0.25f);
 		}
 	}
-
+	IEnumerator setCanLeave(){
+		yield return new WaitForSecondsRealtime(5.0f);
+		canLeave = true;
+	}
 }
