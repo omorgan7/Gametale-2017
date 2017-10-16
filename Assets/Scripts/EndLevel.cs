@@ -26,6 +26,10 @@ public class EndLevel : MonoBehaviour {
 	void FixedUpdate(){
 //		print(fadeController == null);
 		//print(gameObject.name);
+		if((sceneFinished)&&(SceneManager.GetActiveScene().name == "temple2.scene")){
+			StartCoroutine(finalFade());
+			fadeController.FadeOut();
+		}
 		if((sceneFinished)&&(SceneManager.GetActiveScene().name == "town3.scene")){
 			fadeController.FadeOut();
 				StartCoroutine(loadLevel());
@@ -70,6 +74,10 @@ public class EndLevel : MonoBehaviour {
 		else if (SceneManager.GetActiveScene().name == "town3.scene"){
 			SceneManager.LoadScene("temple2.scene");
 		}
+	}
+
+	IEnumerator finalFade(){
+		yield return new WaitForSecondsRealtime(5f);
 	}
 
 }
