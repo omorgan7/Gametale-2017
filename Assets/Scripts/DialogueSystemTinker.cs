@@ -11,7 +11,7 @@ public class DialogueSystemTinker : MonoBehaviour {
 	private GameObject box;
 	LoadText loadText;
 	void Start () {
-		loadText = GameObject.Find("ScriptingSystem").GetComponent<LoadText>();
+		loadText = GameObject.Find("EventSystem").GetComponent<LoadText>();
 		LoadInDialogue(SceneManager.GetActiveScene ().name);
 		StartCoroutine( speak(0,4));
 	}

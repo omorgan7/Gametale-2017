@@ -15,7 +15,7 @@ public class KettleTransformation : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Start(){
-		dialogueSystemBadger = GameObject.Find("ScriptingSystem").GetComponent<DialogueSystemBadger>();
+		dialogueSystemBadger = GameObject.Find("EventSystem").GetComponent<DialogueSystemBadger>();
 	} 
 	void Update () {
 		if(kettle.activeSelf & !bunbuku.activeSelf){

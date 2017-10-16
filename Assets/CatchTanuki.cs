@@ -11,8 +11,8 @@ public class CatchTanuki : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		wildBehaviour = GameObject.Find("ScriptingSystem").GetComponent<WildBehaviour>();
-		endLevel = GameObject.Find("ScriptingSystem").GetComponent<EndLevel>();
+		wildBehaviour = GameObject.Find("EventSystem").GetComponent<WildBehaviour>();
+		endLevel = GameObject.Find("EventSystem").GetComponent<EndLevel>();
 	}
 	
 	// Update is called once per frame
