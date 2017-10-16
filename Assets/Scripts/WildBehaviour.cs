@@ -5,6 +5,8 @@ using UnityEngine;
 public class WildBehaviour : MonoBehaviour {
 
 	// Use this for initialization
+	public AudioSource audioSource;
+	public AudioClip chaseMusic;
 	public GameObject monkContainer;
 
 	GameObject[] monks;
@@ -31,6 +33,9 @@ public class WildBehaviour : MonoBehaviour {
 		if(bunbuku.activeSelf){
 			if(!hasBegun){
 				hasBegun = true;
+				audioSource.Stop();
+				audioSource.clip = chaseMusic;
+				audioSource.Play();
 				wildCraziness();
 			}
 		}
