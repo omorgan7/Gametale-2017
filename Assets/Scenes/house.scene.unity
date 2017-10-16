@@ -2734,7 +2734,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ed578111e2a54136ad0da6b59e1a974, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadeObject: {fileID: 0}
+  fadeObject: {fileID: 175662320}
   duration: 1
   isDone: 0
 --- !u!1001 &620314366
