@@ -14623,7 +14623,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeObject: {fileID: 437858571}
-  duration: 1
+  duration: 5
   isDone: 0
 --- !u!114 &1475217117
 MonoBehaviour:
