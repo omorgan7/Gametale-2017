@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class KettleTransformation : MonoBehaviour {
 	private bool isInitialized = false;
@@ -37,6 +38,8 @@ public class KettleTransformation : MonoBehaviour {
 		yield return new WaitForSecondsRealtime(1f);
 		kettle.SetActive(false);
 		bunbuku.SetActive(true);
-		StartCoroutine(dialogueSystemBadger.speak(0,0, speechBubble, box));
+		if (SceneManager.GetActiveScene().name == "temple.scene"){
+			StartCoroutine(dialogueSystemBadger.speak(0,0, speechBubble, box));
+		}
 	}
 }
