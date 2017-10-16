@@ -19,14 +19,10 @@ public class MonkTinkerDialogue : MonoBehaviour {
 	private bool isTalking = false;
 	SpriteAnimationController MonkSAC;
 	SpriteAnimationController TinkerSAC;
-<<<<<<< HEAD
 	SpriteAnimationController kettleSac;
 	SpriteAnimationController bunbukuSAC;
 
 	bool isDoneAnimating = true;
-=======
-	private bool animating = false;
->>>>>>> 69f0f6488747e01790fa6a409e48c81d9a6ca81e
 
 
 	// Use this for initialization
@@ -82,7 +78,7 @@ public class MonkTinkerDialogue : MonoBehaviour {
 		}
 	}
 	IEnumerator speak(int i){
-		while((DialogueSystemMonk.isTalking)||(DialogueSystemBadger.isTalking)||(DialogueSystemTinker.isTalking)||(animating)){
+		while((DialogueSystemMonk.isTalking)||(DialogueSystemBadger.isTalking)||(DialogueSystemTinker.isTalking)){
 			yield return null;
 		}
 		if((Input.GetButtonUp("Submit"))){
@@ -91,7 +87,6 @@ public class MonkTinkerDialogue : MonoBehaviour {
 		}
 	}
 
-<<<<<<< HEAD
 	IEnumerator DelayedStart(){
 		var loadText = GameObject.Find("EventSystem").GetComponent<LoadText>();
 		while(!loadText.isDone){
@@ -105,12 +100,6 @@ public class MonkTinkerDialogue : MonoBehaviour {
 			yield return null;
 		} 
 		yield return new WaitForSecondsRealtime(8.5f);
-=======
-	IEnumerator Animation1(){ 
-		animating = true;
-		TinkerSAC.nextAnimation = Enums.AnimStates.MoveForward;
-		yield return new WaitForSecondsRealtime(1f);
->>>>>>> 69f0f6488747e01790fa6a409e48c81d9a6ca81e
 		MonkSAC.nextAnimation = Enums.AnimStates.MoveForward;
 		float elapsedTime = 0f;
 		float yPos = monk.transform.position.y;
@@ -121,17 +110,11 @@ public class MonkTinkerDialogue : MonoBehaviour {
 		}
 		GameObject.Find("Head Monk").SetActive(false);
 		kettle.SetActive(true);
-<<<<<<< HEAD
 		yield return new WaitForSecondsRealtime(1f);
 		kettleSac.nextAnimation = Enums.AnimStates.MoveRight;
 		yield return new WaitForSecondsRealtime(3f);
 		kettle.SetActive(false);
 		bunbuku.SetActive(true);
 		isDoneAnimating = true;
-=======
-		yield return (0.5f);
-		animating = false;
-	
->>>>>>> 69f0f6488747e01790fa6a409e48c81d9a6ca81e
 	}
 }
