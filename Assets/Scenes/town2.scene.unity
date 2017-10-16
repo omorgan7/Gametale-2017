@@ -28300,6 +28300,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   npcContainer: {fileID: 1901316076}
+  bunbuku: {fileID: 800615965}
 --- !u!1 &600877622
 GameObject:
   m_ObjectHideFlags: 0
@@ -36292,6 +36293,11 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!4 &800615965 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4185734888126120, guid: 244ba7097fc3a45fd929be8baedfc8bc,
+    type: 2}
+  m_PrefabInternal: {fileID: 828135507}
 --- !u!1 &802726364
 GameObject:
   m_ObjectHideFlags: 0
