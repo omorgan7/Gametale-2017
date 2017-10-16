@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PerformanceResults : MonoBehaviour {
 
@@ -20,10 +21,23 @@ public class PerformanceResults : MonoBehaviour {
 		audioSource.clip = ambient;
 		audioSource.Play();
 	}
-
+	IEnumerator switchLevel(){
+		audioSource.Stop();
+		audioSource.clip = clips[2];
+		audioSource.volume = 1f;
+		audioSource.Play();
+		yield return new WaitForSecondsRealtime(5f);
+		var fadecontroller = gameObject.GetComponent<FadeController>();
+		fadecontroller.FadeOut();
+		while(!fadecontroller.isDone){
+			yield return null;
+		}
+		SceneManager.LoadScene("town3.scene");
+	}
 	void LateUpdate(){
 		if(newProgress >1f){
 			newProgress = 1f;
+			StartCoroutine(switchLevel());
 		}
 		if(progress != newProgress){
 			if(progress < newProgress){

@@ -8,13 +8,38 @@ public class PerformanceActions : MonoBehaviour {
 	MenuInput menuInput;
 	PerformanceResults performanceResults;
 	public GameObject bunbuku;
+	public GameObject bunbukuShadow;
+	public GameObject audience;
+	public GameObject audienceShadow;
+
 	bool isPerforming = false;
-	bool canPerformAgain = true;
+	bool canPerformAgain = false;
 	float elapsedTime = 0f;
 	float height = 2f;
+
+	float twirlAngle = 45f;
+	float twirlTime = 0.05f;
 	void Start () {
 		menuInput = gameObject.GetComponent<MenuInput>();
 		performanceResults = gameObject.GetComponent<PerformanceResults>();
+		StartCoroutine(comeInFromSides());
+	}
+
+	IEnumerator comeInFromSides(){
+		float elapsedTime = 0f;
+		float bunbukuInitialX = bunbuku.transform.position.x;
+		float bunbukuShadowInitialX = bunbukuShadow.transform.position.x;
+		float audienceInitialX = audience.transform.position.x;
+		float audienceShadowInitialX = audienceShadow.transform.position.x;
+		while(elapsedTime <= 1f){
+			bunbuku.transform.position = new Vector3(bunbukuInitialX + Mathf.SmoothStep(0f,7,elapsedTime), bunbuku.transform.position.y,0);
+			bunbukuShadow.transform.position = new Vector3(bunbukuShadowInitialX + Mathf.SmoothStep(0f,7,elapsedTime), bunbukuShadow.transform.position.y,0);
+			audience.transform.position = new Vector3(audienceInitialX - Mathf.SmoothStep(0f,7,elapsedTime), audience.transform.position.y,0);
+			audienceShadow.transform.position = new Vector3(audienceShadowInitialX - Mathf.SmoothStep(0f,7,elapsedTime), audienceShadow.transform.position.y,0);
+			elapsedTime += Time.deltaTime;
+			yield return new WaitForEndOfFrame();
+		}
+		canPerformAgain = true;
 	}
 	
 	// Update is called once per frame
@@ -81,7 +106,6 @@ public class PerformanceActions : MonoBehaviour {
 			elapsedTime -= Time.deltaTime;
 			yield return new WaitForEndOfFrame();
 		}
-		canPerformAgain = true;
 		float result = Random.value;
 		if(result < 0.1){
 			performanceResults.amazed();
@@ -92,22 +116,39 @@ public class PerformanceActions : MonoBehaviour {
 		else{
 			performanceResults.disappointed();
 		}
-		
+		canPerformAgain = true;
 	}
 
 	IEnumerator twirl(){
 		yield return new WaitForSecondsRealtime(0.5f);
 		Vector3 initialPosition = bunbuku.transform.position;
-		var spriteController = bunbuku.transform.GetChild(0).GetComponent<SpriteAnimationController>();
-		spriteController.nextAnimation = Enums.AnimStates.Idle;
-		yield return new WaitForSecondsRealtime(0.25f);
-		spriteController.nextAnimation = Enums.AnimStates.MoveRight;
-		yield return new WaitForSecondsRealtime(0.25f);
-		spriteController.nextAnimation = Enums.AnimStates.Idle;
-		yield return new WaitForSecondsRealtime(0.25f);
-		spriteController.nextAnimation = Enums.AnimStates.MoveLeft;
-		yield return new WaitForSecondsRealtime(0.25f);
-		canPerformAgain = true;
+		float elapsedTime = 0f;
+		for(int i = 0; i < 3; ++i){
+			do{
+			bunbuku.transform.Rotate(new Vector3(0f,0f, twirlAngle*Time.deltaTime));
+			bunbuku.transform.position = initialPosition;
+			elapsedTime += Time.fixedDeltaTime;
+			yield return new WaitForEndOfFrame();
+		}while(elapsedTime <= twirlTime);
+		elapsedTime = 0f;
+		do{
+			bunbuku.transform.Rotate(new Vector3(0f,0f, -2*twirlAngle*Time.deltaTime));
+			bunbuku.transform.position = initialPosition;
+			elapsedTime += Time.fixedDeltaTime;
+			yield return new WaitForEndOfFrame();
+		}while(elapsedTime <= twirlTime);
+		elapsedTime = 0f;
+		do{
+			bunbuku.transform.Rotate(new Vector3(0f,0f, twirlAngle*Time.deltaTime));
+			bunbuku.transform.position = initialPosition;
+			elapsedTime += Time.fixedDeltaTime;
+			yield return new WaitForEndOfFrame();
+		}while(elapsedTime <= twirlTime);
+		elapsedTime = 0f;
+		bunbuku.transform.Rotate(new Vector3(0f,0f, -bunbuku.transform.rotation.eulerAngles.z));
+		}
+		
+		bunbuku.transform.position = initialPosition;
 		float result = Random.value;
 		if(result < 0.1){
 			performanceResults.amazed();
@@ -118,5 +159,6 @@ public class PerformanceActions : MonoBehaviour {
 		else{
 			performanceResults.disappointed();
 		}
+		canPerformAgain = true;
 	}
 }
