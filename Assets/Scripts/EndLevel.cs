@@ -16,6 +16,7 @@ public class EndLevel : MonoBehaviour {
 	void Start () {
 		loadText = GameObject.Find("EventSystem").GetComponent<LoadText>();
 		LoadInDialogue(SceneManager.GetActiveScene ().name);
+		sceneFinished = false;
 		fadeController = gameObject.GetComponent<FadeController>();
 	}
 	
@@ -44,7 +45,6 @@ public class EndLevel : MonoBehaviour {
 			if(Input.GetButtonUp("Submit")){
 				fadeController.FadeOut();
 				StartCoroutine(loadLevel());
-				//SceneManager.LoadScene("temple.scene");
 				sceneFinished = false;
 				DialogueSystemNPC.isDone = false;
 			}

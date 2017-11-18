@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 
 public class DialogueSystemNPC : MonoBehaviour {
+	public TextAsset NPCSpeech;
 	public GameObject speechBubble;
 	private GameObject box;
 	LoadText loadText;
@@ -19,7 +20,7 @@ public class DialogueSystemNPC : MonoBehaviour {
 		NPCword = loadText.npcDialogue;
 	}
 	void LoadInDialogue(string level, LoadText loadText){
-		loadText.Load("Assets/Character Dialogue/npc/"+ level + ".txt", LoadText.characters.npc);
+		loadText.Load(NPCSpeech.text, LoadText.characters.npc);
 		isDone = true;
 	}
 	

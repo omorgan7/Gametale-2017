@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class DialogueSystemMonk : MonoBehaviour {
+	public TextAsset MonkSpeech;
 	LoadText loadText ;
 	static public bool isTalking = false;
 	void Start () {
@@ -16,7 +17,7 @@ public class DialogueSystemMonk : MonoBehaviour {
 		while(!loadText.isDone){
 			yield return null;
 		}
-		loadText.Load("Assets/Character Dialogue/monk/" +level + ".txt", LoadText.characters.monk);
+		loadText.Load(MonkSpeech.text, LoadText.characters.monk);
 	}
 	
 	public IEnumerator speak(int startIndex, int EndIndex, GameObject speechBubble, GameObject box){

@@ -5,6 +5,8 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class DialogueSystemTinker : MonoBehaviour {
+
+	public TextAsset TinkerSpeech;
 	static public bool isTalking = false; 
 	private GameObject box;
 	LoadText loadText;
@@ -14,7 +16,7 @@ public class DialogueSystemTinker : MonoBehaviour {
 	}
 	
 	void LoadInDialogue(string level){
-		loadText.Load("Assets/Character Dialogue/tinker/"+level + ".txt", LoadText.characters.tinker);
+		loadText.Load(TinkerSpeech.text, LoadText.characters.tinker);
 	}
 	// Update is called once per frame
 	

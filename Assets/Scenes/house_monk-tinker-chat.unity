@@ -3057,6 +3057,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textPanel: {fileID: 0}
+  audioSource: {fileID: 0}
 --- !u!114 &654413142
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3113,6 +3114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e4fb47cde335584d9371e79e599b72f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MonkSpeech: {fileID: 4900000, guid: 35c3a08c34360754bb3ebf4df8a6105e, type: 3}
 --- !u!114 &654413146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3124,6 +3126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0d4ff234446eb44daf0d00d7d161c9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BadgerSpeech: {fileID: 0}
 --- !u!114 &654413147
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3135,6 +3138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d085f6f3ad683fb4d97f36cfa18ad2e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TinkerSpeech: {fileID: 4900000, guid: 0ee6da38d3f1ea448a33f0498b53b082, type: 3}
 --- !u!1 &664852554
 GameObject:
   m_ObjectHideFlags: 0
