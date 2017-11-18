@@ -2095,7 +2095,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1000
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 7b8b2f7b1e94f4facbabdf8a2c988888, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2602,7 +2602,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1581670394}
-  m_RootOrder: 18
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &229408886
 BoxCollider2D:
@@ -3068,7 +3068,7 @@ Transform:
   - {fileID: 975553792}
   - {fileID: 237710687}
   m_Father: {fileID: 1581670394}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &311214390
 GameObject:
@@ -4073,7 +4073,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4886437140043832, guid: a28a850afc96a4801b0fef6f5ebb29f0, type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4886437140043832, guid: a28a850afc96a4801b0fef6f5ebb29f0, type: 2}
       propertyPath: m_LocalScale.x
@@ -4396,6 +4396,11 @@ Prefab:
       propertyPath: m_Name
       value: NPC Novice Monk (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 212494810309308318, guid: cea355df6f86648a69790892882da3a8,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: -500
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
   m_ParentPrefab: {fileID: 100100000, guid: cea355df6f86648a69790892882da3a8, type: 2}
@@ -4467,7 +4472,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1000
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 7b8b2f7b1e94f4facbabdf8a2c988888, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -4547,7 +4552,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 437858571}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.766, y: -6.3670006, z: 10}
+  m_LocalPosition: {x: 9.93, y: -7.5, z: 10}
   m_LocalScale: {x: 1000, y: 10000, z: 1000}
   m_Children: []
   m_Father: {fileID: 1449954944}
@@ -5369,7 +5374,7 @@ Transform:
   - {fileID: 215219172}
   - {fileID: 1002853949}
   m_Father: {fileID: 1581670394}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &514501059 stripped
 GameObject:
@@ -5524,7 +5529,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1000
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 7b8b2f7b1e94f4facbabdf8a2c988888, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -5802,6 +5807,11 @@ Prefab:
       propertyPath: m_Name
       value: NPC Novice Monk
       objectReference: {fileID: 0}
+    - target: {fileID: 212494810309308318, guid: cea355df6f86648a69790892882da3a8,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: -500
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
   m_ParentPrefab: {fileID: 100100000, guid: cea355df6f86648a69790892882da3a8, type: 2}
@@ -6004,6 +6014,11 @@ Prefab:
     - target: {fileID: 1567675817320126, guid: cea355df6f86648a69790892882da3a8, type: 2}
       propertyPath: m_Name
       value: NPC Novice Monk (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 212494810309308318, guid: cea355df6f86648a69790892882da3a8,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: -500
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
@@ -6557,7 +6572,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1000
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 7b8b2f7b1e94f4facbabdf8a2c988888, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -7003,6 +7018,11 @@ Prefab:
       propertyPath: MonkSpeech
       value: 
       objectReference: {fileID: 4900000, guid: c6998473ee1772d488fc50d9c6502b38, type: 3}
+    - target: {fileID: 212279100202187128, guid: 5fedeea37ecc64b3484473f667451f05,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: -400
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114062736087209348, guid: 5fedeea37ecc64b3484473f667451f05, type: 2}
     - {fileID: 114933494976572594, guid: 5fedeea37ecc64b3484473f667451f05, type: 2}
@@ -7362,7 +7382,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1000
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 7b8b2f7b1e94f4facbabdf8a2c988888, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -10686,7 +10706,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4886437140043832, guid: a28a850afc96a4801b0fef6f5ebb29f0, type: 2}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4886437140043832, guid: a28a850afc96a4801b0fef6f5ebb29f0, type: 2}
       propertyPath: m_LocalScale.x
@@ -12713,14 +12733,14 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1350912633}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.36, y: 3.84, z: 0}
+  m_LocalPosition: {x: 0.6400001, y: -1.6000001, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1822837062}
   - {fileID: 181848362}
   - {fileID: 735251637}
   - {fileID: 204382125}
-  m_Father: {fileID: 1581670394}
+  m_Father: {fileID: 1528886058}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1354789908
@@ -14382,7 +14402,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1000
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 7b8b2f7b1e94f4facbabdf8a2c988888, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -15124,8 +15144,9 @@ Transform:
   - {fileID: 1720211218}
   - {fileID: 1664825141}
   - {fileID: 1048629832}
+  - {fileID: 1350912634}
   m_Father: {fileID: 1581670394}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1532051127
 GameObject:
@@ -15408,7 +15429,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1000
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 7b8b2f7b1e94f4facbabdf8a2c988888, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -15528,6 +15549,7 @@ GameObject:
   - component: {fileID: 1581670396}
   - component: {fileID: 1581670395}
   - component: {fileID: 1581670402}
+  - component: {fileID: 1581670403}
   m_Layer: 0
   m_Name: Scenery
   m_TagString: walls
@@ -15549,7 +15571,6 @@ Transform:
   - {fileID: 1467012305}
   - {fileID: 1826758284}
   - {fileID: 1406419735}
-  - {fileID: 1350912634}
   - {fileID: 1528886058}
   - {fileID: 1597706411}
   - {fileID: 592740962}
@@ -15770,6 +15791,31 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.762194, y: 3.3855286}
   m_EdgeRadius: 0
+--- !u!61 &1581670403
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1581670393}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 1.4977369, y: 5.691401}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 11.69812, y: 1.5135088}
+  m_EdgeRadius: 0
 --- !u!1001 &1589746122
 Prefab:
   m_ObjectHideFlags: 0
@@ -15807,7 +15853,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4886437140043832, guid: a28a850afc96a4801b0fef6f5ebb29f0, type: 2}
       propertyPath: m_RootOrder
-      value: 21
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4886437140043832, guid: a28a850afc96a4801b0fef6f5ebb29f0, type: 2}
       propertyPath: m_LocalScale.x
@@ -15934,7 +15980,7 @@ Transform:
   - {fileID: 1879536103}
   - {fileID: 1534826234}
   m_Father: {fileID: 1581670394}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1606658027
 GameObject:
@@ -16119,7 +16165,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4886437140043832, guid: a28a850afc96a4801b0fef6f5ebb29f0, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4886437140043832, guid: a28a850afc96a4801b0fef6f5ebb29f0, type: 2}
       propertyPath: m_LocalScale.x
@@ -17245,7 +17291,7 @@ Transform:
   - {fileID: 42470934}
   - {fileID: 1283501894}
   m_Father: {fileID: 1581670394}
-  m_RootOrder: 20
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1742987139
 GameObject:
@@ -17715,7 +17761,7 @@ Transform:
   - {fileID: 902107675}
   - {fileID: 1074084406}
   m_Father: {fileID: 1581670394}
-  m_RootOrder: 17
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1789633933
 GameObject:
@@ -18172,7 +18218,7 @@ Transform:
   - {fileID: 948043223}
   - {fileID: 1290797072}
   m_Father: {fileID: 1581670394}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1822837061
 GameObject:
@@ -18419,7 +18465,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4886437140043832, guid: a28a850afc96a4801b0fef6f5ebb29f0, type: 2}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4886437140043832, guid: a28a850afc96a4801b0fef6f5ebb29f0, type: 2}
       propertyPath: m_LocalScale.x
@@ -19183,7 +19229,7 @@ Transform:
   - {fileID: 591691771}
   - {fileID: 379757414}
   m_Father: {fileID: 1581670394}
-  m_RootOrder: 19
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1958405878
 GameObject:
@@ -19466,7 +19512,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1000
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 7b8b2f7b1e94f4facbabdf8a2c988888, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -19920,6 +19966,11 @@ Prefab:
       propertyPath: m_Name
       value: NPC Novice Monk (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 212494810309308318, guid: cea355df6f86648a69790892882da3a8,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: -500
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
   m_ParentPrefab: {fileID: 100100000, guid: cea355df6f86648a69790892882da3a8, type: 2}
@@ -19976,6 +20027,11 @@ Prefab:
     - target: {fileID: 1567675817320126, guid: cea355df6f86648a69790892882da3a8, type: 2}
       propertyPath: m_Name
       value: NPC Novice Monk (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 212494810309308318, guid: cea355df6f86648a69790892882da3a8,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: -500
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
@@ -20326,6 +20382,11 @@ Prefab:
       propertyPath: m_Name
       value: NPC Novice Monk (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 212494810309308318, guid: cea355df6f86648a69790892882da3a8,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: -500
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
   m_ParentPrefab: {fileID: 100100000, guid: cea355df6f86648a69790892882da3a8, type: 2}
@@ -20365,7 +20426,7 @@ Transform:
   - {fileID: 2124929088}
   - {fileID: 1869289253}
   m_Father: {fileID: 1581670394}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2076055445
 GameObject:
@@ -20470,7 +20531,7 @@ Transform:
   - {fileID: 651352106}
   - {fileID: 1847621736}
   m_Father: {fileID: 1581670394}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2105836070
 GameObject:
@@ -20721,7 +20782,7 @@ Transform:
   - {fileID: 171146591}
   - {fileID: 1997541371}
   m_Father: {fileID: 1581670394}
-  m_RootOrder: 16
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2117743656
 GameObject:
