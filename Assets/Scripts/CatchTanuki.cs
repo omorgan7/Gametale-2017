@@ -9,16 +9,11 @@ public class CatchTanuki : MonoBehaviour {
 	private WildBehaviour wildBehaviour;
 	EndLevel endLevel;
 
-	// Use this for initialization
 	void Start () {
 		wildBehaviour = GameObject.Find("EventSystem").GetComponent<WildBehaviour>();
 		endLevel = GameObject.Find("EventSystem").GetComponent<EndLevel>();
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 	void OnTriggerEnter2D(Collider2D other){
 		if(other.gameObject.tag == "bunbuku" && Input.GetButtonUp("Submit")){
 			if(!caught){

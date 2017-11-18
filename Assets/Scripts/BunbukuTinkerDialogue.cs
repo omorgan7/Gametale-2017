@@ -8,24 +8,19 @@ public class BunbukuTinkerDialogue : MonoBehaviour {
 	public GameObject tinker;
 	public GameObject bunbuku;
 	public GameObject kettle;
-	
 	SpriteAnimationController TinkerSAC;
-
 	private DialogueSystemBadger dialogueSystemBadger;
 	private DialogueSystemTinker dialogueSystemTinker;
 	private GameObject badgerBox;
 	private GameObject tinkerBox;
 	public GameObject speechBubble;
-	//private bool isTalking = false;
 
-	// Use this for initialization
 	void Start () {
 		dialogueSystemBadger = GameObject.Find("EventSystem").GetComponent<DialogueSystemBadger>();
 		dialogueSystemTinker = GameObject.Find("EventSystem").GetComponent<DialogueSystemTinker>();
 		TinkerSAC = tinker.transform.GetChild(0).GetComponent<SpriteAnimationController>();
 	}
-	
-	// Update is called once per frame
+
 	void Update () {
 		StartCoroutine(speak(step));
 	}

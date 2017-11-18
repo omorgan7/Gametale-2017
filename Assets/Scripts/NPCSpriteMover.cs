@@ -12,7 +12,6 @@ public class NPCSpriteMover : MonoBehaviour {
 	bool isMoving = true;
 
 	float elapsedTime = 0f;
-	// Update is called once per frame
 	void Start(){
 		spriteMover = gameObject.GetComponent<SpriteMover>();
 	}
@@ -36,7 +35,6 @@ public class NPCSpriteMover : MonoBehaviour {
 			else{
 				right = 0;
 				forward = 0;
-				//pauseMoving();
 			}
 		}
 	}

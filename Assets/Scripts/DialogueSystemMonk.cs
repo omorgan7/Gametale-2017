@@ -47,7 +47,6 @@ public class DialogueSystemMonk : MonoBehaviour {
 		Destroy(box);	
 		pressed = false;
 		isTalking = false;
-		
 	}
 	
 }

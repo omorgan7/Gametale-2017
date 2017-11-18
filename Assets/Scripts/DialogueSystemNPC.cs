@@ -7,14 +7,11 @@ using UnityEngine.SceneManagement;
 
 public class DialogueSystemNPC : MonoBehaviour {
 	public TextAsset NPCSpeech;
-	public GameObject speechBubble;
-	private GameObject box;
-	private bool pressed;
+		private bool pressed;
 	LoadText loadText;
 	static public List <string> NPCword;
 	static public bool isDone = false;
 
-	// Use this for initialization
 	void Start () {
 		loadText = GameObject.Find("EventSystem").GetComponent<LoadText>();
 		LoadInDialogue(SceneManager.GetActiveScene ().name, loadText);
@@ -24,15 +21,12 @@ public class DialogueSystemNPC : MonoBehaviour {
 		loadText.Load(NPCSpeech.text, LoadText.characters.npc);
 		isDone = true;
 	}
-	
-	// Update is called once per frame
+
 	void FixedUpdate () {
 		if((Input.GetButtonUp("Submit"))){
 			pressed = true;
 		}
 	}
-
-
 	public IEnumerator speak(int catchphrase, GameObject box, GameObject speechBubble){
 		pressed = false;
 		box = Instantiate(speechBubble, Vector3.zero, Quaternion.identity); 

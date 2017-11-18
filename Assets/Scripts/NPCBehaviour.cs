@@ -9,12 +9,8 @@ public class NPCBehaviour : MonoBehaviour {
 	public string nameOfNPC;
 	public GameObject speechBubble;
 	private GameObject box;
-	
 	public string getName(){
 		return nameOfNPC;
-	}
-	public int getCatchphrase(){
-		return catchphrase;
 	}
 	void Start(){
 		StartCoroutine(start());		
@@ -27,7 +23,6 @@ public class NPCBehaviour : MonoBehaviour {
 			gameobjects[0].GetComponent<InteractiveSpriteMover>().moveAgain();
 		}
 	}
-
 	IEnumerator start(){
 		while(!DialogueSystemNPC.isDone){
 			yield return null;
