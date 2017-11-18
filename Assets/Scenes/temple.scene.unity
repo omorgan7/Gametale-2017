@@ -14696,6 +14696,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textPanel: {fileID: 1506839909541514, guid: f5fff3a4797244a3c99b8773e2503888, type: 2}
+  sceneText: {fileID: 4900000, guid: c989f02c3d2b81c458e635a2798f1d04, type: 3}
   audioSource: {fileID: 0}
 --- !u!114 &1475217118
 MonoBehaviour:
@@ -14714,7 +14715,6 @@ MonoBehaviour:
   npcDialogue: []
   narration: []
   letterPause: 0.15
-  sentencePause: 1
   isDone: 1
 --- !u!114 &1475217119
 MonoBehaviour:
