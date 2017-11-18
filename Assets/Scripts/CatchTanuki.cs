@@ -20,7 +20,7 @@ public class CatchTanuki : MonoBehaviour {
 		
 	}
 	void OnTriggerEnter2D(Collider2D other){
-		if(other.gameObject.tag == "bunbuku"){
+		if(other.gameObject.tag == "bunbuku" && Input.GetButtonUp("Submit")){
 			if(!caught){
 				caught = true;
 				wildBehaviour.hasBeenCaught = true;
