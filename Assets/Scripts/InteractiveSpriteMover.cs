@@ -106,8 +106,10 @@ public class InteractiveSpriteMover : MonoBehaviour {
 		}
 		else{
 			if(_npc.getName()=="Head Monk"){
-				StartCoroutine(other.gameObject.GetComponent<DialogueSystemMonk>().speak(0,2, speechBubble, monkBox));
-				StartCoroutine(waitMonk());
+				if(!DialogueSystemMonk.isTalking){
+					StartCoroutine(other.gameObject.GetComponent<DialogueSystemMonk>().speak(0,2, speechBubble, monkBox));
+					StartCoroutine(waitMonk());
+				}
 			}
 		}	
 	}

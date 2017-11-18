@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class EndLevel : MonoBehaviour {
 	static public bool sceneFinished = false;
 	public GameObject textPanel;
+	public TextAsset sceneText;
 	public AudioSource audioSource;
 	bool isQuitting = false;
 	private GameObject box;
@@ -23,7 +24,7 @@ public class EndLevel : MonoBehaviour {
 	// Update is called once per frame
 	void LoadInDialogue(string level){
 		if(loadText){
-			loadText.Load("Assets/Character Dialogue/sceneDescription/" +level + ".txt", LoadText.characters.narrator);
+			loadText.Load(sceneText.text, LoadText.characters.narrator);
 		}
 	}
 	void FixedUpdate(){
