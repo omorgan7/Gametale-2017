@@ -42,15 +42,11 @@ public class DialogueSystemNPC : MonoBehaviour {
 		foreach(char s in _string){
 			txt.text += s;
 			yield return new WaitForSeconds (loadText.letterPause);
-<<<<<<< HEAD
-		}				
-=======
 		}	
 		while(!pressed){
 			yield return null;
 		}
 		pressed = false;			
->>>>>>> aaeba159078eee479e846a3cf8f1a37fa0b8d32a
 		Destroy(box);	
 	}
 }
