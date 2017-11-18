@@ -61,9 +61,6 @@ public class SpriteAnimator : MonoBehaviour {
 	IEnumerator animation(){
 		while(isPlaying){
 			spriteRenderer.sprite = sprites[spriteIndex];
-			if(gameObject.transform.parent.gameObject.tag == "Player"){
-				print(spriteIndex);
-			}
 			if(spriteIndex == numSprites - 1 || (spriteIndex == 0 && indexDirection == -1)){
 				if(!isLooping){
 					break;

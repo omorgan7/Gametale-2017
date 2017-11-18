@@ -78,4 +78,18 @@ public class NPCSpriteMover : MonoBehaviour {
 			spriteMover.moveLeft(right);
 		}
 	}
+
+	// void OnCollisionEnter2D(Collision2D other){
+	// 	if(!isMoving){
+	// 		return;
+	// 	}
+	// 	if(other.gameObject.tag == "walls"){
+	// 		forward = -forward;
+	// 		right = -right;
+	// 	}
+	// 	if(gameObject.tag != "bunbuku" && other.gameObject.tag == "Player"){
+	// 		print("stop " + gameObject.name);
+	// 		stopMoving();
+	// 	}
+	// }
 }

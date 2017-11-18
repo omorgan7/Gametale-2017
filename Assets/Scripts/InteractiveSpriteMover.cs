@@ -62,7 +62,11 @@ public class InteractiveSpriteMover : MonoBehaviour {
 	}
 	void OnTriggerEnter2D(Collider2D other){
 		if(other.gameObject.tag == "fire"){
-			kettle.SetActive(true);	
+
+			if(kettle){
+				kettle.SetActive(true);
+			}
+				
 			if(SceneManager.GetActiveScene().name == "temple2.scene"){
 				EndLevel.sceneFinished = true;
 			}
@@ -97,7 +101,7 @@ public class InteractiveSpriteMover : MonoBehaviour {
 		}
 		other.gameObject.GetComponent<NPCSpriteMover>().stopMoving();
 		_npc = other.gameObject.GetComponent<NPCBehaviour>();
-		if((!hasKettle)|(_npc.getName()!="Head Monk")){
+		if((!hasKettle) | (_npc.getName()!="Head Monk")){
 			_npc.turnOnBox();
 		}
 		else{
@@ -121,7 +125,7 @@ public class InteractiveSpriteMover : MonoBehaviour {
 		isTalking = false;
 	}
 	void OnTriggerStay2D(Collider2D other){
-		if((other.gameObject.tag == "bunbuku")&&(SceneManager.GetActiveScene().name == "town.scene")){
+		if((other.gameObject.tag == "bunbuku") && (SceneManager.GetActiveScene().name == "town.scene")){
 			if(isTalking){
 				return;
 			}

@@ -32,12 +32,12 @@ public class DialogueSystemNPC : MonoBehaviour {
 	public IEnumerator speak(int catchphrase, GameObject box, GameObject speechBubble){
 		box = Instantiate(speechBubble, Vector3.zero, Quaternion.identity); 
 		Text txt = box.transform.GetChild(0).GetChild(0).GetComponent<Text>();
-			string _string = loadText.badgerDialogue[catchphrase];
-			txt.text = " ";
-			foreach(char s in _string){
-				txt.text += s;
-				yield return new WaitForSeconds (loadText.letterPause);
-			}				
+		string _string = loadText.badgerDialogue[catchphrase];
+		txt.text = " ";
+		foreach(char s in _string){
+			txt.text += s;
+			yield return new WaitForSeconds (loadText.letterPause);
+		}				
 		Destroy(box);	
 	}
 }

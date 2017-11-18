@@ -19,7 +19,7 @@ public class KettleTransformation : MonoBehaviour {
 		dialogueSystemBadger = GameObject.Find("EventSystem").GetComponent<DialogueSystemBadger>();
 	} 
 	void Update () {
-		if(kettle.activeSelf & !bunbuku.activeSelf){
+		if(kettle && kettle.activeSelf && !bunbuku.activeSelf){
 			if(!transformationBegun){
 				transformationBegun = true;
 				StartCoroutine(transformKettle());
@@ -37,6 +37,7 @@ public class KettleTransformation : MonoBehaviour {
 		kettleAnimationController.nextAnimation = Enums.AnimStates.MoveLeft;
 		yield return new WaitForSecondsRealtime(1f);
 		kettle.SetActive(false);
+		Destroy(kettle);
 		bunbuku.SetActive(true);
 		if (SceneManager.GetActiveScene().name == "temple.scene"){
 			StartCoroutine(dialogueSystemBadger.speak(0,0, speechBubble, box));
