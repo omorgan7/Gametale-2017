@@ -132,7 +132,7 @@ public class InteractiveSpriteMover : MonoBehaviour {
 			if(isTalking){
 				return;
 			}
-			if((Input.GetButtonUp("Submit"))&&(!isTalking)){
+			if((Input.GetButtonUp("Submit"))&&(!isTalking)&&(!DialogueSystemBadger.isTalking)){
 				isTalking =  true;
 				DialogueSystemBadger.isTalking = true;
 				StartCoroutine(waitBunbuku());
