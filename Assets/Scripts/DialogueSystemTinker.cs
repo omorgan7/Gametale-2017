@@ -9,6 +9,7 @@ public class DialogueSystemTinker : MonoBehaviour {
 	public TextAsset TinkerSpeech;
 	static public bool isTalking = false; 
 	private GameObject box;
+	private bool pressed = false;
 	LoadText loadText;
 	void Start () {
 		loadText = GameObject.Find("EventSystem").GetComponent<LoadText>();
@@ -18,10 +19,14 @@ public class DialogueSystemTinker : MonoBehaviour {
 	void LoadInDialogue(string level){
 		loadText.Load(TinkerSpeech.text, LoadText.characters.tinker);
 	}
-	// Update is called once per frame
 	
-
+	void FixedUpdate () {
+		if((Input.GetButtonUp("Submit"))){
+			pressed = true;
+		}
+	}
 	public IEnumerator speak(int startIndex, int EndIndex, GameObject speechBubble, GameObject box){
+		pressed = false;
 		isTalking = true;
 		box = Instantiate(speechBubble, Vector3.zero, Quaternion.identity); 
 		Text txt = box.transform.GetChild(0).GetChild(0).GetComponent<Text>();
@@ -33,11 +38,16 @@ public class DialogueSystemTinker : MonoBehaviour {
 				txt.text += s;
 				yield return new WaitForSeconds (loadText.letterPause);
 			}
-			yield return new WaitForSeconds(loadText.sentencePause);
-			
+			while(!pressed){
+				yield return null;
+			}
+			pressed = false;			
 		}	
+			
 		Destroy(box);	
+		pressed = false;
 		isTalking = false;
+		
 	}
 	
 }

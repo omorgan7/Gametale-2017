@@ -3126,7 +3126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0d4ff234446eb44daf0d00d7d161c9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BadgerSpeech: {fileID: 0}
+  BadgerSpeech: {fileID: 4900000, guid: f1454ed437069d342b62bd95a0998d43, type: 3}
 --- !u!114 &654413147
 MonoBehaviour:
   m_ObjectHideFlags: 0

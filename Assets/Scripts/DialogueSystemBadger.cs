@@ -5,9 +5,9 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class DialogueSystemBadger : MonoBehaviour {
-
 	public TextAsset BadgerSpeech;
 	LoadText loadText;
+	private bool pressed = false;
 	static public bool isTalking = false;
 	void Start () {
 		loadText = GameObject.Find("EventSystem").GetComponent<LoadText>();
@@ -17,8 +17,14 @@ public class DialogueSystemBadger : MonoBehaviour {
 	void LoadInDialogue(string level){
 		loadText.Load(BadgerSpeech.text, LoadText.characters.badger);
 	}
+	void FixedUpdate () {
+		if((Input.GetButtonUp("Submit"))){
+			pressed = true;
+		}
+	}
 
 	public IEnumerator speak(int startIndex, int EndIndex, GameObject speechBubble, GameObject box){
+		pressed = false;
 		isTalking = true;
 		box = Instantiate(speechBubble, Vector3.zero, Quaternion.identity); 
 		Text txt = box.transform.GetChild(0).GetChild(0).GetComponent<Text>();
@@ -30,8 +36,10 @@ public class DialogueSystemBadger : MonoBehaviour {
 				txt.text += s;
 				yield return new WaitForSeconds (loadText.letterPause);
 			}
-			yield return new WaitForSeconds(loadText.sentencePause);
-			
+			while(!pressed){
+				yield return null;
+			}
+			pressed = false;			
 		}	
 		Destroy(box);
 		isTalking =  false;	

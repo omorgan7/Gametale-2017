@@ -12,7 +12,6 @@ public class LoadText : MonoBehaviour {
 	public List<string> narration = new List<string>();
 	public enum characters {tinker, monk, badger, npc, narrator};
 	public float letterPause = 0.1f;
-	public float sentencePause = 0.75f;
 	public bool isDone;
 	public void Load(string fileName, characters _char){
 		StringReader theReader = new StringReader(fileName);

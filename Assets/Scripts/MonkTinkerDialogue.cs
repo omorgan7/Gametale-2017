@@ -17,6 +17,7 @@ public class MonkTinkerDialogue : MonoBehaviour {
 	private GameObject tinkerBox;
 	public GameObject speechBubble;
 	private bool isTalking = false;
+	private bool started = false;
 	SpriteAnimationController MonkSAC;
 	SpriteAnimationController TinkerSAC;
 	SpriteAnimationController kettleSac;
@@ -40,12 +41,12 @@ public class MonkTinkerDialogue : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void FixedUpdate () {
-		if(!DialogueSystemMonk.isTalking && !DialogueSystemBadger.isTalking && !DialogueSystemTinker.isTalking && isDoneAnimating){
-			if((Input.GetButtonUp("Submit"))){
+	void Update () {
+		if(!DialogueSystemMonk.isTalking && !DialogueSystemBadger.isTalking && !DialogueSystemTinker.isTalking && isDoneAnimating && started){
+		//	if((Input.GetButtonUp("Submit"))){
 				++step;
 				conversation(step);
-			}
+		//	}
 		}
 		//StartCoroutine(speak(step));
 	}
@@ -77,15 +78,6 @@ public class MonkTinkerDialogue : MonoBehaviour {
 			EndLevel.sceneFinished = true;
 		}
 	}
-	IEnumerator speak(int i){
-		while((DialogueSystemMonk.isTalking)||(DialogueSystemBadger.isTalking)||(DialogueSystemTinker.isTalking)){
-			yield return null;
-		}
-		if((Input.GetButtonUp("Submit"))){
-			conversation(i);
-			++step;
-		}
-	}
 
 	IEnumerator DelayedStart(){
 		var loadText = GameObject.Find("EventSystem").GetComponent<LoadText>();
@@ -93,6 +85,7 @@ public class MonkTinkerDialogue : MonoBehaviour {
 			yield return null;
 		}
 		conversation(step);
+		started = true;
 	}
 
 	IEnumerator Animation1(){
@@ -108,6 +101,7 @@ public class MonkTinkerDialogue : MonoBehaviour {
 			elapsedTime += Time.deltaTime;
 			yield return new WaitForEndOfFrame();
 		}
+		//print(GameObject.Find("Head Monk")==null)
 		GameObject.Find("Head Monk").SetActive(false);
 		kettle.SetActive(true);
 		yield return new WaitForSecondsRealtime(1f);

@@ -9,6 +9,7 @@ public class DialogueSystemNPC : MonoBehaviour {
 	public TextAsset NPCSpeech;
 	public GameObject speechBubble;
 	private GameObject box;
+	private bool pressed;
 	LoadText loadText;
 	static public List <string> NPCword;
 	static public bool isDone = false;
@@ -25,19 +26,27 @@ public class DialogueSystemNPC : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		
+	void FixedUpdate () {
+		if((Input.GetButtonUp("Submit"))){
+			pressed = true;
+		}
 	}
 
+
 	public IEnumerator speak(int catchphrase, GameObject box, GameObject speechBubble){
+		pressed = false;
 		box = Instantiate(speechBubble, Vector3.zero, Quaternion.identity); 
 		Text txt = box.transform.GetChild(0).GetChild(0).GetComponent<Text>();
-			string _string = loadText.badgerDialogue[catchphrase];
-			txt.text = " ";
-			foreach(char s in _string){
-				txt.text += s;
-				yield return new WaitForSeconds (loadText.letterPause);
-			}				
+		string _string = loadText.badgerDialogue[catchphrase];
+		txt.text = " ";
+		foreach(char s in _string){
+			txt.text += s;
+			yield return new WaitForSeconds (loadText.letterPause);
+		}	
+		while(!pressed){
+			yield return null;
+		}
+		pressed = false;			
 		Destroy(box);	
 	}
 }

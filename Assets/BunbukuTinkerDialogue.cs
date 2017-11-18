@@ -26,7 +26,7 @@ public class BunbukuTinkerDialogue : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void FixedUpdate () {
+	void Update () {
 		StartCoroutine(speak(step));
 	}
 	void conversation(int i){ //add enumerator
@@ -59,6 +59,7 @@ public class BunbukuTinkerDialogue : MonoBehaviour {
 		}
 		if(i==9){
 			StartCoroutine(dialogueSystemBadger.speak(7,7, speechBubble, badgerBox));
+			
 		}
 		if(i == 10){
 			StartCoroutine(animation());
@@ -68,7 +69,7 @@ public class BunbukuTinkerDialogue : MonoBehaviour {
 		while((DialogueSystemBadger.isTalking)||(DialogueSystemTinker.isTalking)){
 			yield return null;
 		}
-		if((Input.GetButtonUp("Submit"))){
+		if(step < 11){
 			conversation(i);
 			++step;
 		}

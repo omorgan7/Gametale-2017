@@ -8,6 +8,7 @@ public class DialogueSystemMonk : MonoBehaviour {
 	public TextAsset MonkSpeech;
 	LoadText loadText ;
 	static public bool isTalking = false;
+	private bool pressed = false;
 	void Start () {
 		loadText = GameObject.Find("EventSystem").GetComponent<LoadText>();
 		StartCoroutine(LoadInDialogue(SceneManager.GetActiveScene ().name));
@@ -19,8 +20,14 @@ public class DialogueSystemMonk : MonoBehaviour {
 		}
 		loadText.Load(MonkSpeech.text, LoadText.characters.monk);
 	}
+	void FixedUpdate () {
+		if((Input.GetButtonUp("Submit"))){
+			pressed = true;
+		}
+	}
 	
 	public IEnumerator speak(int startIndex, int EndIndex, GameObject speechBubble, GameObject box){
+		pressed = false;
 		isTalking = true;
 		box = Instantiate(speechBubble, Vector3.zero, Quaternion.identity); 
 		Text txt = box.transform.GetChild(0).GetChild(0).GetComponent<Text>();
@@ -32,11 +39,15 @@ public class DialogueSystemMonk : MonoBehaviour {
 				txt.text += s;
 				yield return new WaitForSeconds (loadText.letterPause);
 			}
-			yield return new WaitForSeconds(loadText.sentencePause);
-			
-		}	
+			while(!pressed){
+				yield return null;
+			}
+			pressed = false;
+		}			
 		Destroy(box);	
+		pressed = false;
 		isTalking = false;
+		
 	}
 	
 }
