@@ -1,11 +1,17 @@
 fileFormatVersion: 2
 guid: c9961926e0b2a3b439612c3760d70285
-timeCreated: 1508178650
+timeCreated: 1511013242
 licenseType: Free
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - MonkSpeech: {fileID: 4900000, guid: 35c3a08c34360754bb3ebf4df8a6105e, type: 3}
+  - kettle: {instanceID: 0}
+  - bunbuku: {instanceID: 0}
+  - monk: {instanceID: 0}
+  - tinker: {instanceID: 0}
+  - speechBubble: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -28158,6 +28158,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textPanel: {fileID: 1506839909541514, guid: f5fff3a4797244a3c99b8773e2503888, type: 2}
+  audioSource: {fileID: 0}
 --- !u!114 &600565199
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28185,6 +28186,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d085f6f3ad683fb4d97f36cfa18ad2e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TinkerSpeech: {fileID: 4900000, guid: 001d4d5c9d0fd8a4186d0631a98388c4, type: 3}
 --- !u!114 &600565201
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28196,6 +28198,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0d4ff234446eb44daf0d00d7d161c9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BadgerSpeech: {fileID: 4900000, guid: d54e7ed70eec2d54297f0ccb881305e2, type: 3}
 --- !u!114 &600565202
 MonoBehaviour:
   m_ObjectHideFlags: 0

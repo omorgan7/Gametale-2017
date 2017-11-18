@@ -15,7 +15,7 @@ public class LoadText : MonoBehaviour {
 	public float sentencePause = 0.75f;
 	public bool isDone;
 	public void Load(string fileName, characters _char){
-		StreamReader theReader = new StreamReader(fileName, Encoding.Default);
+		StringReader theReader = new StringReader(fileName);
 		string line;		
 		  do{
 				line = theReader.ReadLine();                     

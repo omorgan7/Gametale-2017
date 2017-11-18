@@ -5,6 +5,8 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class DialogueSystemBadger : MonoBehaviour {
+
+	public TextAsset BadgerSpeech;
 	LoadText loadText;
 	static public bool isTalking = false;
 	void Start () {
@@ -13,7 +15,7 @@ public class DialogueSystemBadger : MonoBehaviour {
 	}
 	
 	void LoadInDialogue(string level){
-		loadText.Load("Assets/Character Dialogue/badger/" +level + ".txt", LoadText.characters.badger);
+		loadText.Load(BadgerSpeech.text, LoadText.characters.badger);
 	}
 
 	public IEnumerator speak(int startIndex, int EndIndex, GameObject speechBubble, GameObject box){

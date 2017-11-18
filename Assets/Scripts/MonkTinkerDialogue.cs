@@ -99,7 +99,7 @@ public class MonkTinkerDialogue : MonoBehaviour {
 		while(DialogueSystemTinker.isTalking){
 			yield return null;
 		} 
-		yield return new WaitForSecondsRealtime(8.5f);
+		yield return new WaitForSecondsRealtime(0.5f);
 		MonkSAC.nextAnimation = Enums.AnimStates.MoveForward;
 		float elapsedTime = 0f;
 		float yPos = monk.transform.position.y;
