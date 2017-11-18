@@ -11,9 +11,7 @@ public class EndLevel : MonoBehaviour {
 	bool isQuitting = false;
 	private GameObject box;
 	LoadText loadText;
-
 	FadeController fadeController;
-	// Use this for initialization
 	void Start () {
 		loadText = GameObject.Find("EventSystem").GetComponent<LoadText>();
 		LoadInDialogue(SceneManager.GetActiveScene ().name);
@@ -21,15 +19,12 @@ public class EndLevel : MonoBehaviour {
 		fadeController = gameObject.GetComponent<FadeController>();
 	}
 	
-	// Update is called once per frame
 	void LoadInDialogue(string level){
 		if(loadText){
 			loadText.Load(sceneText.text, LoadText.characters.narrator);
 		}
 	}
 	void FixedUpdate(){
-//		print(fadeController == null);
-		//print(gameObject.name);
 		if((sceneFinished)&&(SceneManager.GetActiveScene().name == "temple2.scene")){
 			StartCoroutine(finalFade());
 			fadeController.FadeOut();
@@ -38,7 +33,6 @@ public class EndLevel : MonoBehaviour {
 		else if((sceneFinished)&&(SceneManager.GetActiveScene().name == "town3.scene")){
 			fadeController.FadeOut();
 				StartCoroutine(loadLevel());
-				//SceneManager.LoadScene("temple.scene");
 				sceneFinished = false;
 				DialogueSystemNPC.isDone = false;
 		}

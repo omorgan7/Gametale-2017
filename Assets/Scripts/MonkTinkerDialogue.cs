@@ -7,7 +7,6 @@ public class MonkTinkerDialogue : MonoBehaviour {
 	public GameObject kettle;
 	public GameObject bunbuku;
 	public GameObject monk;
-
 	public GameObject tinker;
 	private DialogueSystemBadger dialogueSystemBadger;
 	private DialogueSystemMonk dialogueSystemMonk;
@@ -40,15 +39,11 @@ public class MonkTinkerDialogue : MonoBehaviour {
 		MonkSAC.sendToIdle();
 	}
 	
-	// Update is called once per frame
 	void Update () {
 		if(!DialogueSystemMonk.isTalking && !DialogueSystemBadger.isTalking && !DialogueSystemTinker.isTalking && isDoneAnimating && started){
-		//	if((Input.GetButtonUp("Submit"))){
-				++step;
-				conversation(step);
-		//	}
+			++step;
+			conversation(step);
 		}
-		//StartCoroutine(speak(step));
 	}
 
 	void conversation(int i){ //add enumerator
@@ -63,7 +58,6 @@ public class MonkTinkerDialogue : MonoBehaviour {
 		if(i == 2){
 			++step;
 			conversation(step);
-			//StartCoroutine(Animation1());
 		}
 		if(i ==3 ){
 			StartCoroutine(dialogueSystemBadger.speak(0,1, speechBubble, badgerBox));
@@ -101,7 +95,6 @@ public class MonkTinkerDialogue : MonoBehaviour {
 			elapsedTime += Time.deltaTime;
 			yield return new WaitForEndOfFrame();
 		}
-		//print(GameObject.Find("Head Monk")==null)
 		GameObject.Find("Head Monk").SetActive(false);
 		kettle.SetActive(true);
 		yield return new WaitForSecondsRealtime(1f);

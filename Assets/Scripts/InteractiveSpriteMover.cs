@@ -19,10 +19,6 @@ public class InteractiveSpriteMover : MonoBehaviour {
 	float currentSpeed = 1f;
 	EndLevel endLevel;
 	
-	
-	//LoadText loadText = new LoadText();
-
-	// Update is called once per frame
 	void Start(){
 		endLevel = GameObject.Find("EventSystem").GetComponent<EndLevel>();
 		spriteMover = gameObject.GetComponent<SpriteMover>();
@@ -41,7 +37,6 @@ public class InteractiveSpriteMover : MonoBehaviour {
 		else{
 			currentSpeed = 1f;
 		}
-		//print(new Vector2(right, forward));
 		if(forward == 0 && right == 0){
 			spriteMover.pauseMoving();
 			return;
@@ -106,7 +101,6 @@ public class InteractiveSpriteMover : MonoBehaviour {
 		}
 		else{
 			if(_npc.getName()=="Head Monk"){
-				print("monk");
 				if(!DialogueSystemMonk.isTalking){
 					StartCoroutine(other.gameObject.GetComponent<DialogueSystemMonk>().speak(0,2, speechBubble, monkBox));
 					StartCoroutine(waitMonk());
@@ -156,8 +150,6 @@ public class InteractiveSpriteMover : MonoBehaviour {
 		if(Input.GetButtonUp("Submit")){
 			submitInteraction(other);
 		}
-		
-		
 	}
 	void OnTriggerExit2D(Collider2D other){
 		if(other.gameObject.tag != "npc"){
