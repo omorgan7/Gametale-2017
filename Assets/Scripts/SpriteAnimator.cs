@@ -35,8 +35,8 @@ public class SpriteAnimator : MonoBehaviour {
 		}
 	}
 	public void startAnimation(){
-		needsStarting = isPlaying || (isPlaying == false) ;
-		isPlaying = isPlaying || (isPlaying == false) ;
+		needsStarting = true; //isPlaying || (isPlaying == false) ;
+		isPlaying = true; //isPlaying || (isPlaying == false) ;
 		//needsStarting = isPlaying 
 		// if(!isPlaying){
 		// 	isPlaying = true;
@@ -61,6 +61,9 @@ public class SpriteAnimator : MonoBehaviour {
 	IEnumerator animation(){
 		while(isPlaying){
 			spriteRenderer.sprite = sprites[spriteIndex];
+			if(gameObject.transform.parent.gameObject.tag == "Player"){
+				print(spriteIndex);
+			}
 			if(spriteIndex == numSprites - 1 || (spriteIndex == 0 && indexDirection == -1)){
 				if(!isLooping){
 					break;
@@ -70,5 +73,9 @@ public class SpriteAnimator : MonoBehaviour {
 			spriteIndex += indexDirection;
 			yield return new WaitForSecondsRealtime(frameTime);
 		}
+	}
+
+	public bool isCurrentlyPlaying(){
+		return isPlaying;
 	}
 }

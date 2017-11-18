@@ -22,13 +22,13 @@ public class SpriteAnimationController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		if(nextAnimation != animationCurrentlyPlaying.state){
+		if(nextAnimation != animationCurrentlyPlaying.state || !animationCurrentlyPlaying.isCurrentlyPlaying()){
 			var animation = findAnimation(nextAnimation);
 			if(!animation){
 				return;
 			}
-			animation.startAnimation(); 
-			animationCurrentlyPlaying.stopAnimation();
+			SpriteAnimator old = animationCurrentlyPlaying;
+			StartCoroutine(animationStarter(old, animation));
 			animationCurrentlyPlaying = animation;
 			// animationCurrentlyPlaying.startAnimation();
 		}
@@ -37,6 +37,7 @@ public class SpriteAnimationController : MonoBehaviour {
 	public void sendToIdle(){
 		animationCurrentlyPlaying.goIdle();
 	}
+	
 	SpriteAnimator findAnimation(Enums.AnimStates state){
 		foreach(var animation in animations){
 			if(animation.state == nextAnimation){
@@ -44,5 +45,11 @@ public class SpriteAnimationController : MonoBehaviour {
 			}
 		}
 		return null;
+	}
+
+	IEnumerator animationStarter(SpriteAnimator oldAnimation, SpriteAnimator newAnimation){
+		oldAnimation.stopAnimation();
+		yield return new WaitForFixedUpdate();
+		newAnimation.startAnimation();
 	}
 }

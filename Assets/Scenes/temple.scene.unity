@@ -13897,7 +13897,7 @@ Prefab:
     - target: {fileID: 61739575192298754, guid: 9bce754a6465649e3bab3c23cfd4cb40,
         type: 2}
       propertyPath: m_Size.y
-      value: 1.8973389
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 61739575192298754, guid: 9bce754a6465649e3bab3c23cfd4cb40,
         type: 2}
@@ -13907,7 +13907,7 @@ Prefab:
     - target: {fileID: 61739575192298754, guid: 9bce754a6465649e3bab3c23cfd4cb40,
         type: 2}
       propertyPath: m_Size.x
-      value: 1.8405752
+      value: 1.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9bce754a6465649e3bab3c23cfd4cb40, type: 2}
@@ -14690,6 +14690,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textPanel: {fileID: 1506839909541514, guid: f5fff3a4797244a3c99b8773e2503888, type: 2}
+  audioSource: {fileID: 0}
 --- !u!114 &1475217118
 MonoBehaviour:
   m_ObjectHideFlags: 0

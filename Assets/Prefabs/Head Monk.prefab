@@ -51,7 +51,7 @@ GameObject:
   - component: {fileID: 114801725712535862}
   m_Layer: 0
   m_Name: Head Monk
-  m_TagString: npc
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -115,7 +115,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.018620014, y: 0.00000059604645}
+  m_Offset: {x: 0.04, y: 0.00000059604645}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -126,7 +126,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.9414015, y: 2.978639}
+  m_Size: {x: 2.1, y: 3.1}
   m_EdgeRadius: 0
 --- !u!61 &61998924323320930
 BoxCollider2D:
@@ -140,7 +140,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.04, y: -0.16}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -151,7 +151,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.6, y: 2.6}
+  m_Size: {x: 1.96, y: 2.63}
   m_EdgeRadius: 0
 --- !u!114 &114062736087209348
 MonoBehaviour:
