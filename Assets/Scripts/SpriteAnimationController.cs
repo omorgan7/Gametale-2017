@@ -11,7 +11,7 @@ public class SpriteAnimationController : MonoBehaviour {
 	SpriteAnimator animationCurrentlyPlaying;
 	int numAnimations;
 	// Use this for initialization
-	void Start () {
+	void Start(){
 		animations = gameObject.GetComponents<SpriteAnimator>();
 		animationCurrentlyPlaying = findAnimation(nextAnimation);
 		if(!animationCurrentlyPlaying){
@@ -21,8 +21,8 @@ public class SpriteAnimationController : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void FixedUpdate () {
-		if(nextAnimation != animationCurrentlyPlaying.state || !animationCurrentlyPlaying.isCurrentlyPlaying()){
+	void Update(){
+		if(nextAnimation != animationCurrentlyPlaying.state){
 			var animation = findAnimation(nextAnimation);
 			if(!animation){
 				return;
@@ -40,8 +40,8 @@ public class SpriteAnimationController : MonoBehaviour {
 	
 	SpriteAnimator findAnimation(Enums.AnimStates state){
 		foreach(var animation in animations){
-			if(animation.state == nextAnimation){
-				return animation ;
+			if(animation.state == state){
+				return animation;
 			}
 		}
 		return null;
@@ -49,7 +49,7 @@ public class SpriteAnimationController : MonoBehaviour {
 
 	IEnumerator animationStarter(SpriteAnimator oldAnimation, SpriteAnimator newAnimation){
 		oldAnimation.stopAnimation();
-		yield return new WaitForFixedUpdate();
+		yield return null;
 		newAnimation.startAnimation();
 	}
 }

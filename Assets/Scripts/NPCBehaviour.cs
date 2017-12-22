@@ -18,14 +18,6 @@ public class NPCBehaviour : MonoBehaviour {
 		var gameobjects = GameObject.FindGameObjectsWithTag("Player");
 		player = gameobjects[0].GetComponent<InteractiveSpriteMover>();
 	}
-	
-	void LateUpdate(){
-		if((Input.GetButtonUp("Submit")) && player.isTalking){
-			//turnOffBox();
-			//print("told player to move again");
-			//player.moveAgain();
-		}
-	}
 	IEnumerator start(){
 		while(!DialogueSystemNPC.isDone){
 			yield return null;

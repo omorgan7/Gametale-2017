@@ -33,16 +33,19 @@ public class InteractiveSpriteMover : MonoBehaviour {
 
 		right = Input.GetAxisRaw("Horizontal");
 		forward = Input.GetAxisRaw("Vertical");
+
 		if(Input.GetKey(KeyCode.LeftShift)){
 			currentSpeed = speedMultiplier;
 		}
 		else{
 			currentSpeed = 1f;
 		}
+
 		if(forward == 0 && right == 0){
 			spriteMover.pauseMoving();
 			return;
 		}
+
 		if(right > 0f){
 			spriteMover.moveRight(right*currentSpeed);
 		}
@@ -50,6 +53,7 @@ public class InteractiveSpriteMover : MonoBehaviour {
 			spriteMover.moveLeft(right*currentSpeed);
 			return;
 		}
+
 		if(forward < 0f){
 			spriteMover.moveForward(forward*currentSpeed);
 		}
@@ -62,9 +66,6 @@ public class InteractiveSpriteMover : MonoBehaviour {
 		if(rayCaster.triggeredObject != null){
 			collidedFunction(rayCaster.triggeredObject);
 		}
-	}
-
-	void OnTriggerEnter2D(Collider2D other){
 	}
 	void collidedFunction(GameObject other){
 		
@@ -109,9 +110,10 @@ public class InteractiveSpriteMover : MonoBehaviour {
 		if(Input.GetButtonUp("Submit")){
 			if(isTalking){
 				NPCBehaviour tempNPC = other.GetComponent<NPCBehaviour>();
-				if(!tempNPC){
+				if(tempNPC != null){
 					tempNPC.turnOffBox();
 					isTalking = false;
+					other.GetComponent<NPCSpriteMover>().startMoving();
 				}
 			}
 			else{
@@ -140,6 +142,8 @@ public class InteractiveSpriteMover : MonoBehaviour {
 			}
 		}
 		other.GetComponent<NPCSpriteMover>().stopMoving();
+		// other.GetComponent<SpriteMover>().pauseMoving();
+
 		_npc = other.GetComponent<NPCBehaviour>();
 
 		if((!hasKettle) | (_npc.getName() != "Head Monk")){
@@ -162,16 +166,10 @@ public class InteractiveSpriteMover : MonoBehaviour {
 		endLevel.endLevelText(textPanel);
 	}
 	IEnumerator waitBunbuku(){
-		while (DialogueSystemBadger.isTalking){
+		while(DialogueSystemBadger.isTalking){
 			yield return null;
 		}
 		isTalking = false;
-	}
-	void OnTriggerStay2D(Collider2D other){
-
-	}
-	void OnTriggerExit2D(Collider2D other){
-
 	}
 
 	public void moveAgain(){

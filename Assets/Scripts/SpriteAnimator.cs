@@ -27,24 +27,19 @@ public class SpriteAnimator : MonoBehaviour {
 			isLooping = false;
 		}
 	}
-	void FixedUpdate(){
-		//print(isPlaying.ToString() + gameObject.transform.parent.name);
-		if(needsStarting){
-			StartCoroutine(animation());
-			needsStarting = false;
-		}
+	void Start(){
+		StartCoroutine(spriteAnimation());
 	}
+	// void FixedUpdate(){
+	// 	if(needsStarting){
+	// 		StartCoroutine(animation());
+	// 		needsStarting = false;
+	// 	}
+	// }
 	public void startAnimation(){
-		needsStarting = true; //isPlaying || (isPlaying == false) ;
-		isPlaying = true; //isPlaying || (isPlaying == false) ;
-		//needsStarting = isPlaying 
-		// if(!isPlaying){
-		// 	isPlaying = true;
-		// 	needsStarting = true;
-		// }
+		isPlaying = true;
 	}
 	public void stopAnimation(){
-		StopCoroutine(animation());
 		isPlaying = false;
 		indexDirection = 1;
 		spriteIndex = 0;
@@ -52,22 +47,22 @@ public class SpriteAnimator : MonoBehaviour {
 
 	public void goIdle(){
 		stopAnimation();
-		if(idleIndex < 0 || idleIndex > numSprites){
-			return;
-		}
+		spriteIndex = 0;
 		spriteRenderer.sprite = sprites[idleIndex];
 	}
 
-	IEnumerator animation(){
-		while(isPlaying){
-			spriteRenderer.sprite = sprites[spriteIndex];
-			if(spriteIndex == numSprites - 1 || (spriteIndex == 0 && indexDirection == -1)){
-				if(!isLooping){
-					break;
+	IEnumerator spriteAnimation(){
+		while(true){
+			if(isPlaying){
+				spriteRenderer.sprite = sprites[spriteIndex];
+				if(spriteIndex == numSprites - 1 || (spriteIndex == 0 && indexDirection == -1)){
+					if(!isLooping){
+						break;
+					}
+					indexDirection *= -1;
 				}
-				indexDirection *= -1;
+				spriteIndex += indexDirection;
 			}
-			spriteIndex += indexDirection;
 			yield return new WaitForSecondsRealtime(frameTime);
 		}
 	}

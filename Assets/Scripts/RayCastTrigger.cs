@@ -13,7 +13,7 @@ public class RayCastTrigger : MonoBehaviour {
 	private RaycastHit2D[] hits;
 	void Start(){
 		// get a reference to all objects that sit on the interactive layer.
-		GameObject[] allObjects = FindObjectsOfType<GameObject>();
+		GameObject[] allObjects = Resources.FindObjectsOfTypeAll<GameObject>();
 		List<GameObject> interactive = new List<GameObject>();
 		for(int i = 0; i < allObjects.Length; ++i){
 			if(allObjects[i].layer == 8){
