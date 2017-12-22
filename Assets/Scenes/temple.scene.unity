@@ -14734,7 +14734,7 @@ MonoBehaviour:
   badgerDialogue: []
   npcDialogue: []
   narration: []
-  letterPause: 0.15
+  letterPause: 0.03
   isDone: 1
 --- !u!114 &1475217119
 MonoBehaviour:
@@ -14748,8 +14748,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NPCSpeech: {fileID: 4900000, guid: e7f7e1dcfd6f92b45989cc8b322cca62, type: 3}
-  speechBubble: {fileID: 1542382921259858, guid: d3e1654edb721a6409cd39fc10f200f8,
-    type: 2}
 --- !u!1 &1483774211
 GameObject:
   m_ObjectHideFlags: 0
@@ -15509,6 +15507,31 @@ Prefab:
         type: 2}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 61251490450174536, guid: 244ba7097fc3a45fd929be8baedfc8bc,
+        type: 2}
+      propertyPath: m_Offset.x
+      value: 0.054812193
+      objectReference: {fileID: 0}
+    - target: {fileID: 61251490450174536, guid: 244ba7097fc3a45fd929be8baedfc8bc,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 1.8192487
+      objectReference: {fileID: 0}
+    - target: {fileID: 61251490450174536, guid: 244ba7097fc3a45fd929be8baedfc8bc,
+        type: 2}
+      propertyPath: m_Offset.y
+      value: -0.5301461
+      objectReference: {fileID: 0}
+    - target: {fileID: 61251490450174536, guid: 244ba7097fc3a45fd929be8baedfc8bc,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 1.7041464
+      objectReference: {fileID: 0}
+    - target: {fileID: 61686689249526704, guid: 244ba7097fc3a45fd929be8baedfc8bc,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114271821919083870, guid: 244ba7097fc3a45fd929be8baedfc8bc, type: 2}
