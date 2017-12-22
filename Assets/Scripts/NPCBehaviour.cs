@@ -9,18 +9,21 @@ public class NPCBehaviour : MonoBehaviour {
 	public string nameOfNPC;
 	public GameObject speechBubble;
 	private GameObject box;
+	private InteractiveSpriteMover player;
 	public string getName(){
 		return nameOfNPC;
 	}
 	void Start(){
-		StartCoroutine(start());		
+		StartCoroutine(start());
+		var gameobjects = GameObject.FindGameObjectsWithTag("Player");
+		player = gameobjects[0].GetComponent<InteractiveSpriteMover>();
 	}
 	
-	void FixedUpdate(){
-		if((Input.GetButtonUp("Submit"))){
-			turnOffBox();
-			var gameobjects = GameObject.FindGameObjectsWithTag("Player");
-			gameobjects[0].GetComponent<InteractiveSpriteMover>().moveAgain();
+	void LateUpdate(){
+		if((Input.GetButtonUp("Submit")) && player.isTalking){
+			//turnOffBox();
+			//print("told player to move again");
+			//player.moveAgain();
 		}
 	}
 	IEnumerator start(){

@@ -9,8 +9,9 @@ public class InteractiveSpriteMover : MonoBehaviour {
 	private GameObject bunbukuBox;
 	private GameObject monkBox;
 	private NPCBehaviour _npc;
+	private RayCastTrigger rayCaster;
 	float right, forward;
-	private bool isTalking = false;
+	public bool isTalking = false;
 	private bool hasKettle = false;
 	public GameObject speechBubble;
 	public GameObject kettle;
@@ -22,6 +23,7 @@ public class InteractiveSpriteMover : MonoBehaviour {
 	void Start(){
 		endLevel = GameObject.Find("EventSystem").GetComponent<EndLevel>();
 		spriteMover = gameObject.GetComponent<SpriteMover>();
+		rayCaster = gameObject.GetComponent<RayCastTrigger>();
 	}
 	void LateUpdate(){
 		if(isTalking){
@@ -55,9 +57,18 @@ public class InteractiveSpriteMover : MonoBehaviour {
 			spriteMover.moveBackward(forward*currentSpeed);
 		}
 	}
-	void OnTriggerEnter2D(Collider2D other){
-		if(other.gameObject.tag == "fire"){
 
+	void Update(){
+		if(rayCaster.triggeredObject != null){
+			collidedFunction(rayCaster.triggeredObject);
+		}
+	}
+
+	void OnTriggerEnter2D(Collider2D other){
+	}
+	void collidedFunction(GameObject other){
+		
+		if(other.gameObject.tag == "fire"){
 			if(kettle){
 				kettle.SetActive(true);
 			}
@@ -67,46 +78,81 @@ public class InteractiveSpriteMover : MonoBehaviour {
 			}
 			return;	
 		}
-		if(other.gameObject.tag != "npc"){
+
+		if((other.tag == "bunbuku") && (SceneManager.GetActiveScene().name == "town.scene")){
+			if(isTalking){
+				return;
+			}
+			if((Input.GetButtonUp("Submit")) && (!isTalking) && (!DialogueSystemBadger.isTalking)){
+				isTalking =  true;
+				DialogueSystemBadger.isTalking = true;
+				StartCoroutine(waitBunbuku());
+				StartCoroutine(other.GetComponent<DialogueSystemBadger>().speak(0, 0, speechBubble,bunbukuBox));
+				StartCoroutine(other.GetComponent<DialogueSystemBadger>().disappear());
+				kettle.SetActive(true);
+			}
 			return;
 		}
+
+		if(other.tag == "kettle"){ //collect kettle
+			if(Input.GetButtonUp("Submit")){
+				other.SetActive(false);
+				hasKettle = true;
+			}
+			return;
+		}
+
+		if(other.tag != "npc"){
+			return;
+		}
+
 		if(Input.GetButtonUp("Submit")){
-			submitInteraction(other);
+			if(isTalking){
+				NPCBehaviour tempNPC = other.GetComponent<NPCBehaviour>();
+				if(!tempNPC){
+					tempNPC.turnOffBox();
+					isTalking = false;
+				}
+			}
+			else{
+				submitInteraction(other);
+			}
+			
 		}
 	}
-
-	void submitInteraction(Collider2D other){
+	void submitInteraction(GameObject other){
 		isTalking = true;
 		Vector3 positionDifference = transform.position - other.transform.position;
 		if(Mathf.Abs(positionDifference.x) > Mathf.Abs(positionDifference.y)){
 			if(positionDifference.x <= 0f){
-				other.gameObject.GetComponent<NPCSpriteMover>().spriteMover.moveLeft(1f);
+				other.GetComponent<NPCSpriteMover>().spriteMover.moveLeft(1f);
 			}
 			else{
-				other.gameObject.GetComponent<NPCSpriteMover>().spriteMover.moveRight(1f);
+				other.GetComponent<NPCSpriteMover>().spriteMover.moveRight(1f);
 			}
 		}
 		else{
 			if(positionDifference.y <= 0f){
-				other.gameObject.GetComponent<NPCSpriteMover>().spriteMover.moveForward(1f);
+				other.GetComponent<NPCSpriteMover>().spriteMover.moveForward(1f);
 			}
 			else{
-				other.gameObject.GetComponent<NPCSpriteMover>().spriteMover.moveBackward(1f);
+				other.GetComponent<NPCSpriteMover>().spriteMover.moveBackward(1f);
 			}
 		}
-		other.gameObject.GetComponent<NPCSpriteMover>().stopMoving();
-		_npc = other.gameObject.GetComponent<NPCBehaviour>();
-		if((!hasKettle) | (_npc.getName()!="Head Monk")){
+		other.GetComponent<NPCSpriteMover>().stopMoving();
+		_npc = other.GetComponent<NPCBehaviour>();
+
+		if((!hasKettle) | (_npc.getName() != "Head Monk")){
 			_npc.turnOnBox();
 		}
 		else{
-			if(_npc.getName()=="Head Monk"){
+			if(_npc.getName() == "Head Monk"){
 				if(!DialogueSystemMonk.isTalking){
-					StartCoroutine(other.gameObject.GetComponent<DialogueSystemMonk>().speak(0,2, speechBubble, monkBox));
+					StartCoroutine(other.GetComponent<DialogueSystemMonk>().speak(0, 2, speechBubble, monkBox));
 					StartCoroutine(waitMonk());
 				}
 			}
-		}	
+		}
 	}
 	IEnumerator waitMonk(){
 		while(DialogueSystemMonk.isTalking){
@@ -122,40 +168,10 @@ public class InteractiveSpriteMover : MonoBehaviour {
 		isTalking = false;
 	}
 	void OnTriggerStay2D(Collider2D other){
-		if((other.gameObject.tag == "bunbuku") && (SceneManager.GetActiveScene().name == "town.scene")){
-			if(isTalking){
-				return;
-			}
-			if((Input.GetButtonUp("Submit"))&&(!isTalking)&&(!DialogueSystemBadger.isTalking)){
-				isTalking =  true;
-				DialogueSystemBadger.isTalking = true;
-				StartCoroutine(waitBunbuku());
-				StartCoroutine(other.gameObject.GetComponent<DialogueSystemBadger>().speak(0,0, speechBubble,bunbukuBox));
-				StartCoroutine(other.gameObject.GetComponent<DialogueSystemBadger>().disappear());
-				kettle.SetActive(true);
-			}
-			return;
-		}
-		if(other.gameObject.tag == "kettle"){ //collect kettle
-			if(Input.GetButtonUp("Submit")){
-				other.gameObject.SetActive(false);
-				hasKettle = true;
-			}
-			return;
-		}
 
-		if(other.gameObject.tag != "npc"){
-			return;
-		}
-		if(Input.GetButtonUp("Submit")){
-			submitInteraction(other);
-		}
 	}
 	void OnTriggerExit2D(Collider2D other){
-		if(other.gameObject.tag != "npc"){
-			return;
-		}
-		other.gameObject.GetComponent<NPCSpriteMover>().startMoving();
+
 	}
 
 	public void moveAgain(){
