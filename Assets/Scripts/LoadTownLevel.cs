@@ -13,8 +13,6 @@ public class LoadTownLevel : MonoBehaviour {
 	void Start(){
 		fadeController = gameObject.GetComponent<FadeController>();
 		doorClose = sound.GetComponent<AudioSource>();
-		print(doorClose==null);
-		
 	}
 	void OnTriggerEnter2D(Collider2D other){
 		if (other.gameObject.tag == "door"){
