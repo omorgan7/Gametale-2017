@@ -3629,6 +3629,7 @@ GameObject:
   - component: {fileID: 654413146}
   - component: {fileID: 654413145}
   - component: {fileID: 654413147}
+  - component: {fileID: 654413148}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -3780,6 +3781,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TinkerSpeech: {fileID: 4900000, guid: 0ee6da38d3f1ea448a33f0498b53b082, type: 3}
+--- !u!114 &654413148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 654413137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7de6e70402fe91d4290740b41c464ff1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &663654176
 GameObject:
   m_ObjectHideFlags: 0

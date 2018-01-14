@@ -43,7 +43,7 @@ public class MonkTinkerDialogue : MonoBehaviour {
 	}
 
 	void conversation(int i){ //add enumerator
-		if( i == 0){
+		if(i == 0){
 			StartCoroutine(dialogueSystemMonk.speak(0,1, speechBubble, monkBox));
 		}
 		if(i == 1){
@@ -55,17 +55,15 @@ public class MonkTinkerDialogue : MonoBehaviour {
 			++step;
 			conversation(step);
 		}
-		if(i ==3 ){
+		if(i == 3){
 			StartCoroutine(dialogueSystemBadger.speak(0,2, speechBubble, badgerBox));
 		}
-		if( i == 4){
+		if(i == 4){
 			StartCoroutine(dialogueSystemTinker.speak(4,6, speechBubble, tinkerBox));
 		}
-		if( i==5){
+		if(i == 5){
 			StartCoroutine(dialogueSystemBadger.speak(3,8, speechBubble, badgerBox));
-		}
-		if (i==6){
-			EndLevel.sceneFinished = true;
+			StartCoroutine(DelayedEnd());
 		}
 	}
 
@@ -76,6 +74,12 @@ public class MonkTinkerDialogue : MonoBehaviour {
 		}
 		conversation(step);
 		started = true;
+	}
+	IEnumerator DelayedEnd(){
+		while(DialogueSystemBadger.isTalking){
+			yield return null;
+		}
+		EndLevel.sceneFinished = true;
 	}
 
 	IEnumerator Animation1(){
