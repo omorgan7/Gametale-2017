@@ -6871,6 +6871,7 @@ GameObject:
   - component: {fileID: 600565201}
   - component: {fileID: 600565200}
   - component: {fileID: 600565199}
+  - component: {fileID: 600565198}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -6951,6 +6952,17 @@ MonoBehaviour:
   textPanel: {fileID: 1506839909541514, guid: f5fff3a4797244a3c99b8773e2503888, type: 2}
   sceneText: {fileID: 4900000, guid: 6a607eba85a851e4d8d41d45d78e4225, type: 3}
   audioSource: {fileID: 0}
+--- !u!114 &600565198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 600565192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7de6e70402fe91d4290740b41c464ff1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &600565199
 MonoBehaviour:
   m_ObjectHideFlags: 0
