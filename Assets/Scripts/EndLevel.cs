@@ -32,9 +32,14 @@ public class EndLevel : MonoBehaviour {
 		}
 		else if((sceneFinished)&&(SceneManager.GetActiveScene().name == "town3.scene")){
 			fadeController.FadeOut();
-				StartCoroutine(loadLevel());
-				sceneFinished = false;
-				DialogueSystemNPC.isDone = false;
+			StartCoroutine(loadLevel());
+			sceneFinished = false;
+			DialogueSystemNPC.isDone = false;
+		}
+		else if((sceneFinished)&&(SceneManager.GetActiveScene().name == "house_monk-tinker-chat")){
+			fadeController.FadeOut();
+			StartCoroutine(loadLevel());
+			sceneFinished = false;
 		}
 		else if(sceneFinished){
 			if(Input.GetButtonUp("Submit")){
