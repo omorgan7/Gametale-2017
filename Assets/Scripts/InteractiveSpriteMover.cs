@@ -25,7 +25,7 @@ public class InteractiveSpriteMover : MonoBehaviour {
 		spriteMover = gameObject.GetComponent<SpriteMover>();
 		rayCaster = gameObject.GetComponent<RayCastTrigger>();
 	}
-	void LateUpdate(){
+	void FixedUpdate(){
 		if(isTalking){
 			spriteMover.pauseMoving();
 			return;
