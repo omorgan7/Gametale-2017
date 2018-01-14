@@ -15261,6 +15261,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114973285397288100, guid: 716d3e38923cc4a378e427b2a9a9349f,
+        type: 2}
+      propertyPath: sprites.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4851571544380670, guid: 716d3e38923cc4a378e427b2a9a9349f, type: 2}
       propertyPath: m_LocalPosition.x
       value: -0.6
@@ -15331,6 +15336,36 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 212919414217399038, guid: 716d3e38923cc4a378e427b2a9a9349f,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 804c1644190ef4920b7c239a60529610,
+        type: 3}
+    - target: {fileID: 114973285397288100, guid: 716d3e38923cc4a378e427b2a9a9349f,
+        type: 2}
+      propertyPath: sprites.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: d484896e2482445af9ae09626332ba0b,
+        type: 3}
+    - target: {fileID: 114973285397288100, guid: 716d3e38923cc4a378e427b2a9a9349f,
+        type: 2}
+      propertyPath: sprites.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 804c1644190ef4920b7c239a60529610,
+        type: 3}
+    - target: {fileID: 114973285397288100, guid: 716d3e38923cc4a378e427b2a9a9349f,
+        type: 2}
+      propertyPath: sprites.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: 609e04c6911ce4e02a5564d3eabd9497,
+        type: 3}
+    - target: {fileID: 114289588614115190, guid: 716d3e38923cc4a378e427b2a9a9349f,
+        type: 2}
+      propertyPath: sprites.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 804c1644190ef4920b7c239a60529610,
+        type: 3}
     m_RemovedComponents:
     - {fileID: 114762058551890060, guid: 716d3e38923cc4a378e427b2a9a9349f, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 716d3e38923cc4a378e427b2a9a9349f, type: 2}
