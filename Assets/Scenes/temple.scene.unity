@@ -4409,6 +4409,16 @@ Prefab:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 50686917035467680, guid: cea355df6f86648a69790892882da3a8,
+        type: 2}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 50686917035467680, guid: cea355df6f86648a69790892882da3a8,
+        type: 2}
+      propertyPath: m_CollisionDetection
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
   m_ParentPrefab: {fileID: 100100000, guid: cea355df6f86648a69790892882da3a8, type: 2}
@@ -5842,6 +5852,16 @@ Prefab:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 50686917035467680, guid: cea355df6f86648a69790892882da3a8,
+        type: 2}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 50686917035467680, guid: cea355df6f86648a69790892882da3a8,
+        type: 2}
+      propertyPath: m_CollisionDetection
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
   m_ParentPrefab: {fileID: 100100000, guid: cea355df6f86648a69790892882da3a8, type: 2}
@@ -6057,6 +6077,16 @@ Prefab:
     - target: {fileID: 1567675817320126, guid: cea355df6f86648a69790892882da3a8, type: 2}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 50686917035467680, guid: cea355df6f86648a69790892882da3a8,
+        type: 2}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 50686917035467680, guid: cea355df6f86648a69790892882da3a8,
+        type: 2}
+      propertyPath: m_CollisionDetection
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
@@ -15618,6 +15648,11 @@ Prefab:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 50097109420416754, guid: 244ba7097fc3a45fd929be8baedfc8bc,
+        type: 2}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114271821919083870, guid: 244ba7097fc3a45fd929be8baedfc8bc, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 244ba7097fc3a45fd929be8baedfc8bc, type: 2}
@@ -20087,6 +20122,16 @@ Prefab:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 50686917035467680, guid: cea355df6f86648a69790892882da3a8,
+        type: 2}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 50686917035467680, guid: cea355df6f86648a69790892882da3a8,
+        type: 2}
+      propertyPath: m_CollisionDetection
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
   m_ParentPrefab: {fileID: 100100000, guid: cea355df6f86648a69790892882da3a8, type: 2}
@@ -20156,6 +20201,16 @@ Prefab:
     - target: {fileID: 1257863830761514, guid: cea355df6f86648a69790892882da3a8, type: 2}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 50686917035467680, guid: cea355df6f86648a69790892882da3a8,
+        type: 2}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 50686917035467680, guid: cea355df6f86648a69790892882da3a8,
+        type: 2}
+      propertyPath: m_CollisionDetection
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
@@ -20518,6 +20573,16 @@ Prefab:
     - target: {fileID: 1567675817320126, guid: cea355df6f86648a69790892882da3a8, type: 2}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 50686917035467680, guid: cea355df6f86648a69790892882da3a8,
+        type: 2}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 50686917035467680, guid: cea355df6f86648a69790892882da3a8,
+        type: 2}
+      propertyPath: m_CollisionDetection
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
