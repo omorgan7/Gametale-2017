@@ -7,12 +7,16 @@ public class LoadTownLevel : MonoBehaviour {
 
 	// Use this for initialization
 	FadeController fadeController;
+	public GameObject sound;
+	private AudioSource doorClose;
 
 	void Start(){
 		fadeController = gameObject.GetComponent<FadeController>();
+		doorClose = sound.GetComponent<AudioSource>();
 	}
 	void OnTriggerEnter2D(Collider2D other){
 		if (other.gameObject.tag == "door"){
+			doorClose.Play();
 			fadeController.FadeOut();
 			StartCoroutine(loadLevel());
 		}

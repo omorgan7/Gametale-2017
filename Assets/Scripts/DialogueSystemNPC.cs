@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class DialogueSystemNPC : MonoBehaviour {
 	public TextAsset NPCSpeech;
-		private bool pressed;
+	private bool pressed;
 	LoadText loadText;
 	static public List <string> NPCword;
 	static public bool isDone = false;

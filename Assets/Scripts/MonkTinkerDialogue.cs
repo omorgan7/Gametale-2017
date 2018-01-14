@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MonkTinkerDialogue : MonoBehaviour {
-	private int step =0;
+	private int step = 0;
 	public GameObject kettle;
 	public GameObject bunbuku;
 	public GameObject monk;
@@ -11,17 +11,14 @@ public class MonkTinkerDialogue : MonoBehaviour {
 	private DialogueSystemBadger dialogueSystemBadger;
 	private DialogueSystemMonk dialogueSystemMonk;
 	private DialogueSystemTinker dialogueSystemTinker;
-	private GameObject monkBox;
-	private GameObject badgerBox;
-	private GameObject tinkerBox;
+	private GameObject monkBox = null;
+	private GameObject badgerBox = null;
+	private GameObject tinkerBox = null;
 	public GameObject speechBubble;
-	private bool isTalking = false;
 	private bool started = false;
 	SpriteAnimationController MonkSAC;
 	SpriteAnimationController TinkerSAC;
 	SpriteAnimationController kettleSac;
-	SpriteAnimationController bunbukuSAC;
-
 	bool isDoneAnimating = true;
 
 
@@ -32,7 +29,6 @@ public class MonkTinkerDialogue : MonoBehaviour {
 		dialogueSystemTinker = GameObject.Find("EventSystem").GetComponent<DialogueSystemTinker>();
 		TinkerSAC = tinker.transform.GetChild(0).GetComponent<SpriteAnimationController>();
 		MonkSAC = monk.transform.GetChild(0).GetComponent<SpriteAnimationController>();
-		bunbukuSAC = bunbuku.transform.GetChild(0).GetComponent<SpriteAnimationController>();
 		kettleSac = kettle.GetComponent<SpriteAnimationController>();
 		StartCoroutine(DelayedStart());
 		TinkerSAC.sendToIdle();
@@ -51,7 +47,7 @@ public class MonkTinkerDialogue : MonoBehaviour {
 			StartCoroutine(dialogueSystemMonk.speak(0,1, speechBubble, monkBox));
 		}
 		if(i == 1){
-			StartCoroutine(dialogueSystemTinker.speak(0,2, speechBubble, tinkerBox));
+			StartCoroutine(dialogueSystemTinker.speak(0,3, speechBubble, tinkerBox));
 			isDoneAnimating = false;
 			StartCoroutine(Animation1());
 		}
@@ -60,13 +56,13 @@ public class MonkTinkerDialogue : MonoBehaviour {
 			conversation(step);
 		}
 		if(i ==3 ){
-			StartCoroutine(dialogueSystemBadger.speak(0,1, speechBubble, badgerBox));
+			StartCoroutine(dialogueSystemBadger.speak(0,2, speechBubble, badgerBox));
 		}
 		if( i == 4){
-			StartCoroutine(dialogueSystemTinker.speak(3,5, speechBubble, tinkerBox));
+			StartCoroutine(dialogueSystemTinker.speak(4,6, speechBubble, tinkerBox));
 		}
 		if( i==5){
-			StartCoroutine(dialogueSystemBadger.speak(2,4, speechBubble, badgerBox));
+			StartCoroutine(dialogueSystemBadger.speak(3,8, speechBubble, badgerBox));
 		}
 		if (i==6){
 			EndLevel.sceneFinished = true;

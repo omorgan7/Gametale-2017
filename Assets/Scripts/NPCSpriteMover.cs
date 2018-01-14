@@ -43,7 +43,6 @@ public class NPCSpriteMover : MonoBehaviour {
 		forward = 0f;
 		spriteMover.pauseMoving();
 	}
-
 	public void startMoving(){
 		isMoving = true;
 	}
@@ -53,7 +52,6 @@ public class NPCSpriteMover : MonoBehaviour {
 		right = 0f;
 		forward = 0f;
 	}
-
 	void FixedUpdate(){
 		if(!isMoving){
 			pauseMoving();
@@ -76,18 +74,4 @@ public class NPCSpriteMover : MonoBehaviour {
 			spriteMover.moveLeft(right);
 		}
 	}
-
-	// void OnCollisionEnter2D(Collision2D other){
-	// 	if(!isMoving){
-	// 		return;
-	// 	}
-	// 	if(other.gameObject.tag == "walls"){
-	// 		forward = -forward;
-	// 		right = -right;
-	// 	}
-	// 	if(gameObject.tag != "bunbuku" && other.gameObject.tag == "Player"){
-	// 		print("stop " + gameObject.name);
-	// 		stopMoving();
-	// 	}
-	// }
 }

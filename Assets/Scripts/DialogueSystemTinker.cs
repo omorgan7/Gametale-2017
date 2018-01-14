@@ -31,7 +31,7 @@ public class DialogueSystemTinker : MonoBehaviour {
 		box = Instantiate(speechBubble, Vector3.zero, Quaternion.identity); 
 		Text txt = box.transform.GetChild(0).GetChild(0).GetComponent<Text>();
 		box.transform.GetChild(1).GetChild(0).GetComponent<Text>().text = "Tinker";
-		for(int i = startIndex; i< EndIndex + 1; ++i){
+		for(int i = startIndex; i < EndIndex + 1; ++i){
 			string _string = loadText.tinkerDialogue[i];
 			txt.text = " ";
 			foreach(char s in _string){
@@ -43,11 +43,8 @@ public class DialogueSystemTinker : MonoBehaviour {
 			}
 			pressed = false;			
 		}	
-			
 		Destroy(box);	
 		pressed = false;
 		isTalking = false;
-		
 	}
-	
 }

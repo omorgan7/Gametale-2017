@@ -10,7 +10,7 @@ public class FadeController : MonoBehaviour {
 	public float duration = 1f;
 	public bool isDone = false;
 
-	Renderer renderer;
+	Renderer _renderer;
 	float timestart = 0f;
 	enum Fade {Black, White, Nothing};
 	Color startcolor;
@@ -19,7 +19,7 @@ public class FadeController : MonoBehaviour {
 
 	void Start () {
 		startduration = duration;
-		renderer = fadeObject.GetComponent<Renderer>();
+		_renderer = fadeObject.GetComponent<Renderer>();
 	}
 
 	public void Update(){
@@ -43,7 +43,7 @@ public class FadeController : MonoBehaviour {
 			duration = startduration;
 			return;
 		}
-		renderer.material.SetColor("_Color",Color.Lerp(from,to,lerp));
+		_renderer.material.SetColor("_Color",Color.Lerp(from,to,lerp));
 	}
 
 	public void FadeIn(){
@@ -64,7 +64,7 @@ public class FadeController : MonoBehaviour {
 	}
 	void FadeInit(){
 		isDone = false;
-		startcolor = renderer.material.GetColor("_Color");
+		startcolor = _renderer.material.GetColor("_Color");
 		timestart = Time.time;
 	}
 }

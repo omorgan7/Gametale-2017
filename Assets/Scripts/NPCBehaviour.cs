@@ -13,15 +13,7 @@ public class NPCBehaviour : MonoBehaviour {
 		return nameOfNPC;
 	}
 	void Start(){
-		StartCoroutine(start());		
-	}
-	
-	void FixedUpdate(){
-		if((Input.GetButtonUp("Submit"))){
-			turnOffBox();
-			var gameobjects = GameObject.FindGameObjectsWithTag("Player");
-			gameobjects[0].GetComponent<InteractiveSpriteMover>().moveAgain();
-		}
+		StartCoroutine(start());
 	}
 	IEnumerator start(){
 		while(!DialogueSystemNPC.isDone){
@@ -38,7 +30,6 @@ public class NPCBehaviour : MonoBehaviour {
 			box.transform.GetChild(1).gameObject.SetActive(false);
 		}
 		box.SetActive(false);
-		
 	}
 	public void turnOnBox(){
 		if(!box){

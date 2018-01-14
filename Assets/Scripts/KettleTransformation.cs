@@ -4,14 +4,14 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class KettleTransformation : MonoBehaviour {
-	private bool isInitialized = false;
+//	private bool isInitialized = false;
 	// Use this for initialization
 
 	public GameObject kettle;
 	public GameObject bunbuku;
 	bool transformationBegun = false;
 	DialogueSystemBadger dialogueSystemBadger;
-	private GameObject box;
+	private GameObject box = null;
 	public GameObject speechBubble;
 	
 	// Update is called once per frame

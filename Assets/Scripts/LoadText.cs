@@ -16,29 +16,29 @@ public class LoadText : MonoBehaviour {
 	public void Load(string fileName, characters _char){
 		StringReader theReader = new StringReader(fileName);
 		string line;		
-		  do{
-				line = theReader.ReadLine();                     
-                 if (line != null){
-					 switch(_char){
-					 	case characters.tinker:
-							tinkerDialogue.Add(line);
-							break;
-						case characters.monk:
-							monkDialogue.Add(line);
-							break;
-						case characters.badger:
-							badgerDialogue.Add(line);
-							break;
-						case characters.npc:
-							npcDialogue.Add(line);
-							break;
-						case characters.narrator:
-							narration.Add(line);
-							break;
-					 }
-                 }
+		do{
+			line = theReader.ReadLine();                     
+			if (line != null){
+				switch(_char){
+					case characters.tinker:
+						tinkerDialogue.Add(line);
+						break;
+					case characters.monk:
+						monkDialogue.Add(line);
+						break;
+					case characters.badger:
+						badgerDialogue.Add(line);
+						break;
+					case characters.npc:
+						npcDialogue.Add(line);
+						break;
+					case characters.narrator:
+						narration.Add(line);
+						break;
+				}
+			}
 			
-			}while (line != null);
-			isDone = true;
+		}while (line != null);
+		isDone = true;
 	}	
 }

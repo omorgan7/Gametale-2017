@@ -11,8 +11,8 @@ public class BunbukuTinkerDialogue : MonoBehaviour {
 	SpriteAnimationController TinkerSAC;
 	private DialogueSystemBadger dialogueSystemBadger;
 	private DialogueSystemTinker dialogueSystemTinker;
-	private GameObject badgerBox;
-	private GameObject tinkerBox;
+	private GameObject badgerBox = null;
+	private GameObject tinkerBox = null;
 	public GameObject speechBubble;
 
 	void Start () {
@@ -41,23 +41,22 @@ public class BunbukuTinkerDialogue : MonoBehaviour {
 			StartCoroutine(dialogueSystemTinker.speak(3,3, speechBubble, tinkerBox));
 		}
 		if( i == 5){
-			StartCoroutine(dialogueSystemBadger.speak(4,5, speechBubble, badgerBox));
+			StartCoroutine(dialogueSystemBadger.speak(4,6, speechBubble, badgerBox));
 		}
 		if(i==6){
 			StartCoroutine(dialogueSystemTinker.speak(4,4, speechBubble, tinkerBox));
 		}
 		if(i==7){
-			StartCoroutine(dialogueSystemBadger.speak(6,6, speechBubble, badgerBox));
+			StartCoroutine(dialogueSystemBadger.speak(7,7, speechBubble, badgerBox));
 		}
 		if(i==8){
 			StartCoroutine(dialogueSystemTinker.speak(5,5, speechBubble, tinkerBox));
 		}
 		if(i==9){
-			StartCoroutine(dialogueSystemBadger.speak(7,7, speechBubble, badgerBox));
-			
+			StartCoroutine(dialogueSystemBadger.speak(8,8, speechBubble, badgerBox));
 		}
 		if(i == 10){
-			StartCoroutine(animation());
+			StartCoroutine(animationSequence());
 		}
 	}
 	IEnumerator speak(int i){
@@ -70,15 +69,14 @@ public class BunbukuTinkerDialogue : MonoBehaviour {
 		}
 	}
 
-	IEnumerator animation(){
-		var bunbukuController =  bunbuku.transform.GetChild(0).GetComponent<SpriteAnimationController>();
+	IEnumerator animationSequence(){
 		yield return new WaitForSecondsRealtime(0.5f);
 		float _elapsedTime = 0f;
 		float _yPos = bunbuku.transform.position.y;
 		int x = -1;
 		while(_elapsedTime <= 2.35f){
 		x *= -1;
-		bunbuku.transform.position = new Vector3(bunbuku.transform.position.x + 0.1f*x, _yPos ,0);
+		bunbuku.transform.position = new Vector3(bunbuku.transform.position.x + 0.1f*x, _yPos , 0);
 		_elapsedTime += Time.deltaTime;
 		yield return new WaitForEndOfFrame();
 		}
@@ -93,7 +91,7 @@ public class BunbukuTinkerDialogue : MonoBehaviour {
 		float elapsedTime = 0f;
 		float yPos = tinker.transform.position.y;
 		while(elapsedTime <= 2.35f){
-		tinker.transform.position = new Vector3(tinker.transform.position.x, yPos + Mathf.SmoothStep(0f,5,0.25f*elapsedTime),0);
+		tinker.transform.position = new Vector3(tinker.transform.position.x, yPos + Mathf.SmoothStep(0f, 5, 0.25f*elapsedTime), 0);
 		elapsedTime += Time.deltaTime;
 		yield return new WaitForEndOfFrame();
 		}
