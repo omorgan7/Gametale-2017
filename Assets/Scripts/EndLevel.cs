@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 public class EndLevel : MonoBehaviour {
 	static public bool sceneFinished = false;
+	bool startedFade = false;
 	public GameObject textPanel;
 	public TextAsset sceneText;
 	public AudioSource audioSource;
@@ -26,25 +27,31 @@ public class EndLevel : MonoBehaviour {
 	}
 	void FixedUpdate(){
 		if((sceneFinished)&&(SceneManager.GetActiveScene().name == "temple2.scene")){
-			StartCoroutine(finalFade());
-			fadeController.FadeOut();
-			sceneFinished = false;
+			if(!startedFade){
+				StartCoroutine(loadLevel());
+			}
+			startedFade = true;
 		}
 		else if((sceneFinished)&&(SceneManager.GetActiveScene().name == "town3.scene")){
-			fadeController.FadeOut();
-			StartCoroutine(loadLevel());
-			sceneFinished = false;
+			if(!startedFade){
+				StartCoroutine(loadLevel());
+			}
+			startedFade = true;
 			DialogueSystemNPC.isDone = false;
 		}
 		else if((sceneFinished)&&(SceneManager.GetActiveScene().name == "house_monk-tinker-chat")){
-			fadeController.FadeOut();
-			StartCoroutine(loadLevel());
-			sceneFinished = false;
+			if(!startedFade){
+				StartCoroutine(loadLevel());
+			}
+			startedFade = true;
 		}
 		else if(sceneFinished){
 			if(Input.GetButtonUp("Submit")){
-				fadeController.FadeOut();
-				StartCoroutine(loadLevel());
+
+				if(!startedFade){
+					StartCoroutine(loadLevel());
+				}
+				startedFade = true;
 				sceneFinished = false;
 				DialogueSystemNPC.isDone = false;
 			}
@@ -62,9 +69,11 @@ public class EndLevel : MonoBehaviour {
 	}
 	
 	IEnumerator loadLevel(){
+		fadeController.FadeOut();
 		while(!fadeController.isDone){
 			yield return null;
 		}
+		sceneFinished = false;
 		if(SceneManager.GetActiveScene().name=="town.scene"){
 			SceneManager.LoadScene("temple.scene");
 		}
@@ -80,11 +89,9 @@ public class EndLevel : MonoBehaviour {
 		else if (SceneManager.GetActiveScene().name == "town3.scene"){
 			SceneManager.LoadScene("temple2.scene");
 		}
-	}
-	IEnumerator finalFade(){
-		isQuitting = true;
-		yield return new WaitForSecondsRealtime(5f);
-		Application.Quit();
+		else if (SceneManager.GetActiveScene().name == "temple2.scene"){
+			SceneManager.LoadScene("Credits.scene");
+		}
 	}
 
 }

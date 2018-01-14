@@ -92,7 +92,8 @@ public class InteractiveSpriteMover : MonoBehaviour {
 				kettle.SetActive(true);
 			}
 				
-			if(SceneManager.GetActiveScene().name == "temple2.scene"){
+			if(SceneManager.GetActiveScene().name == "temple2.scene" && EndLevel.sceneFinished == false){
+				isTalking = true;
 				EndLevel.sceneFinished = true;
 			}
 			return;	
