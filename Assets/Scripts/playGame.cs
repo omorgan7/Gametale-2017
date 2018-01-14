@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class ResetGame : MonoBehaviour {
+
+public class playGame : MonoBehaviour {
 	private Button button;
     void Start(){
         button = gameObject.GetComponent<Button>();
@@ -13,6 +14,6 @@ public class ResetGame : MonoBehaviour {
 	
 
 	void TaskOnClick(){
-        SceneManager.LoadScene("splashScreen.scene");
+        SceneManager.LoadScene("house.scene");
 	}
 }
