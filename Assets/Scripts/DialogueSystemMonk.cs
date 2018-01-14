@@ -9,7 +9,7 @@ public class DialogueSystemMonk : MonoBehaviour {
 	LoadText loadText;
 	static public bool isTalking = false;
 	private bool pressed = false;
-	private bool hasSpoken = false;
+	public bool hasSpoken = false;
 	void Start () {
 		loadText = GameObject.Find("EventSystem").GetComponent<LoadText>();
 		StartCoroutine(LoadInDialogue(SceneManager.GetActiveScene ().name));
