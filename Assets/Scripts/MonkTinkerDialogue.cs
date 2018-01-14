@@ -51,7 +51,7 @@ public class MonkTinkerDialogue : MonoBehaviour {
 			StartCoroutine(dialogueSystemMonk.speak(0,1, speechBubble, monkBox));
 		}
 		if(i == 1){
-			StartCoroutine(dialogueSystemTinker.speak(0,2, speechBubble, tinkerBox));
+			StartCoroutine(dialogueSystemTinker.speak(0,3, speechBubble, tinkerBox));
 			isDoneAnimating = false;
 			StartCoroutine(Animation1());
 		}
@@ -60,13 +60,13 @@ public class MonkTinkerDialogue : MonoBehaviour {
 			conversation(step);
 		}
 		if(i ==3 ){
-			StartCoroutine(dialogueSystemBadger.speak(0,1, speechBubble, badgerBox));
+			StartCoroutine(dialogueSystemBadger.speak(0,2, speechBubble, badgerBox));
 		}
 		if( i == 4){
-			StartCoroutine(dialogueSystemTinker.speak(3,5, speechBubble, tinkerBox));
+			StartCoroutine(dialogueSystemTinker.speak(4,6, speechBubble, tinkerBox));
 		}
 		if( i==5){
-			StartCoroutine(dialogueSystemBadger.speak(2,4, speechBubble, badgerBox));
+			StartCoroutine(dialogueSystemBadger.speak(3,8, speechBubble, badgerBox));
 		}
 		if (i==6){
 			EndLevel.sceneFinished = true;
