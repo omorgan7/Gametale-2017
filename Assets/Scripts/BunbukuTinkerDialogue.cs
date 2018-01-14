@@ -27,6 +27,7 @@ public class BunbukuTinkerDialogue : MonoBehaviour {
 	void conversation(int i){ //add enumerator
 		if( i == 0){
 			StartCoroutine(dialogueSystemTinker.speak(0,1, speechBubble, tinkerBox));
+			TinkerSAC.sendToIdle();
 		}
 		if( i == 1){
 			StartCoroutine(dialogueSystemBadger.speak(0,1, speechBubble, badgerBox));
@@ -70,16 +71,20 @@ public class BunbukuTinkerDialogue : MonoBehaviour {
 	}
 
 	IEnumerator animationSequence(){
+
 		yield return new WaitForSecondsRealtime(0.5f);
+
 		float _elapsedTime = 0f;
 		float _yPos = bunbuku.transform.position.y;
 		int x = -1;
+
 		while(_elapsedTime <= 2.35f){
-		x *= -1;
-		bunbuku.transform.position = new Vector3(bunbuku.transform.position.x + 0.1f*x, _yPos , 0);
-		_elapsedTime += Time.deltaTime;
-		yield return new WaitForEndOfFrame();
+			x *= -1;
+			bunbuku.transform.position = new Vector3(bunbuku.transform.position.x + 0.1f*x, _yPos , 0);
+			_elapsedTime += Time.deltaTime;
+			yield return new WaitForEndOfFrame();
 		}
+
 		kettle.SetActive(true);
 		bunbuku.SetActive(false);
 		yield return new WaitForSecondsRealtime(1.0f);
@@ -90,11 +95,13 @@ public class BunbukuTinkerDialogue : MonoBehaviour {
 		TinkerSAC.nextAnimation = Enums.AnimStates.MoveBack;
 		float elapsedTime = 0f;
 		float yPos = tinker.transform.position.y;
+
 		while(elapsedTime <= 2.35f){
-		tinker.transform.position = new Vector3(tinker.transform.position.x, yPos + Mathf.SmoothStep(0f, 5, 0.25f*elapsedTime), 0);
-		elapsedTime += Time.deltaTime;
-		yield return new WaitForEndOfFrame();
+			tinker.transform.position = new Vector3(tinker.transform.position.x, yPos + Mathf.SmoothStep(0f, 5, 0.25f*elapsedTime), 0);
+			elapsedTime += Time.deltaTime;
+			yield return new WaitForEndOfFrame();
 		}
+
 		EndLevel.sceneFinished=true;
 	}
 }

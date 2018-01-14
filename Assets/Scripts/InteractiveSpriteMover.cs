@@ -151,7 +151,7 @@ public class InteractiveSpriteMover : MonoBehaviour {
 		}
 		else{
 			if(_npc.getName() == "Head Monk"){
-				if(!DialogueSystemMonk.isTalking){
+				if(!DialogueSystemMonk.isTalking && !other.GetComponent<DialogueSystemMonk>().hasSpoken){
 					StartCoroutine(other.GetComponent<DialogueSystemMonk>().speak(0, 2, speechBubble, monkBox));
 					StartCoroutine(waitMonk());
 				}

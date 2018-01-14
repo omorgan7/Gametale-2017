@@ -14949,12 +14949,17 @@ Prefab:
     - target: {fileID: 114656243919266844, guid: 716d3e38923cc4a378e427b2a9a9349f,
         type: 2}
       propertyPath: frameTime
-      value: 9999
+      value: 0.001
       objectReference: {fileID: 0}
     - target: {fileID: 114929645771466316, guid: 716d3e38923cc4a378e427b2a9a9349f,
         type: 2}
       propertyPath: nextAnimation
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114656243919266844, guid: 716d3e38923cc4a378e427b2a9a9349f,
+        type: 2}
+      propertyPath: isLooping
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114762058551890060, guid: 716d3e38923cc4a378e427b2a9a9349f, type: 2}
