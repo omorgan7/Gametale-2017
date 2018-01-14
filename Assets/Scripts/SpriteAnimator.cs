@@ -48,6 +48,7 @@ public class SpriteAnimator : MonoBehaviour {
 	public void goIdle(){
 		stopAnimation();
 		spriteIndex = 0;
+		// state = Enums.AnimStates.Idle;
 		spriteRenderer.sprite = sprites[idleIndex];
 	}
 
