@@ -1,19 +1,17 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
-
-public class playGame : MonoBehaviour {
-	private Button button;
+public class PlayGame : MonoBehaviour {
+	FadeController fadeController;
     void Start(){
-        button = gameObject.GetComponent<Button>();
-        button.onClick.AddListener(TaskOnClick);
+        fadeController = gameObject.GetComponent<FadeController>();
     }
-	
-
-	void TaskOnClick(){
-        SceneManager.LoadScene("house.scene");
-	}
+    void Update(){
+        if(Input.GetButtonUp("Submit") && !fadeController.isDone){
+            fadeController.FadeOut();
+        }
+        if(fadeController.isDone){
+            SceneManager.LoadScene("house.scene");
+        }
+    }
 }
