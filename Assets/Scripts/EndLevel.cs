@@ -55,8 +55,7 @@ public class EndLevel : MonoBehaviour {
 		Text txt = box.transform.GetChild(0).GetChild(0).GetComponent<Text>();
 		txt.text = loadText.narration[0];
 	}
-
-
+	
 	IEnumerator loadLevel(){
 		while(!fadeController.isDone){
 			yield return null;
@@ -77,7 +76,6 @@ public class EndLevel : MonoBehaviour {
 			SceneManager.LoadScene("temple2.scene");
 		}
 	}
-
 	IEnumerator finalFade(){
 		isQuitting = true;
 		yield return new WaitForSecondsRealtime(5f);

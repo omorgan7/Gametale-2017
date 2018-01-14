@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MonkTinkerDialogue : MonoBehaviour {
-	private int step =0;
+	private int step = 0;
 	public GameObject kettle;
 	public GameObject bunbuku;
 	public GameObject monk;
@@ -11,17 +11,14 @@ public class MonkTinkerDialogue : MonoBehaviour {
 	private DialogueSystemBadger dialogueSystemBadger;
 	private DialogueSystemMonk dialogueSystemMonk;
 	private DialogueSystemTinker dialogueSystemTinker;
-	private GameObject monkBox;
-	private GameObject badgerBox;
-	private GameObject tinkerBox;
+	private GameObject monkBox = null;
+	private GameObject badgerBox = null;
+	private GameObject tinkerBox = null;
 	public GameObject speechBubble;
-	private bool isTalking = false;
 	private bool started = false;
 	SpriteAnimationController MonkSAC;
 	SpriteAnimationController TinkerSAC;
 	SpriteAnimationController kettleSac;
-	SpriteAnimationController bunbukuSAC;
-
 	bool isDoneAnimating = true;
 
 
@@ -32,7 +29,6 @@ public class MonkTinkerDialogue : MonoBehaviour {
 		dialogueSystemTinker = GameObject.Find("EventSystem").GetComponent<DialogueSystemTinker>();
 		TinkerSAC = tinker.transform.GetChild(0).GetComponent<SpriteAnimationController>();
 		MonkSAC = monk.transform.GetChild(0).GetComponent<SpriteAnimationController>();
-		bunbukuSAC = bunbuku.transform.GetChild(0).GetComponent<SpriteAnimationController>();
 		kettleSac = kettle.GetComponent<SpriteAnimationController>();
 		StartCoroutine(DelayedStart());
 		TinkerSAC.sendToIdle();

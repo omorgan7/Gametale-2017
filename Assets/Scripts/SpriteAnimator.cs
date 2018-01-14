@@ -13,7 +13,7 @@ public class SpriteAnimator : MonoBehaviour {
 	public Sprite[] sprites;
 	bool isPlaying = false;
 	public bool isLooping = true;
-	bool needsStarting = false;
+//	bool needsStarting = false;
 	public int idleIndex;
 
 	public float frameTime = 0.1f;

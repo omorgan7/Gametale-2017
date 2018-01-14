@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 public class InteractiveSpriteMover : MonoBehaviour {
 	// Use this for initialization
 	SpriteMover spriteMover;
-	private GameObject bunbukuBox;
-	private GameObject monkBox;
+	private GameObject bunbukuBox = null;
+	private GameObject monkBox = null;
 	private NPCBehaviour _npc;
 	private RayCastTrigger rayCaster;
 	float right, forward;

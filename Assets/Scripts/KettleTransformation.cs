@@ -11,7 +11,7 @@ public class KettleTransformation : MonoBehaviour {
 	public GameObject bunbuku;
 	bool transformationBegun = false;
 	DialogueSystemBadger dialogueSystemBadger;
-	private GameObject box;
+	private GameObject box = null;
 	public GameObject speechBubble;
 	
 	// Update is called once per frame

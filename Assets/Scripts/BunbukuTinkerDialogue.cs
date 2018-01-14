@@ -11,8 +11,8 @@ public class BunbukuTinkerDialogue : MonoBehaviour {
 	SpriteAnimationController TinkerSAC;
 	private DialogueSystemBadger dialogueSystemBadger;
 	private DialogueSystemTinker dialogueSystemTinker;
-	private GameObject badgerBox;
-	private GameObject tinkerBox;
+	private GameObject badgerBox = null;
+	private GameObject tinkerBox = null;
 	public GameObject speechBubble;
 
 	void Start () {
@@ -76,7 +76,7 @@ public class BunbukuTinkerDialogue : MonoBehaviour {
 		int x = -1;
 		while(_elapsedTime <= 2.35f){
 		x *= -1;
-		bunbuku.transform.position = new Vector3(bunbuku.transform.position.x + 0.1f*x, _yPos ,0);
+		bunbuku.transform.position = new Vector3(bunbuku.transform.position.x + 0.1f*x, _yPos , 0);
 		_elapsedTime += Time.deltaTime;
 		yield return new WaitForEndOfFrame();
 		}
@@ -91,7 +91,7 @@ public class BunbukuTinkerDialogue : MonoBehaviour {
 		float elapsedTime = 0f;
 		float yPos = tinker.transform.position.y;
 		while(elapsedTime <= 2.35f){
-		tinker.transform.position = new Vector3(tinker.transform.position.x, yPos + Mathf.SmoothStep(0f,5,0.25f*elapsedTime),0);
+		tinker.transform.position = new Vector3(tinker.transform.position.x, yPos + Mathf.SmoothStep(0f, 5, 0.25f*elapsedTime), 0);
 		elapsedTime += Time.deltaTime;
 		yield return new WaitForEndOfFrame();
 		}

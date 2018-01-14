@@ -9,14 +9,11 @@ public class NPCBehaviour : MonoBehaviour {
 	public string nameOfNPC;
 	public GameObject speechBubble;
 	private GameObject box;
-	private InteractiveSpriteMover player;
 	public string getName(){
 		return nameOfNPC;
 	}
 	void Start(){
 		StartCoroutine(start());
-		var gameobjects = GameObject.FindGameObjectsWithTag("Player");
-		player = gameobjects[0].GetComponent<InteractiveSpriteMover>();
 	}
 	IEnumerator start(){
 		while(!DialogueSystemNPC.isDone){
@@ -33,7 +30,6 @@ public class NPCBehaviour : MonoBehaviour {
 			box.transform.GetChild(1).gameObject.SetActive(false);
 		}
 		box.SetActive(false);
-		
 	}
 	public void turnOnBox(){
 		if(!box){

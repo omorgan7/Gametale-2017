@@ -29,3 +29,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/temple2.scene.unity
     guid: 6fdf7a905ddb9f844bc695da0c9d8d33
+  - enabled: 1
+    path: Assets/Scenes/Credits.scene.unity
+    guid: 80825a7cff5eaa143923eb489e04d215
