@@ -165,6 +165,7 @@ public class InteractiveSpriteMover : MonoBehaviour {
 		EndLevel.sceneFinished = true;
 		endLevel.endLevelText(textPanel);
 	}
+	
 	IEnumerator waitBunbuku(){
 		while(DialogueSystemBadger.isTalking){
 			yield return null;
