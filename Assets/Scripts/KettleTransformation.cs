@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class KettleTransformation : MonoBehaviour {
-	private bool isInitialized = false;
+//	private bool isInitialized = false;
 	// Use this for initialization
 
 	public GameObject kettle;

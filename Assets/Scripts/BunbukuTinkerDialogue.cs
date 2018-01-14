@@ -41,23 +41,22 @@ public class BunbukuTinkerDialogue : MonoBehaviour {
 			StartCoroutine(dialogueSystemTinker.speak(3,3, speechBubble, tinkerBox));
 		}
 		if( i == 5){
-			StartCoroutine(dialogueSystemBadger.speak(4,5, speechBubble, badgerBox));
+			StartCoroutine(dialogueSystemBadger.speak(4,6, speechBubble, badgerBox));
 		}
 		if(i==6){
 			StartCoroutine(dialogueSystemTinker.speak(4,4, speechBubble, tinkerBox));
 		}
 		if(i==7){
-			StartCoroutine(dialogueSystemBadger.speak(6,6, speechBubble, badgerBox));
+			StartCoroutine(dialogueSystemBadger.speak(7,7, speechBubble, badgerBox));
 		}
 		if(i==8){
 			StartCoroutine(dialogueSystemTinker.speak(5,5, speechBubble, tinkerBox));
 		}
 		if(i==9){
-			StartCoroutine(dialogueSystemBadger.speak(7,7, speechBubble, badgerBox));
-			
+			StartCoroutine(dialogueSystemBadger.speak(8,8, speechBubble, badgerBox));
 		}
 		if(i == 10){
-			StartCoroutine(animation());
+			StartCoroutine(animationSequence());
 		}
 	}
 	IEnumerator speak(int i){
@@ -70,8 +69,7 @@ public class BunbukuTinkerDialogue : MonoBehaviour {
 		}
 	}
 
-	IEnumerator animation(){
-		var bunbukuController =  bunbuku.transform.GetChild(0).GetComponent<SpriteAnimationController>();
+	IEnumerator animationSequence(){
 		yield return new WaitForSecondsRealtime(0.5f);
 		float _elapsedTime = 0f;
 		float _yPos = bunbuku.transform.position.y;
