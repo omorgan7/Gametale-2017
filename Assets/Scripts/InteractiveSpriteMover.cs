@@ -8,11 +8,13 @@ public class InteractiveSpriteMover : MonoBehaviour {
 	SpriteMover spriteMover;
 	private GameObject bunbukuBox = null;
 	private GameObject monkBox = null;
+	private GameObject textBox = null;
 	private NPCBehaviour _npc;
 	private RayCastTrigger rayCaster;
 	float right, forward;
 	public bool isTalking = false;
 	private bool hasKettle = false;
+	private bool doorLocked = false;
 	public GameObject speechBubble;
 	public GameObject kettle;
 	public GameObject textPanel;
@@ -68,6 +70,22 @@ public class InteractiveSpriteMover : MonoBehaviour {
 		}
 	}
 	void collidedFunction(GameObject other){
+
+		if(other.gameObject.tag == "door"){
+			if((Input.GetButtonUp("Submit")&&(!doorLocked))){
+				textBox = Instantiate(speechBubble, Vector3.zero, Quaternion.identity);
+				Text txt = textBox.transform.GetChild(0).GetChild(0).GetComponent<Text>();
+				txt.text = "The door is locked.";
+				textBox.transform.GetChild(1).gameObject.SetActive(false);
+				doorLocked = true;
+				isTalking = true;
+			}
+			else if((Input.GetButtonUp("Submit")&&(doorLocked))){	
+				Destroy(textBox);
+				doorLocked = false;
+				isTalking = false;
+			}
+		}
 		
 		if(other.gameObject.tag == "fire"){
 			if(kettle){
