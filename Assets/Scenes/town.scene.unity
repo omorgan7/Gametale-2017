@@ -6458,7 +6458,7 @@ GameObject:
   - component: {fileID: 540815795}
   - component: {fileID: 540815796}
   m_Layer: 8
-  m_Name: GameObject
+  m_Name: Door
   m_TagString: door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6471,7 +6471,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 540815794}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.02, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1264343876}
@@ -6489,7 +6489,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.1747539, y: -0.22342706}
+  m_Offset: {x: -0.1747539, y: -0.04}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -7415,7 +7415,7 @@ GameObject:
   - component: {fileID: 637545518}
   - component: {fileID: 637545519}
   m_Layer: 8
-  m_Name: GameObject
+  m_Name: Door
   m_TagString: door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7428,7 +7428,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 637545517}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.144, y: -6.92, z: 0}
+  m_LocalPosition: {x: -3.144, y: -6.94, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1306325646}
@@ -7446,7 +7446,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 2.8211112, y: 6.6646376}
+  m_Offset: {x: 2.8211112, y: 6.9}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -8511,7 +8511,7 @@ GameObject:
   - component: {fileID: 761718503}
   - component: {fileID: 761718504}
   m_Layer: 8
-  m_Name: GameObject
+  m_Name: Door
   m_TagString: door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8542,7 +8542,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 3.4821253, y: 3.2017117}
+  m_Offset: {x: 3.4821253, y: 3.4}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -13054,7 +13054,7 @@ GameObject:
   - component: {fileID: 1142531182}
   - component: {fileID: 1142531183}
   m_Layer: 8
-  m_Name: GameObject
+  m_Name: Door
   m_TagString: door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13067,7 +13067,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1142531181}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.91400003, y: -6.92, z: 0}
+  m_LocalPosition: {x: -0.91400003, y: -6.94, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 657430181}
@@ -13085,7 +13085,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.6012851, y: 6.6646376}
+  m_Offset: {x: 0.6012851, y: 6.87}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -18610,7 +18610,7 @@ GameObject:
   - component: {fileID: 1625187109}
   - component: {fileID: 1625187110}
   m_Layer: 8
-  m_Name: GameObject
+  m_Name: Door
   m_TagString: door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18623,7 +18623,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1625187108}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.253, y: -0.5599997, z: 0}
+  m_LocalPosition: {x: 3.253, y: -0.51, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1554141932}
@@ -18641,7 +18641,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -3.2671983, y: 0.23652506}
+  m_Offset: {x: -3.2671983, y: 0.28}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -20344,7 +20344,7 @@ GameObject:
   - component: {fileID: 1777174943}
   - component: {fileID: 1777174944}
   m_Layer: 8
-  m_Name: GameObject
+  m_Name: Door
   m_TagString: door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20375,7 +20375,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -2.269004, y: 1.9001825}
+  m_Offset: {x: -2.269004, y: 2.17}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
