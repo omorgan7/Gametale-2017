@@ -3757,6 +3757,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MonkSpeech: {fileID: 4900000, guid: 35c3a08c34360754bb3ebf4df8a6105e, type: 3}
+  hasSpoken: 0
 --- !u!114 &654413146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3977,6 +3978,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 82048810189441696, guid: 130d329a7ef33471a8e375f1a1a3e92a,
+        type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: c3e72a2e44b8646ffa85c44b90671c28, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 130d329a7ef33471a8e375f1a1a3e92a, type: 2}
   m_IsPrefabParent: 0
